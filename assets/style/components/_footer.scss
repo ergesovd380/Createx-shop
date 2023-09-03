@@ -1,0 +1,67 @@
+.footer {
+
+  &__title{
+    margin: 40px 0 12px 0;
+
+    @include for-big-tablet {
+      margin: 10px 0 7px 0;
+    }
+  }
+
+  &__item {
+    margin-bottom: 12px;
+
+    @include for-big-tablet {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__menu {
+    font-weight: 400;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  &__icons {
+    margin-top: 16px;
+
+    &-item {
+      padding-right: 12px;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__download {
+    @include flex-v-center;
+
+    &-item {
+      padding-right: 20px;
+      cursor: pointer;
+    }
+  }
+
+  &__bottom {
+    @include flex-all-sb;
+
+    &-item {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &-gotop {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 25.6px;
+      opacity: 0.6;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import './components/menu';
+@import './components/button';
+@import './components/divider';
+@import './components/navigation';
+@import './components/dialog';
+@import './components/title';
+@import './components/header';
+@import './components/footer';
+
+// Home-page
+@import './components/pages/home-page/banner.scss';
+@import './components/pages/home-page/newarrival.scss';
+@import './components/elementsDelete';

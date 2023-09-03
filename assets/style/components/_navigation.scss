@@ -1,0 +1,32 @@
+.navigation {
+  padding-top: 20px;
+
+  &__category {
+    padding-bottom: 8px;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+
+  &__sale {
+    color: var(--danger);
+  }
+
+  &__img {
+    height: 285px;
+    width: 285px;
+    
+    &-title {
+      margin: 16px 0;
+      font-weight: 700;
+    }
+
+    // 1280
+    @include for-small-laptop {
+      height: 250px;
+      width: 250px;
+    }
+  }
+}

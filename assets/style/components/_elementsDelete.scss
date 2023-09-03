@@ -1,0 +1,54 @@
+.element {
+
+// 960 <
+  &__more-big-tablet {
+    @include for-big-tablet {
+      display: none;
+    }
+  }
+// 960 >
+  &__less-big-tablet {
+    @include big-tablet {
+      display: none;
+    }
+  }
+
+// 800 <
+  &__more-tablet {
+    @include for-tablet {
+      display: none;
+    }
+  }
+// 800 >
+  &__less-tablet {
+    @include tablet {
+      display: none;
+    }
+  }
+
+// 600 <
+  &__more-small-tablet {
+    @include for-small-tablet {
+      display: none;
+    }
+  }
+// 600 >
+  &__less-small-tablet {
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+// 400 <
+  &__more-mobile {
+    @include for-mobile {
+      display: none;
+    }
+  }
+// 400 >
+  &__less-mobile {
+    @include mobile {
+      display: none;
+    }
+  }
+}

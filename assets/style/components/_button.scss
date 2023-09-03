@@ -1,0 +1,29 @@
+.btn {
+
+  &__outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+
+    &:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+  }
+
+  &__flat {
+    background-color: var(--primary);
+    color: var(--white);
+    border-radius: 4px;
+  }
+
+  &__navigation {
+    padding: 0 24px;
+    height: 36px;
+
+    &-icon{
+      margin-left: 10px;
+    }
+  }
+}
