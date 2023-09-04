@@ -1,0 +1,64 @@
+.title {
+
+  &-h1 {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 59.8px;
+
+    @include for-laptop {
+      font-size: 40px;
+      line-height: 53px;
+    }
+  }
+
+  &-h2 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 41.6px;
+  }
+
+  &-h6 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+
+  @include for-laptop {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+
+  @include for-laptop {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+// Все ссылки на сайте
+.link {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  color: var(--primary);
+  text-decoration: underline;
+
+  @include for-laptop {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}

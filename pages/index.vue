@@ -1,5 +1,12 @@
 <script lang="ts" setup>
 import {ref} from 'vue';
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import { Pagination } from 'swiper/modules';
 
 // Banner section
 const items = ref([
@@ -45,44 +52,94 @@ const categories = ref([
 // newarrival
 const newarrival = ref([
   {
+    id: 1,
+    stars: 5,
     src: '/images/home-page/newarrival/1.png',
     name: 'Black and white sport cap',
-    price: '18.15',
-    stars: 1
+    price: '18.15'
   },
   {
+    id: 2,
+    stars: 0,
     src: '/images/home-page/newarrival/2.png',
     name: 'Metal bridge sunglasses',
-    price: '89.95',
-    stars: 1
+    price: '89.95'
   },
   {
+    id: 3,
+    stars: 4,
     src: '/images/home-page/newarrival/3.png',
     name: 'Green baby romper',
-    price: '20.40',
-    stars: 1
+    price: '20.40'
   },
   {
+    id: 4,
+    stars: 0,
     src: '/images/home-page/newarrival/4.png',
     name: 'Mid-rise slim cropped fit jeans',
-    price: '40.00',
-    stars: 1
+    price: '40.00'
   },
   {
+    id: 5,
+    stars: 5,
     src: '/images/home-page/newarrival/5.png',
     name: 'Red dangle earrings',
-    price: '29.95',
-    stars: 1
+    price: '29.95'
   },
   {
+    id: 6,
+    stars: 0,
     src: '/images/home-page/newarrival/6.png',
     name: 'Baby shoes with laces',
-    price: '30.60',
-    stars: 1
+    price: '30.60'
   },
+  {
+    id: 7,
+    stars: 5,
+    src: '/images/home-page/newarrival/1.png',
+    name: 'Black and white sport cap',
+    price: '18.15'
+  },
+  {
+    id: 8,
+    stars: 0,
+    src: '/images/home-page/newarrival/2.png',
+    name: 'Metal bridge sunglasses',
+    price: '89.95'
+  },
+  {
+    id: 9,
+    stars: 4,
+    src: '/images/home-page/newarrival/3.png',
+    name: 'Green baby romper',
+    price: '20.40'
+  },
+  {
+    id: 10,
+    stars: 0,
+    src: '/images/home-page/newarrival/4.png',
+    name: 'Mid-rise slim cropped fit jeans',
+    price: '40.00'
+  },
+  {
+    id: 11,
+    stars: 5,
+    src: '/images/home-page/newarrival/5.png',
+    name: 'Red dangle earrings',
+    price: '29.95'
+  },
+  {
+    id: 12,
+    stars: 0,
+    src: '/images/home-page/newarrival/6.png',
+    name: 'Baby shoes with laces',
+    price: '30.60'
+  }
 ])
 
-const model = null
+// Pagination carousel
+const modules = [Pagination]
+
 </script>
 
 <template>
@@ -147,51 +204,44 @@ const model = null
     </section>
 <!-- New arrival section -->
     <section class="home-page__newarrival section">
-        <h1 class="title-h1">New arrival</h1>
-        <div class="home-page__newarrival-subtitle subtitle">
-          Check out our latest arrivals for the upcoming season
-          <br>
-          <a href="#" class="link">See the collection here</a>
-        </div>
-        <div>
-          <v-sheet
-            class="mx-auto"
-            elevation="8"
-            max-width="800"
+      <h1 class="title-h1">New arrival</h1>
+      <div class="home-page__newarrival-subtitle subtitle">
+        Check out our latest arrivals for the upcoming season
+        <br>
+        <a href="#" class="link">See the collection here</a>
+      </div>
+      <swiper
+        :slidesPerView="6"
+        :spaceBetween="30"
+        :pagination="{
+          clickable: true,
+        }"
+        :modules="modules"
+        class="mySwiper"
+      >
+        <swiper-slide 
+          v-for="item in newarrival"
+          :key="item.id"
+        >
+          <v-img 
+            :src="item.src" 
+            max-height="320px" 
+            max-width="285px"
+            class="swiper-img"
           >
-            <v-slide-group
-              v-model="model"
-              class="pa-4"
-              selected-class="bg-success"
-              show-arrows
-            >
-              <v-slide-group-item
-                v-for="n in 15"
-                :key="n"
-                v-slot="{ isSelected, toggle, selectedClass }"
-              >
-                <v-card
-                  color="grey-lighten-1"
-                  :class="['ma-4', selectedClass]"
-                  height="200"
-                  width="100"
-                  @click="toggle"
-                >
-                  <div class="d-flex fill-height align-center justify-center">
-                    <v-scale-transition>
-                      <v-icon
-                        v-if="isSelected"
-                        color="white"
-                        size="48"
-                        icon="mdi-close-circle-outline"
-                      ></v-icon>
-                    </v-scale-transition>
-                  </div>
-                </v-card>
-              </v-slide-group-item>
-            </v-slide-group>
-          </v-sheet>
-        </div>
+            <v-rating
+              v-model="item.stars"
+              color="white"
+              active-color="yellow-accent-4"
+              half-increments
+              disabled
+              size="18"
+            ></v-rating>
+          </v-img>
+          <div class="subtitle">{{ item.name }}</div>
+          <div class="price">${{ item.price }}</div>
+        </swiper-slide>
+      </swiper>
     </section>
   </main>
 </template>
