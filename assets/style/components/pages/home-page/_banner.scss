@@ -8,7 +8,6 @@
       color: var(--gray-900);
       font-size: 18px;
       font-weight: 700;
-      
       line-height: 27px;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -294,6 +293,7 @@
         // 800
         @include for-tablet {
           grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
         }
       }
 

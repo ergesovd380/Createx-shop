@@ -4,20 +4,20 @@ import { useTheme } from 'vuetify';
 const theme = useTheme()
 
 const Desktop = ref(true)
-window.addEventListener('resize', () => {
+
+const calculateSize = () => {
   if(window.innerWidth > 600) {
     Desktop.value = true
   } else {
     Desktop.value = false
   }
+}
+window.addEventListener('resize', () => {
+  calculateSize()
 })
 
 onMounted(() => {
-  if(window.innerWidth > 600) {
-    Desktop.value = true
-  } else {
-    Desktop.value = false
-  }
+  calculateSize()
 })
 
 // Менять контент под тему

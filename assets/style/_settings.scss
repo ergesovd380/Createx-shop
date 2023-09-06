@@ -88,13 +88,69 @@ a {
 
 // All sections
 .section {
-  padding: 100px 0 80px;
+  padding: 100px 30px 80px;
 
   &-banner {
     padding-bottom: 80px;
+
+    // 1600
+    @include for-laptop {
+      padding-bottom: 70px;
+    }
+
+    // 1280
+    @include for-small-laptop {
+      padding-bottom: 60px;
+    }
+
+    // 960
+    @include for-big-tablet {
+      padding-bottom: 50px;
+    }
+
+    // 800
+    @include for-tablet {
+      padding-bottom: 40px;
+    }
+
+    // 600
+    @include for-small-tablet {
+      padding-bottom: 30px;
+    }
+
+    // 400
+    @include for-mobile {
+      padding-bottom: 20px;
+    }
   }
 
+  // 1600
   @include for-laptop {
-    padding: 90px 0 70px;
+    padding: 90px 30px 70px;
+  }
+
+  // 1280
+  @include for-small-laptop {
+    padding: 80px 30px 60px;
+  }
+
+  // 960
+  @include for-big-tablet {
+    padding: 70px 30px 50px;
+  }
+
+  // 800
+  @include for-tablet {
+    padding: 60px 30px 40px;
+  }
+
+  // 600
+  @include for-small-tablet {
+    padding: 50px 30px 30px;
+  }
+
+  // 400
+  @include for-mobile {
+    padding: 40px 30px 20px;
   }
 }

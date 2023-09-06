@@ -9,12 +9,37 @@
       font-size: 40px;
       line-height: 53px;
     }
+
+    @include for-big-tablet {
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    @include for-small-tablet {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   &-h2 {
     font-size: 32px;
     font-weight: 900;
     line-height: 41.6px;
+    
+    @include for-laptop {
+      font-size: 28px;
+      line-height: 35px;
+    }
+
+    @include for-big-tablet {
+      font-size: 20px;
+      line-height: 27px;
+    }
+
+    @include for-small-tablet {
+      font-size: 18px;
+      line-height: 25px;
+    }
   }
 
   &-h6 {
@@ -23,6 +48,21 @@
     line-height: 24px;
     letter-spacing: 1px;
     text-transform: uppercase;
+        
+    @include for-laptop {
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    @include for-big-tablet {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @include for-small-tablet {
+      font-size: 12px;
+      line-height: 15px;
+    }
   }
 
 }
@@ -35,6 +75,16 @@
   @include for-laptop {
     font-size: 16px;
     line-height: 25px;
+  }    
+
+  @include for-big-tablet {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  @include for-small-tablet {
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
@@ -46,6 +96,16 @@
   @include for-laptop {
     font-size: 18px;
     line-height: 23px;
+  }
+
+  @include for-big-tablet {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @include for-small-tablet {
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -60,5 +120,15 @@
   @include for-laptop {
     font-size: 16px;
     line-height: 25px;
+  }    
+
+  @include for-big-tablet {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  @include for-small-tablet {
+    font-size: 14px;
+    line-height: 18px;
   }
 }

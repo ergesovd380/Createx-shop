@@ -113,33 +113,31 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/3.png',
     name: 'Green baby romper',
     price: '20.40'
-  },
-  {
-    id: 10,
-    stars: 0,
-    src: '/images/home-page/newarrival/4.png',
-    name: 'Mid-rise slim cropped fit jeans',
-    price: '40.00'
-  },
-  {
-    id: 11,
-    stars: 5,
-    src: '/images/home-page/newarrival/5.png',
-    name: 'Red dangle earrings',
-    price: '29.95'
-  },
-  {
-    id: 12,
-    stars: 0,
-    src: '/images/home-page/newarrival/6.png',
-    name: 'Baby shoes with laces',
-    price: '30.60'
   }
 ])
 
 // Pagination carousel
 const modules = [Pagination]
 
+// Desktop size
+const slidesPerView = ref(6)
+const calculateSize = () => {
+  if(window.innerWidth < 600) {
+    slidesPerView.value = 2
+  } else if(window.innerWidth < 800) {
+    slidesPerView.value = 3
+  } else if(window.innerWidth < 960) {
+    slidesPerView.value = 4
+  } else if(window.innerWidth < 1600) {
+    slidesPerView.value = 5
+  }
+}
+window.addEventListener('resize', () => {
+  calculateSize()
+})
+onMounted(() => {
+  calculateSize()
+})
 </script>
 
 <template>
@@ -211,7 +209,7 @@ const modules = [Pagination]
         <a href="#" class="link">See the collection here</a>
       </div>
       <swiper
-        :slidesPerView="6"
+        :slidesPerView="slidesPerView"
         :spaceBetween="30"
         :pagination="{
           clickable: true,
@@ -242,6 +240,31 @@ const modules = [Pagination]
           <div class="price">${{ item.price }}</div>
         </swiper-slide>
       </swiper>
+    </section>
+<!-- Gallery section -->
+    <section class="home-page__gallery section">
+      <v-row>
+        <v-col cols="5">
+          <div class="menu__small">Summer Collections</div>
+          <div class="title-h2">Sale Up to 70%</div>
+          <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+        </v-col>
+        <v-col cols="7">
+          <div class="menu__small">Deal of the week</div>
+          <div class="title-h2">Stay Warm With Our <br> New Sweaters</div>
+          <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
+        </v-col>
+        <v-col cols="7">
+          <div class="menu__small">New collection</div>
+          <div class="title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
+          <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+        </v-col>
+        <v-col cols="5">
+          <div class="menu__small">Deal of the week</div>
+          <div class="title-h2">Stay Warm With Our <br> New Sweaters</div>
+          <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
+        </v-col>
+      </v-row>
     </section>
   </main>
 </template>
