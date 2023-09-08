@@ -49,70 +49,79 @@ const categories = ref([
   }
 ])
 
-// newarrival
+// Newarrival
 const newarrival = ref([
   {
     id: 1,
     stars: 5,
     src: '/images/home-page/newarrival/1.png',
     name: 'Black and white sport cap',
-    price: '18.15'
+    price: '18.15',
+    heart: false
   },
   {
     id: 2,
     stars: 0,
     src: '/images/home-page/newarrival/2.png',
     name: 'Metal bridge sunglasses',
-    price: '89.95'
+    price: '89.95',
+    heart: false
   },
   {
     id: 3,
     stars: 4,
     src: '/images/home-page/newarrival/3.png',
     name: 'Green baby romper',
-    price: '20.40'
+    price: '20.40',
+    heart: true
   },
   {
     id: 4,
     stars: 0,
     src: '/images/home-page/newarrival/4.png',
     name: 'Mid-rise slim cropped fit jeans',
-    price: '40.00'
+    price: '40.00',
+    heart: false
   },
   {
     id: 5,
     stars: 5,
     src: '/images/home-page/newarrival/5.png',
     name: 'Red dangle earrings',
-    price: '29.95'
+    price: '29.95',
+    heart: false
   },
   {
     id: 6,
     stars: 0,
     src: '/images/home-page/newarrival/6.png',
     name: 'Baby shoes with laces',
-    price: '30.60'
+    price: '30.60',
+    heart: true
   },
   {
     id: 7,
     stars: 5,
     src: '/images/home-page/newarrival/1.png',
     name: 'Black and white sport cap',
-    price: '18.15'
+    price: '18.15',
+    heart: false
   },
   {
     id: 8,
     stars: 0,
     src: '/images/home-page/newarrival/2.png',
     name: 'Metal bridge sunglasses',
-    price: '89.95'
+    price: '89.95',
+    heart: false
   },
   {
     id: 9,
     stars: 4,
     src: '/images/home-page/newarrival/3.png',
     name: 'Green baby romper',
-    price: '20.40'
+    price: '20.40',
+    heart: false
   }
 ])
 
@@ -229,12 +238,31 @@ onMounted(() => {
           >
             <v-rating
               v-model="item.stars"
-              color="white"
               active-color="yellow-accent-4"
+              color="white"
               half-increments
               disabled
-              size="18"
+              size="x-small"
+              density="compact"
+              class="swiper-img-stars"
             ></v-rating>
+            <div 
+              class="swiper-img-heart"
+              @click="item.heart = !item.heart"
+            >
+              <v-icon
+                v-if="item.heart"
+                icon="mdi-heart"
+                color="red"
+                class="mt-1"
+              ></v-icon>
+              <v-icon
+                v-else
+                icon="mdi-heart-outline"
+                color="black"
+                class="mt-1"
+              ></v-icon>
+            </div>
           </v-img>
           <div class="subtitle">{{ item.name }}</div>
           <div class="price">${{ item.price }}</div>
@@ -244,22 +272,26 @@ onMounted(() => {
 <!-- Gallery section -->
     <section class="home-page__gallery section">
       <v-row>
-        <v-col cols="5">
-          <div class="menu__small">Summer Collections</div>
-          <div class="title-h2">Sale Up to 70%</div>
-          <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+        <v-col cols="5" class="home-page__gallery-banner">
+          <div class="home-page__gallery-banner-img">
+            <div class="menu__small">Summer Collections</div>
+            <div class="title-h2">Sale Up to 70%</div>
+            <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+          </div>
         </v-col>
-        <v-col cols="7">
+        <v-col cols="7" class="home-page__gallery-banner">
           <div class="menu__small">Deal of the week</div>
           <div class="title-h2">Stay Warm With Our <br> New Sweaters</div>
           <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
         </v-col>
-        <v-col cols="7">
+      </v-row>
+      <v-row>
+        <v-col cols="7" class="home-page__gallery-banner">
           <div class="menu__small">New collection</div>
           <div class="title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
           <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
         </v-col>
-        <v-col cols="5">
+        <v-col cols="5" class="home-page__gallery-banner">
           <div class="menu__small">Deal of the week</div>
           <div class="title-h2">Stay Warm With Our <br> New Sweaters</div>
           <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
