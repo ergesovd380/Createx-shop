@@ -359,9 +359,20 @@ const date = [
           >
             <div class="menu__small">For All new Email Subscribers</div>
             <div class="home-page__gallery-title title-h2">Get 5% Off & Free Delivery</div>
-          </v-img>
 <!-- Form -->
-          
+            <v-form @submit.prevent>
+              <label for="email__gallery">Email</label>
+              <InputText 
+                placeholder="Your working email" 
+                class="home-page__gallery-form-input"
+              ></InputText>
+              <Btn 
+                class="home-page__gallery-form-btn"
+              >
+                Subscribe
+              </Btn>
+            </v-form>
+          </v-img>
         </v-col>
       </v-row>
     </section>
