@@ -42,6 +42,27 @@
     }
   }
 
+  &-h3 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 42px;
+    
+    @include for-laptop {
+      font-size: 25px;
+      line-height: 30px;
+    }
+
+    @include for-big-tablet {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include for-small-tablet {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  }
+
   &-h6 {
     font-size: 16px;
     font-weight: 700;

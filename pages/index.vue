@@ -147,6 +147,27 @@ window.addEventListener('resize', () => {
 onMounted(() => {
   calculateSize()
 })
+
+// Gallery
+const date = [
+  {
+    num: '06',
+    str: 'Days'
+  },
+  {
+    num: '18',
+    str: 'Hours'
+  },
+  {
+    num: '24',
+    str: 'Mins'
+  },
+  {
+    num: '12',
+    str: 'Sec'
+  },
+]
+
 </script>
 
 <template>
@@ -271,30 +292,76 @@ onMounted(() => {
     </section>
 <!-- Gallery section -->
     <section class="home-page__gallery section">
+<!-- Banner Row 1 -->
       <v-row>
-        <v-col cols="5" class="home-page__gallery-banner">
-          <div class="home-page__gallery-banner-img">
+<!-- Banner 1 -->
+        <v-col cols="5" class="pa-1">
+          <v-img 
+            src="images/home-page/gallery/banner-1.png" 
+            class="home-page__gallery-img"
+            cover
+          >
             <div class="menu__small">Summer Collections</div>
-            <div class="title-h2">Sale Up to 70%</div>
+            <div class="home-page__gallery-title title-h2">Sale Up to 70%</div>
             <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
-          </div>
+          </v-img>
         </v-col>
-        <v-col cols="7" class="home-page__gallery-banner">
-          <div class="menu__small">Deal of the week</div>
-          <div class="title-h2">Stay Warm With Our <br> New Sweaters</div>
-          <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
+<!-- Banner 2 -->
+        <v-col cols="7" class="pa-1">
+          <v-img 
+            src="images/home-page/gallery/banner-2.png"
+            class="home-page__gallery-img"
+            cover
+          >
+            <div class="menu__small">Deal of the week</div>
+            <div class="home-page__gallery-title title-h2">Stay Warm With Our <br> New Sweaters</div>
+            <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
+<!-- Date -->
+            <div class="menu__small-title mb-3">Limited time offer</div>
+            <div class="home-page__gallery-date">
+              <v-row>
+                <v-col                   
+                  v-for="(d, index) in date"
+                  :key="index"
+                >
+                  <div class="title-h3">
+                    {{ d.num }}
+                  </div>
+                  <div class="menu__small">
+                    {{ d.str }}
+                  </div>
+                </v-col>
+              </v-row>
+            </div>
+          </v-img>
         </v-col>
       </v-row>
+<!-- Banner Row 2 -->
       <v-row>
-        <v-col cols="7" class="home-page__gallery-banner">
-          <div class="menu__small">New collection</div>
-          <div class="title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
-          <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+<!-- Banner 3 -->
+        <v-col cols="7" class="pa-1">
+          <v-img 
+            src="images/home-page/gallery/banner-3.png"
+            class="home-page__gallery-img"
+            cover
+          >
+            <div class="menu__small">New collection</div>
+            <div class="home-page__gallery-title title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
+            <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+          </v-img>
         </v-col>
-        <v-col cols="5" class="home-page__gallery-banner">
-          <div class="menu__small">Deal of the week</div>
-          <div class="title-h2">Stay Warm With Our <br> New Sweaters</div>
-          <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
+<!-- Banner 4 -->
+        <v-col cols="5" class="pa-1">
+          <v-img 
+            src="images/home-page/gallery/banner-4.png"
+            class="home-page__gallery-img"
+            cover
+          >
+            <div class="menu__small">For All new Email Subscribers</div>
+            <div class="home-page__gallery-title title-h2">Get 5% Off & Free Delivery</div>
+          </v-img>
+<!-- Form -->
+          
         </v-col>
       </v-row>
     </section>
