@@ -47,7 +47,7 @@ const categories = ref([
     src: '/images/home-page/categories/kid.png',
     title: "Kids'"
   }
-])
+]);
 
 // Newarrival
 const newarrival = ref([
@@ -123,30 +123,10 @@ const newarrival = ref([
     price: '20.40',
     heart: false
   }
-])
+]);
 
 // Pagination carousel
-const modules = [Pagination]
-
-// Desktop size
-const slidesPerView = ref(6)
-const calculateSize = () => {
-  if(window.innerWidth < 600) {
-    slidesPerView.value = 2
-  } else if(window.innerWidth < 800) {
-    slidesPerView.value = 3
-  } else if(window.innerWidth < 960) {
-    slidesPerView.value = 4
-  } else if(window.innerWidth < 1600) {
-    slidesPerView.value = 5
-  }
-}
-window.addEventListener('resize', () => {
-  calculateSize()
-})
-onMounted(() => {
-  calculateSize()
-})
+const modules = [Pagination];
 
 // Gallery
 const date = [
@@ -166,7 +146,38 @@ const date = [
     num: '12',
     str: 'Sec'
   },
-]
+];
+const gridBigGallery = ref(7);
+const gridSmallGallery = ref(5);
+
+// Desktop size
+const slidesPerView = ref(6)
+const calculateSize = () => {
+  if(window.innerWidth < 600) {
+    slidesPerView.value = 2;
+    gridBigGallery.value = 12;
+    gridSmallGallery.value = 12;
+  } else if(window.innerWidth < 800) {
+    slidesPerView.value = 3;
+    gridBigGallery.value = 12;
+    gridSmallGallery.value = 12;
+  } else if(window.innerWidth < 960) {
+    slidesPerView.value = 4
+    gridBigGallery.value = 7;
+    gridSmallGallery.value = 5;
+  } else if(window.innerWidth < 1600) {
+    slidesPerView.value = 5;
+    gridBigGallery.value = 7;
+    gridSmallGallery.value = 5;
+  }
+};
+
+window.addEventListener('resize', () => {
+  calculateSize();
+});
+onMounted(() => {
+  calculateSize();
+});
 
 </script>
 
@@ -291,47 +302,57 @@ const date = [
       </swiper>
     </section>
 <!-- Gallery section -->
-    <section class="home-page__gallery section">
+    <section class="home-page__gallery section menu__small">
 <!-- Banner Row 1 -->
       <v-row>
 <!-- Banner 1 -->
-        <v-col cols="5" class="pa-1">
+        <v-col :cols="gridSmallGallery"  class="pa-1">
           <v-img 
             src="images/home-page/gallery/banner-1.png" 
             class="home-page__gallery-img"
             cover
           >
-            <div class="menu__small">Summer Collections</div>
+            <div class="home-page__gallery-subtitle">Summer Collections</div>
             <div class="home-page__gallery-title title-h2">Sale Up to 70%</div>
             <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
           </v-img>
         </v-col>
 <!-- Banner 2 -->
-        <v-col cols="7" class="pa-1">
+        <v-col :cols="gridBigGallery" class="pa-1">
           <v-img 
             src="images/home-page/gallery/banner-2.png"
             class="home-page__gallery-img"
             cover
           >
-            <div class="menu__small">Deal of the week</div>
+            <div class="home-page__gallery-subtitle">Deal of the week</div>
             <div class="home-page__gallery-title title-h2">Stay Warm With Our <br> New Sweaters</div>
             <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
 <!-- Date -->
-            <div class="menu__small-title mb-3">Limited time offer</div>
             <div class="home-page__gallery-date">
-              <v-row>
-                <v-col                   
-                  v-for="(d, index) in date"
-                  :key="index"
-                >
-                  <div class="title-h3">
-                    {{ d.num }}
-                  </div>
-                  <div class="menu__small">
-                    {{ d.str }}
-                  </div>
-                </v-col>
-              </v-row>
+              <div 
+                class="
+                  menu__small-title
+                  mb-3
+                  home-page__gallery-date-title
+                "
+              >
+                Limited time offer
+              </div>
+              <div class="home-page__gallery-date-content">
+                <v-row>
+                  <v-col                   
+                    v-for="(d, index) in date"
+                    :key="index"
+                  >
+                    <div class="title-h3">
+                      {{ d.num }}
+                    </div>
+                    <div>
+                      {{ d.str }}
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
             </div>
           </v-img>
         </v-col>
@@ -339,35 +360,47 @@ const date = [
 <!-- Banner Row 2 -->
       <v-row>
 <!-- Banner 3 -->
-        <v-col cols="7" class="pa-1">
+        <v-col :cols="gridBigGallery" class="pa-1">
           <v-img 
             src="images/home-page/gallery/banner-3.png"
             class="home-page__gallery-img"
             cover
           >
-            <div class="menu__small">New collection</div>
+            <div class="home-page__gallery-subtitle">New collection</div>
             <div class="home-page__gallery-title title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
-            <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+            <BtnOutline class="home-page__gallery-btn">
+              See offers 
+              <v-icon size="small">mdi-arrow-right</v-icon>
+            </BtnOutline>
           </v-img>
         </v-col>
 <!-- Banner 4 -->
-        <v-col cols="5" class="pa-1">
+        <v-col :cols="gridSmallGallery" class="pa-1">
           <v-img 
             src="images/home-page/gallery/banner-4.png"
             class="home-page__gallery-img"
             cover
           >
-            <div class="menu__small">For All new Email Subscribers</div>
+            <div class="home-page__gallery-subtitle">For All new Email Subscribers</div>
             <div class="home-page__gallery-title title-h2">Get 5% Off & Free Delivery</div>
 <!-- Form -->
-            <v-form @submit.prevent>
-              <label for="email__gallery">Email</label>
+            <v-form 
+              @submit.prevent
+              class="home-page__gallery-form"
+            >
+              <label 
+                for="email__gallery" 
+                class="home-page__gallery-form-label"
+              >
+                Email
+              </label>
               <InputText 
                 placeholder="Your working email" 
-                class="home-page__gallery-input"
+                class="home-page__gallery-form-input"
                 id="email__gallery"
               />
               <Btn class="home-page__gallery-btn">Subscribe</Btn>
+              <div class="home-page__gallery-form-singup">*Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.</div>
             </v-form>
           </v-img>
         </v-col>

@@ -7,10 +7,14 @@
 
 <style scoped lang="scss">
   .input {
+    padding: 11px 0 12px 16px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-400);
     background-color: var(--white);
+    color: var(--gray-900);
 
     &:focus {
-      border: 1px solid var(--success);
+      outline: 1px solid var(--primary);
     }
   }
 </style>
