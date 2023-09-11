@@ -364,13 +364,10 @@ const date = [
               <label for="email__gallery">Email</label>
               <InputText 
                 placeholder="Your working email" 
-                class="home-page__gallery-form-input"
-              ></InputText>
-              <Btn 
-                class="home-page__gallery-form-btn"
-              >
-                Subscribe
-              </Btn>
+                class="home-page__gallery-input"
+                id="email__gallery"
+              />
+              <Btn class="home-page__gallery-btn">Subscribe</Btn>
             </v-form>
           </v-img>
         </v-col>
