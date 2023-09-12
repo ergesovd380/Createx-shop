@@ -150,6 +150,34 @@ const date = [
 const gridBigGallery = ref(7);
 const gridSmallGallery = ref(5);
 
+// Popular
+const popularCategories = [
+  {
+    img: 'images/home-page/popular/img-1.png',
+    name: 'Tops'
+  },
+  {
+    img: 'images/home-page/popular/img-2.png',
+    name: 'T-shirts'
+  },
+  {
+    img: 'images/home-page/popular/img-3.png',
+    name: 'Caps'
+  },
+  {
+    img: 'images/home-page/popular/img-4.png',
+    name: 'Sandals'
+  },
+  {
+    img: 'images/home-page/popular/img-5.png',
+    name: 'Jackets'
+  },
+  {
+    img: 'images/home-page/popular/img-6.png',
+    name: 'Coats'
+  }
+]
+
 // Desktop size
 const calculateSize = () => {
   if(window.innerWidth < 600) {
@@ -409,7 +437,16 @@ onMounted(() => {
     </section>
 <!-- Popular Categories section -->
     <section class="home-page__popular section">
-      <h1>Hello World</h1>
+      <h1 class="title-h1">Popular categories</h1>
+      <div class="home-page__popular-categories">
+        <div 
+          v-for="(item, index) in popularCategories"
+          :key="index"
+        >
+          <v-img :src="item.img"></v-img>
+          <div class="home-page__popular-name category-name">{{ item.name }}</div>
+        </div>
+      </div>
     </section>
   </main>
 </template>
