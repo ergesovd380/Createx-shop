@@ -124,7 +124,7 @@ const newarrival = ref([
     heart: false
   }
 ]);
-
+const slidesPerView = ref(6)
 // Pagination carousel
 const modules = [Pagination];
 
@@ -151,7 +151,6 @@ const gridBigGallery = ref(7);
 const gridSmallGallery = ref(5);
 
 // Desktop size
-const slidesPerView = ref(6)
 const calculateSize = () => {
   if(window.innerWidth < 600) {
     slidesPerView.value = 2;
@@ -186,7 +185,9 @@ onMounted(() => {
 <!-- Banner section -->
     <section class="section-banner">
       <div class="home-page__banner">
-        <v-carousel 
+        <v-carousel
+          cycle 
+          interval="3000"
           show-arrows="hover" 
           height="auto" 
           hide-delimiters
@@ -405,6 +406,10 @@ onMounted(() => {
           </v-img>
         </v-col>
       </v-row>
+    </section>
+<!-- Popular Categories section -->
+    <section class="home-page__popular section">
+      <h1>Hello World</h1>
     </section>
   </main>
 </template>
