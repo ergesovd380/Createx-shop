@@ -9,6 +9,16 @@
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 40px;
+
+      @include for-tablet {
+        gap: 20px;
+      }
+
+      @include for-small-tablet {
+        width: 150px;
+        margin-top: 30px;
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
 
     &-name {
