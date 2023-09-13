@@ -30,7 +30,7 @@
     }
 
     &-pagination {
-      position: sticky;
+      position: static;
 
       &-bullet {
         width: 30px;
@@ -42,6 +42,17 @@
         &-active {
           opacity: 1;
         }
+      }
+
+    }
+
+    &-button-prev,
+    &-button-next {
+      top: 40%;
+      color: var(--gray-800);
+
+      @include for-small-tablet {
+        --swiper-navigation-size: 30px;
       }
     }
 

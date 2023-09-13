@@ -5,8 +5,9 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay, Navigation } from 'swiper/modules';
 
 // Banner section
 const items = ref([
@@ -126,7 +127,7 @@ const newarrival = ref([
 ]);
 const slidesPerView = ref(6)
 // Pagination carousel
-const modules = [Pagination];
+const modules = [Pagination, Autoplay, Navigation];
 
 // Gallery
 const date = [
@@ -283,6 +284,11 @@ onMounted(() => {
         :spaceBetween="30"
         :pagination="{
           clickable: true,
+        }"
+        :navigation="true"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: false
         }"
         :modules="modules"
         class="mySwiper"
