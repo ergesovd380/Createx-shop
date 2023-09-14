@@ -516,7 +516,7 @@ onMounted(() => {
       </v-container>
     </section>
 <!-- Trending now section -->
-    <section class="home-page__trending section-top">
+    <section class="home-page__trending section">
       <v-container>
         <div class="home-page__trending-header">
           <h1 class="title-h1">Trending now</h1>
@@ -571,7 +571,12 @@ onMounted(() => {
             </swiper-slide>
           </swiper>
         </div>
+        <div class="text-center">
+          <BtnOutline class="home-page__trending-btn">Explore top sales</BtnOutline>
+        </div>
       </v-container>
     </section>
+<!-- Sale up section -->
+
   </main>
 </template>
