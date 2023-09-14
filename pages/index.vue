@@ -2,12 +2,16 @@
 import {ref} from 'vue';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Swiper
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+// Pagination carousel
+const modules = [Pagination, Autoplay, Navigation];
 
 // Banner section
 const items = ref([
@@ -125,9 +129,8 @@ const newarrival = ref([
     heart: false
   }
 ]);
-const slidesPerView = ref(6)
-// Pagination carousel
-const modules = [Pagination, Autoplay, Navigation];
+const newarrivalSidesPerView = ref(6)
+
 
 // Gallery
 const date = [
@@ -179,32 +182,93 @@ const popularCategories = [
   }
 ]
 
+// Trending
+const trending = ref([
+  {
+    id: 1,
+    stars: 5,
+    src: '/images/home-page/trending/img-1.png',
+    name: 'Shirt with insertion lace trims',
+    price: '49.95',
+    heart: false
+  },
+  {
+    id: 2,
+    stars: 4,
+    src: '/images/home-page/trending/img-2.png',
+    name: 'Chrono watch with blue leather belt',
+    price: '120.60',
+    heart: false
+  },
+  {
+    id: 3,
+    stars: 0,
+    src: '/images/home-page/trending/img-3.png',
+    name: 'Check coat with colour contrast',
+    price: '183.45',
+    heart: false
+  },
+  {
+    id: 4,
+    stars: 5,
+    src: '/images/home-page/trending/img-1.png',
+    name: 'Shirt with insertion lace trims',
+    price: '49.95',
+    heart: false
+  },
+  {
+    id: 5,
+    stars: 4,
+    src: '/images/home-page/trending/img-2.png',
+    name: 'Chrono watch with blue leather belt',
+    price: '120.60',
+    heart: false
+  },
+  {
+    id: 6,
+    stars: 0,
+    src: '/images/home-page/trending/img-3.png',
+    name: 'Check coat with colour contrast',
+    price: '183.45',
+    heart: false
+  }
+])
+const trendingSidesPerView = ref(3)
+
 // Desktop size
-const calculateSize = () => {
+const calculateNewarrival = () => {
   if(window.innerWidth < 600) {
-    slidesPerView.value = 2;
-    gridBigGallery.value = 12;
-    gridSmallGallery.value = 12;
+    newarrivalSidesPerView.value = 2;
   } else if(window.innerWidth < 800) {
-    slidesPerView.value = 3;
+    newarrivalSidesPerView.value = 3;
+  } else if(window.innerWidth < 960) {
+    newarrivalSidesPerView.value = 4
+  } else if(window.innerWidth < 1600) {
+    newarrivalSidesPerView.value = 5;
+  }
+};
+const calculateGrid = () => {
+  if(window.innerWidth < 800) {
     gridBigGallery.value = 12;
     gridSmallGallery.value = 12;
-  } else if(window.innerWidth < 960) {
-    slidesPerView.value = 4
-    gridBigGallery.value = 7;
-    gridSmallGallery.value = 5;
-  } else if(window.innerWidth < 1600) {
-    slidesPerView.value = 5;
+  } else {
     gridBigGallery.value = 7;
     gridSmallGallery.value = 5;
   }
 };
+const calculateTrending = () => {
+  if(window.innerWidth < 600) {
+    trendingSidesPerView.value = 1;
+  } else {
+    trendingSidesPerView.value = 3;
+  }
+};
 
 window.addEventListener('resize', () => {
-  calculateSize();
+  calculateNewarrival(); calculateGrid(); calculateTrending();
 });
 onMounted(() => {
-  calculateSize();
+  calculateNewarrival(); calculateGrid(); calculateTrending();
 });
 
 </script>
@@ -280,7 +344,7 @@ onMounted(() => {
         <a href="#" class="link">See the collection here</a>
       </div>
       <swiper
-        :slidesPerView="slidesPerView"
+        :slidesPerView="newarrivalSidesPerView"
         :spaceBetween="30"
         :pagination="{
           clickable: true,
@@ -304,16 +368,10 @@ onMounted(() => {
             max-width="285px"
             class="swiper-img"
           >
-            <v-rating
+            <Rating 
+              v-if="item.stars > 0"
               v-model="item.stars"
-              active-color="yellow-accent-4"
-              color="white"
-              half-increments
-              disabled
-              size="x-small"
-              density="compact"
-              class="swiper-img-stars"
-            ></v-rating>
+            ></Rating>
             <div 
               class="swiper-img-heart"
               @click="item.heart = !item.heart"
@@ -460,21 +518,24 @@ onMounted(() => {
 <!-- Trending now section -->
     <section class="home-page__trending section-top">
       <v-container>
-        <h1 class="title-h1">Trending now</h1>
+        <div class="home-page__trending-header">
+          <h1 class="title-h1">Trending now</h1>
+          <div>
+            <Btn class="myPrev swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
+            <Btn class="myNext swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
+          </div>
+        </div>
         <div class="home-page__trending-categories">
           <swiper
-            :slidesPerView="3"
+            :slidesPerView="trendingSidesPerView"
             :spaceBetween="30"
-            :autoplay="{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
-            }"
+            :navigation="{enabled: true, prevEl: '.myPrev', nextEl: '.myNext'}"
+            :loop="true"
             :modules="modules"
             class="mySwiper"
           >
             <swiper-slide 
-              v-for="item in newarrival"
+              v-for="item in trending"
               :key="item.id"
             >
               <v-img 
@@ -483,16 +544,10 @@ onMounted(() => {
                 max-width="440px"
                 class="swiper-img"
               >
-                <v-rating
+                <Rating 
+                  v-if="item.stars > 0"
                   v-model="item.stars"
-                  active-color="yellow-accent-4"
-                  color="white"
-                  half-increments
-                  disabled
-                  size="x-small"
-                  density="compact"
-                  class="swiper-img-stars"
-                ></v-rating>
+                ></Rating>
                 <div 
                   class="swiper-img-heart"
                   @click="item.heart = !item.heart"

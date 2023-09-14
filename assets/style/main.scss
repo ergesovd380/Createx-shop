@@ -10,6 +10,7 @@
 @import './components/divider';
 @import './components/navigation';
 @import './components/text';
+@import './components/btn';
 @import './components/header';
 @import './components/footer';
 
@@ -19,6 +20,8 @@
 @import './components/pages/home-page/gallery.scss';
 @import './components/pages/home-page/popular.scss';
 @import './components/pages/home-page/trending.scss';
+// Swiper
+@import './components/pages/home-page/swiper.scss';
 
 // Элементы в разных экранах
 @import './components/elementsDelete';

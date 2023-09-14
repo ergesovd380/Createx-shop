@@ -1,0 +1,11 @@
+<template>
+  <v-rating
+    active-color="yellow-accent-4"
+    color="var(--gray-500)"
+    half-increments
+    disabled
+    size="x-small"
+    density="compact"
+    class="swiper-img-stars"
+  ></v-rating>
+</template>
