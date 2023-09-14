@@ -233,7 +233,60 @@ const trending = ref([
     heart: false
   }
 ])
-const trendingSidesPerView = ref(3)
+
+const bigSidesPerView = ref(3)
+
+// Sale Up
+const saleUp = ref([
+  {
+    id: 1,
+    stars: 5,
+    src: '/images/home-page/sale-up/img-1.png',
+    name: 'Leather crossbody bag with gold hardware',
+    price: '179.00',
+    heart: false
+  },
+  {
+    id: 2,
+    stars: 0,
+    src: '/images/home-page/sale-up/img-2.png',
+    name: 'Skinny push-up jeans',
+    price: '80.00',
+    heart: false
+  },
+  {
+    id: 3,
+    stars: 5,
+    src: '/images/home-page/sale-up/img-3.png',
+    name: 'Wide heel suede ankle boots',
+    price: '149.95',
+    heart: false
+  },
+  {
+    id: 4,
+    stars: 5,
+    src: '/images/home-page/sale-up/img-1.png',
+    name: 'Leather crossbody bag with gold hardware',
+    price: '179.00',
+    heart: false
+  },
+  {
+    id: 5,
+    stars: 0,
+    src: '/images/home-page/sale-up/img-2.png',
+    name: 'Skinny push-up jeans',
+    price: '80.00',
+    heart: false
+  },
+  {
+    id: 6,
+    stars: 5,
+    src: '/images/home-page/sale-up/img-3.png',
+    name: 'Wide heel suede ankle boots',
+    price: '149.95',
+    heart: false
+  }
+])
 
 // Desktop size
 const calculateNewarrival = () => {
@@ -256,19 +309,19 @@ const calculateGrid = () => {
     gridSmallGallery.value = 5;
   }
 };
-const calculateTrending = () => {
+const calculatebigSidesPerView = () => {
   if(window.innerWidth < 600) {
-    trendingSidesPerView.value = 1;
+    bigSidesPerView.value = 1;
   } else {
-    trendingSidesPerView.value = 3;
+    bigSidesPerView.value = 3;
   }
 };
 
 window.addEventListener('resize', () => {
-  calculateNewarrival(); calculateGrid(); calculateTrending();
+  calculateNewarrival(); calculateGrid(); calculatebigSidesPerView();
 });
 onMounted(() => {
-  calculateNewarrival(); calculateGrid(); calculateTrending();
+  calculateNewarrival(); calculateGrid(); calculatebigSidesPerView();
 });
 
 </script>
@@ -521,15 +574,15 @@ onMounted(() => {
         <div class="home-page__trending-header">
           <h1 class="title-h1">Trending now</h1>
           <div>
-            <Btn class="myPrev swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
-            <Btn class="myNext swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
+            <Btn class="myPrevTrending swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
+            <Btn class="myNextTrending swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
           </div>
         </div>
         <div class="home-page__trending-categories">
           <swiper
-            :slidesPerView="trendingSidesPerView"
+            :slidesPerView="bigSidesPerView"
             :spaceBetween="30"
-            :navigation="{enabled: true, prevEl: '.myPrev', nextEl: '.myNext'}"
+            :navigation="{enabled: true, prevEl: '.myPrevTrending', nextEl: '.myNextTrending'}"
             :loop="true"
             :modules="modules"
             class="mySwiper"
@@ -577,6 +630,65 @@ onMounted(() => {
       </v-container>
     </section>
 <!-- Sale up section -->
-
+    <section class="home-page__sale-up section">
+      <v-container>
+        <div class="home-page__sale-up-header">
+          <h1 class="title-h1">Sale up to 70%</h1>
+          <div>
+            <Btn class="myPrevSale swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
+            <Btn class="myNextSale swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
+          </div>
+        </div>
+        <div class="home-page__sale-up-categories">
+          <swiper
+            :slidesPerView="bigSidesPerView"
+            :spaceBetween="30"
+            :navigation="{enabled: true, prevEl: '.myPrevSale', nextEl: '.myNextSale'}"
+            :loop="true"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide 
+              v-for="item in saleUp"
+              :key="item.id"
+            >
+              <v-img 
+                :src="item.src" 
+                max-height="490px" 
+                max-width="440px"
+                class="swiper-img"
+              >
+                <Rating 
+                  v-if="item.stars > 0"
+                  v-model="item.stars"
+                ></Rating>
+                <div 
+                  class="swiper-img-heart"
+                  @click="item.heart = !item.heart"
+                >
+                  <v-icon
+                    v-if="item.heart"
+                    icon="mdi-heart"
+                    color="red"
+                    class="mt-1"
+                  ></v-icon>
+                  <v-icon
+                    v-else
+                    icon="mdi-heart-outline"
+                    color="black"
+                    class="mt-1"
+                  ></v-icon>
+                </div>
+              </v-img>
+              <div class="subtitle swiper-name">{{ item.name }}</div>
+              <div class="price">${{ item.price }}</div>
+            </swiper-slide>
+          </swiper>
+        </div>
+        <div class="text-center">
+          <BtnOutline class="home-page__sale-up-btn">See all sale products</BtnOutline>
+        </div>
+      </v-container>
+    </section>
   </main>
 </template>
