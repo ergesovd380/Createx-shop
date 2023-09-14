@@ -1,10 +1,14 @@
 .home-page {
 
   &__newarrival {
-    text-align: center;
+
+    &-title {
+      text-align: center;
+    }
     
     &-subtitle {
       padding: 24px 0 60px;
+      text-align: center;
 
       @include for-laptop {
         padding: 20px 0 50px;
@@ -26,7 +30,37 @@
     height: 100%;
 
     &-slide {
-      text-align: center;
+      margin-bottom: 80px;
+
+      // 1600
+      @include for-laptop {
+        margin-bottom: 70px;
+      }
+
+      // 1280
+      @include for-small-laptop {
+        margin-bottom: 60px;
+      }
+
+      // 960
+      @include for-big-tablet {
+        margin-bottom: 50px;
+      }
+
+      // 800
+      @include for-tablet {
+        margin-bottom: 40px;
+      }
+
+      // 600
+      @include for-small-tablet {
+        margin-bottom: 30px;
+      }
+
+      // 400
+      @include for-mobile {
+        margin-bottom: 20px;
+      }
     }
 
     &-pagination {
@@ -48,7 +82,7 @@
 
     &-button-prev,
     &-button-next {
-      top: 40%;
+      top: 30%;
       color: var(--gray-800);
 
       @include for-small-tablet {
@@ -78,5 +112,8 @@
       }
     }
 
+    &-name {
+      margin: 16px 0 8px;
+    }
   }
 }

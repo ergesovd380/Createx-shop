@@ -272,8 +272,8 @@ onMounted(() => {
       </div>
     </section>
 <!-- New arrival section -->
-    <section class="home-page__newarrival section">
-      <h1 class="title-h1">New arrival</h1>
+    <section class="home-page__newarrival section-top">
+      <h1 class="title-h1 home-page__newarrival-title">New arrival</h1>
       <div class="home-page__newarrival-subtitle subtitle">
         Check out our latest arrivals for the upcoming season
         <br>
@@ -288,7 +288,8 @@ onMounted(() => {
         :navigation="true"
         :autoplay="{
           delay: 3000,
-          disableOnInteraction: false
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true
         }"
         :modules="modules"
         class="mySwiper"
@@ -331,7 +332,7 @@ onMounted(() => {
               ></v-icon>
             </div>
           </v-img>
-          <div class="subtitle">{{ item.name }}</div>
+          <div class="subtitle swiper-name">{{ item.name }}</div>
           <div class="price">${{ item.price }}</div>
         </swiper-slide>
       </swiper>
@@ -443,16 +444,79 @@ onMounted(() => {
     </section>
 <!-- Popular Categories section -->
     <section class="home-page__popular section">
-      <h1 class="title-h1">Popular categories</h1>
-      <div class="home-page__popular-categories">
-        <div 
-          v-for="(item, index) in popularCategories"
-          :key="index"
-        >
-          <v-img :src="item.img"></v-img>
-          <div class="home-page__popular-name category-name">{{ item.name }}</div>
+      <v-container>
+        <h1 class="title-h1">Popular categories</h1>
+        <div class="home-page__popular-categories">
+          <div 
+            v-for="(item, index) in popularCategories"
+            :key="index"
+          >
+            <v-img :src="item.img"></v-img>
+            <div class="home-page__popular-name category-name">{{ item.name }}</div>
+          </div>
         </div>
-      </div>
+      </v-container>
+    </section>
+<!-- Trending now section -->
+    <section class="home-page__trending section-top">
+      <v-container>
+        <h1 class="title-h1">Trending now</h1>
+        <div class="home-page__trending-categories">
+          <swiper
+            :slidesPerView="3"
+            :spaceBetween="30"
+            :autoplay="{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true
+            }"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide 
+              v-for="item in newarrival"
+              :key="item.id"
+            >
+              <v-img 
+                :src="item.src" 
+                max-height="490px" 
+                max-width="440px"
+                class="swiper-img"
+              >
+                <v-rating
+                  v-model="item.stars"
+                  active-color="yellow-accent-4"
+                  color="white"
+                  half-increments
+                  disabled
+                  size="x-small"
+                  density="compact"
+                  class="swiper-img-stars"
+                ></v-rating>
+                <div 
+                  class="swiper-img-heart"
+                  @click="item.heart = !item.heart"
+                >
+                  <v-icon
+                    v-if="item.heart"
+                    icon="mdi-heart"
+                    color="red"
+                    class="mt-1"
+                  ></v-icon>
+                  <v-icon
+                    v-else
+                    icon="mdi-heart-outline"
+                    color="black"
+                    class="mt-1"
+                  ></v-icon>
+                </div>
+              </v-img>
+              <div class="subtitle swiper-name">{{ item.name }}</div>
+              <div class="price">${{ item.price }}</div>
+            </swiper-slide>
+          </swiper>
+        </div>
+      </v-container>
     </section>
   </main>
 </template>

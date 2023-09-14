@@ -5,6 +5,7 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import './components/section';
 @import './components/menu';
 @import './components/divider';
 @import './components/navigation';
@@ -17,6 +18,7 @@
 @import './components/pages/home-page/newarrival.scss';
 @import './components/pages/home-page/gallery.scss';
 @import './components/pages/home-page/popular.scss';
+@import './components/pages/home-page/trending.scss';
 
 // Элементы в разных экранах
 @import './components/elementsDelete';
