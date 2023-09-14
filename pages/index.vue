@@ -9,9 +9,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
-import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 // Pagination carousel
-const modules = [Pagination, Autoplay, Navigation];
+const modules = [Pagination, Navigation];
 
 // Banner section
 const items = ref([
@@ -62,7 +62,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/1.png',
     name: 'Black and white sport cap',
     price: '18.15',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 2,
@@ -70,7 +73,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/2.png',
     name: 'Metal bridge sunglasses',
     price: '89.95',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 3,
@@ -78,7 +84,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/3.png',
     name: 'Green baby romper',
     price: '20.40',
-    heart: true
+    heart: true,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 4,
@@ -86,7 +95,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/4.png',
     name: 'Mid-rise slim cropped fit jeans',
     price: '40.00',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 5,
@@ -94,7 +106,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/5.png',
     name: 'Red dangle earrings',
     price: '29.95',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 6,
@@ -102,7 +117,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/6.png',
     name: 'Baby shoes with laces',
     price: '30.60',
-    heart: true
+    heart: true,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 7,
@@ -110,7 +128,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/1.png',
     name: 'Black and white sport cap',
     price: '18.15',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 8,
@@ -118,7 +139,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/2.png',
     name: 'Metal bridge sunglasses',
     price: '89.95',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   },
   {
     id: 9,
@@ -126,7 +150,10 @@ const newarrival = ref([
     src: '/images/home-page/newarrival/3.png',
     name: 'Green baby romper',
     price: '20.40',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['black', 'brown']
   }
 ]);
 const newarrivalSidesPerView = ref(6)
@@ -403,11 +430,6 @@ onMounted(() => {
           clickable: true,
         }"
         :navigation="true"
-        :autoplay="{
-          delay: 3000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true
-        }"
         :modules="modules"
         class="mySwiper"
       >
@@ -443,8 +465,37 @@ onMounted(() => {
               ></v-icon>
             </div>
           </v-img>
-          <div class="subtitle swiper-name">{{ item.name }}</div>
+          <div 
+            class="subtitle swiper-name"
+            @click="item.expand = !item.expand"
+          >
+            {{ item.name }}
+            <v-tooltip
+              activator="parent"
+              location="top"
+            >To card double click</v-tooltip>
+          </div>
           <div class="price">${{ item.price }}</div>
+          <v-expand-transition>
+            <div v-if="item.expand">
+              <div class="swiper-data">
+                <v-chip-group
+                  selected-class="text-deep-purple-accent-4"
+                  mandatory
+                >
+                  <v-chip
+                    v-for="size in item.size"
+                    :key="size"
+                    :value="size"
+                    variant="outlined"
+                  >
+                    {{ size }}
+                  </v-chip>
+                </v-chip-group>
+                <div class="swiper-color">Hello from size</div>
+              </div>
+            </div>
+          </v-expand-transition>
         </swiper-slide>
       </swiper>
     </section>

@@ -90,6 +90,7 @@
 
     &-name {
       margin: 16px 0 8px;
+      cursor: pointer;
     }
 
     &-btn {
@@ -102,6 +103,31 @@
       &:hover {
         background-color: var(--primary);
         color: var(--white)
+      }
+    }
+
+    &-data {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-size {
+      padding: 5px;
+      border: 1px solid var(--gray-800);
+      border-radius: 4px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--primary);
+      }
+
+      &:active {
+        border-color: var(--primary);
       }
     }
   }
