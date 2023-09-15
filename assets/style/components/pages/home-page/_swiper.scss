@@ -89,7 +89,7 @@
     }
 
     &-name {
-      margin: 16px 0 8px;
+      margin-bottom: 8px;
       cursor: pointer;
     }
 
@@ -114,19 +114,34 @@
     }
 
     &-size {
-      padding: 5px;
-      border: 1px solid var(--gray-800);
+      padding: 1px 4px;
+      border: 2px solid var(--gray-500);
       border-radius: 4px;
-      text-align: center;
       font-size: 12px;
-      font-weight: 400;
-      cursor: pointer;
 
       &:hover {
         border-color: var(--primary);
       }
 
-      &:active {
+      &-active {
+        border-color: var(--primary);
+      }
+    }
+
+    &-color {
+      padding: 4px;
+      border: 2px solid var(--gray-500);
+
+      &-value {
+        padding: 7px;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        border-color: var(--primary);
+      }
+
+      &-active {
         border-color: var(--primary);
       }
     }

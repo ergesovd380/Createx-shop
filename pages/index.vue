@@ -65,7 +65,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['black', 'brown', 'gray']
   },
   {
     id: 2,
@@ -437,65 +437,91 @@ onMounted(() => {
           v-for="item in newarrival"
           :key="item.id"
         >
-          <v-img 
-            :src="item.src" 
-            max-height="320px" 
-            max-width="285px"
-            class="swiper-img"
-          >
-            <Rating 
-              v-if="item.stars > 0"
-              v-model="item.stars"
-            ></Rating>
-            <div 
-              class="swiper-img-heart"
-              @click="item.heart = !item.heart"
+          <v-card elevation="0">
+            <v-img 
+              :src="item.src" 
+              max-height="320px" 
+              max-width="285px"
+              class="swiper-img"
             >
-              <v-icon
-                v-if="item.heart"
-                icon="mdi-heart"
-                color="red"
-                class="mt-1"
-              ></v-icon>
-              <v-icon
-                v-else
-                icon="mdi-heart-outline"
-                color="black"
-                class="mt-1"
-              ></v-icon>
-            </div>
-          </v-img>
-          <div 
-            class="subtitle swiper-name"
-            @click="item.expand = !item.expand"
-          >
-            {{ item.name }}
-            <v-tooltip
-              activator="parent"
-              location="top"
-            >To card double click</v-tooltip>
-          </div>
-          <div class="price">${{ item.price }}</div>
-          <v-expand-transition>
-            <div v-if="item.expand">
-              <div class="swiper-data">
-                <v-chip-group
-                  selected-class="text-deep-purple-accent-4"
-                  mandatory
-                >
-                  <v-chip
-                    v-for="size in item.size"
-                    :key="size"
-                    :value="size"
-                    variant="outlined"
-                  >
-                    {{ size }}
-                  </v-chip>
-                </v-chip-group>
-                <div class="swiper-color">Hello from size</div>
+              <Rating 
+                v-if="item.stars > 0"
+                v-model="item.stars"
+              ></Rating>
+              <div 
+                class="swiper-img-heart"
+                @click="item.heart = !item.heart"
+              >
+                <v-icon
+                  v-if="item.heart"
+                  icon="mdi-heart"
+                  color="red"
+                  class="mt-1"
+                ></v-icon>
+                <v-icon
+                  v-else
+                  icon="mdi-heart-outline"
+                  color="black"
+                  class="mt-1"
+                ></v-icon>
               </div>
-            </div>
-          </v-expand-transition>
+            </v-img>
+            <v-card-text>
+              <div 
+                class="subtitle swiper-name"
+                @click="item.expand = !item.expand"
+              >
+                {{ item.name }}
+                <v-tooltip
+                  activator="parent"
+                  location="top"
+                >To card double click</v-tooltip>
+              </div>
+              <div class="price">${{ item.price }}</div>
+<!-- Expand transition-->
+              <v-expand-transition>
+                <div v-if="item.expand">
+                  <div class="swiper-data">
+<!-- Swiper size -->
+                    <v-chip-group
+                      selected-class="swiper-size-active"
+                      mandatory
+                    >
+                      <v-chip
+                        v-for="size in item.size"
+                        :key="size"
+                        :value="size"
+                        variant="text"
+                        tag="div"
+                        class="swiper-size"
+                        size="24"
+                      >
+                        {{ size }}
+                      </v-chip>
+                    </v-chip-group>
+<!-- Swiper color -->
+                    <v-chip-group
+                      selected-class="swiper-color-active"
+                      mandatory
+                    >
+                      <v-chip
+                        v-for="color in item.color"
+                        :key="color"
+                        :value="color"
+                        variant="text"
+                        tag="div"
+                        class="swiper-color"
+                        size="24"
+                        rounded
+                      >
+                        <div class="swiper-color-value" :background="color"></div>
+                      </v-chip>
+                    </v-chip-group>
+                  </div>
+                </div>
+              </v-expand-transition>
+            </v-card-text>
+          </v-card>
         </swiper-slide>
       </swiper>
     </section>
