@@ -111,6 +111,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      @include for-big-tablet {
+        display: block;
+      }
     }
 
     &-size {
@@ -144,6 +148,15 @@
       &-active {
         border-color: var(--primary);
       }
+    }
+
+    &-add-cart {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 44px;
+      letter-spacing: 0.5px;
     }
   }
 }

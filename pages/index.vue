@@ -65,7 +65,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown', 'gray']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 2,
@@ -76,7 +76,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 3,
@@ -87,7 +87,7 @@ const newarrival = ref([
     heart: true,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 4,
@@ -98,7 +98,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 5,
@@ -109,7 +109,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 6,
@@ -120,7 +120,7 @@ const newarrival = ref([
     heart: true,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 7,
@@ -131,7 +131,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 8,
@@ -142,7 +142,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 9,
@@ -153,7 +153,7 @@ const newarrival = ref([
     heart: false,
     expand: false,
     size: [36, 38, 40, 42],
-    color: ['black', 'brown']
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   }
 ]);
 const newarrivalSidesPerView = ref(6)
@@ -217,7 +217,10 @@ const trending = ref([
     src: '/images/home-page/trending/img-1.png',
     name: 'Shirt with insertion lace trims',
     price: '49.95',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 2,
@@ -225,7 +228,10 @@ const trending = ref([
     src: '/images/home-page/trending/img-2.png',
     name: 'Chrono watch with blue leather belt',
     price: '120.60',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 3,
@@ -233,7 +239,10 @@ const trending = ref([
     src: '/images/home-page/trending/img-3.png',
     name: 'Check coat with colour contrast',
     price: '183.45',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 4,
@@ -241,7 +250,10 @@ const trending = ref([
     src: '/images/home-page/trending/img-1.png',
     name: 'Shirt with insertion lace trims',
     price: '49.95',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 5,
@@ -249,7 +261,10 @@ const trending = ref([
     src: '/images/home-page/trending/img-2.png',
     name: 'Chrono watch with blue leather belt',
     price: '120.60',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   },
   {
     id: 6,
@@ -257,7 +272,10 @@ const trending = ref([
     src: '/images/home-page/trending/img-3.png',
     name: 'Check coat with colour contrast',
     price: '183.45',
-    heart: false
+    heart: false,
+    expand: false,
+    size: [36, 38, 40, 42],
+    color: ['bg-black', 'bg-brown', 'bg-secondary']
   }
 ])
 
@@ -514,10 +532,14 @@ onMounted(() => {
                         size="24"
                         rounded
                       >
-                        <div class="swiper-color-value" :background="color"></div>
+                        <div 
+                          class="swiper-color-value" 
+                          :class="color"
+                        ></div>
                       </v-chip>
                     </v-chip-group>
                   </div>
+                  <BtnOutline class="swiper-add-cart"> <v-icon>mdi-cart</v-icon> Add to cart</BtnOutline>
                 </div>
               </v-expand-transition>
             </v-card-text>
@@ -649,7 +671,7 @@ onMounted(() => {
     <section class="home-page__trending section">
       <v-container>
         <div class="home-page__trending-header">
-          <h1 class="title-h1">Trending now</h1>
+          <h1 class="home-page__trending-title title-h1">Trending now</h1>
           <div>
             <Btn class="myPrevTrending swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
             <Btn class="myNextTrending swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
@@ -668,36 +690,86 @@ onMounted(() => {
               v-for="item in trending"
               :key="item.id"
             >
-              <v-img 
-                :src="item.src" 
-                max-height="490px" 
-                max-width="440px"
-                class="swiper-img"
-              >
-                <Rating 
-                  v-if="item.stars > 0"
-                  v-model="item.stars"
-                ></Rating>
-                <div 
-                  class="swiper-img-heart"
-                  @click="item.heart = !item.heart"
+              <v-card>
+                <v-img 
+                  :src="item.src" 
+                  max-height="490px" 
+                  max-width="440px"
+                  class="swiper-img"
                 >
-                  <v-icon
-                    v-if="item.heart"
-                    icon="mdi-heart"
-                    color="red"
-                    class="mt-1"
-                  ></v-icon>
-                  <v-icon
-                    v-else
-                    icon="mdi-heart-outline"
-                    color="black"
-                    class="mt-1"
-                  ></v-icon>
-                </div>
-              </v-img>
-              <div class="subtitle swiper-name">{{ item.name }}</div>
-              <div class="price">${{ item.price }}</div>
+                  <Rating 
+                    v-if="item.stars > 0"
+                    v-model="item.stars"
+                  ></Rating>
+                  <div 
+                    class="swiper-img-heart"
+                    @click="item.heart = !item.heart"
+                  >
+                    <v-icon
+                      v-if="item.heart"
+                      icon="mdi-heart"
+                      color="red"
+                      class="mt-1"
+                    ></v-icon>
+                    <v-icon
+                      v-else
+                      icon="mdi-heart-outline"
+                      color="black"
+                      class="mt-1"
+                    ></v-icon>
+                  </div>
+                </v-img>
+                <v-card-text>
+                  <div class="subtitle swiper-name" @click="item.expand = !item.expand">{{ item.name }}</div>
+                  <div class="price">${{ item.price }}</div>
+                  <!-- Expand transition-->
+                  <v-expand-transition>
+                    <div v-if="item.expand">
+                      <div class="swiper-data">
+<!-- Swiper size -->
+                        <v-chip-group
+                          selected-class="swiper-size-active"
+                          mandatory
+                        >
+                          <v-chip
+                            v-for="size in item.size"
+                            :key="size"
+                            :value="size"
+                            variant="text"
+                            tag="div"
+                            class="swiper-size"
+                            size="24"
+                          >
+                            {{ size }}
+                          </v-chip>
+                        </v-chip-group>
+<!-- Swiper color -->
+                        <v-chip-group
+                          selected-class="swiper-color-active"
+                          mandatory
+                        >
+                          <v-chip
+                            v-for="color in item.color"
+                            :key="color"
+                            :value="color"
+                            variant="text"
+                            tag="div"
+                            class="swiper-color"
+                            size="24"
+                            rounded
+                          >
+                            <div 
+                              class="swiper-color-value" 
+                              :class="color"
+                            ></div>
+                          </v-chip>
+                        </v-chip-group>
+                      </div>
+                      <BtnOutline class="swiper-add-cart"> <v-icon>mdi-cart</v-icon> Add to cart</BtnOutline>
+                    </div>
+                  </v-expand-transition>
+                </v-card-text>
+              </v-card>
             </swiper-slide>
           </swiper>
         </div>
