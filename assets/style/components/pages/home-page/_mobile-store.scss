@@ -1,0 +1,11 @@
+.home-page {
+
+  &__mobileStore {
+    background-color: var(--gray-900);
+
+    &-links {
+      display: flex;
+      text-align: left;
+    }
+  }
+}

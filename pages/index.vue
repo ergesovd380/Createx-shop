@@ -927,5 +927,30 @@ onMounted(() => {
         </div>
       </v-container>
     </section>
+<!-- Mobile store -->
+    <section class="home-page__mobileStore">
+      <v-container>
+        <v-row>
+          <v-col>
+            <img src="images/home-page/mobile-store/img.png" class="">
+          </v-col>
+          <v-col>
+            <div class="home-page__mobileStore-title title-h2">Enjoy mobile shopping with our Createx Store App!</div>
+            <div class="home-page__mobileStore-links">
+              <v-img 
+                width="162" 
+                height="48"
+                src="images/footer/app-store.png"
+              ></v-img>
+              <v-img 
+                width="162" 
+                height="48"
+                src="images/footer/google-play.png"
+              ></v-img>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
   </main>
 </template>
