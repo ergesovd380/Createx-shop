@@ -11,6 +11,10 @@
       @include for-small-laptop {
         margin: 40px 0;
       }
+
+      @include for-tablet {
+        text-align: center;
+      }
     }
     
     &-img {
@@ -28,6 +32,11 @@
 
       @include for-small-laptop {
         margin-top: 40px;
+      }
+
+      @include for-mobile {
+        display: block;
+        margin: 20px auto;
       }
     }
   }

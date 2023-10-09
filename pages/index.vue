@@ -351,6 +351,12 @@ const saleUp = ref([
   }
 ])
 
+// mobileStore
+const mobileStore = ref(true);
+
+// Services
+const gridServices = ref(3);
+
 // Desktop size
 const calculateNewarrival = () => {
   if(window.innerWidth < 600) {
@@ -367,16 +373,24 @@ const calculateGrid = () => {
   if(window.innerWidth < 800) {
     gridBigGallery.value = 12;
     gridSmallGallery.value = 12;
+
+    mobileStore.value = false;
   } else {
     gridBigGallery.value = 7;
     gridSmallGallery.value = 5;
+
+    mobileStore.value = true;
   }
 };
 const calculatebigSidesPerView = () => {
   if(window.innerWidth < 600) {
     bigSidesPerView.value = 1;
+
+    gridServices.value = 12;
   } else {
     bigSidesPerView.value = 3;
+
+    gridServices.value = 3;
   }
 };
 
@@ -931,7 +945,7 @@ onMounted(() => {
     <section class="home-page__mobileStore">
       <v-container>
         <v-row>
-          <v-col v-if="window.innerWidth > 800">
+          <v-col v-if="mobileStore">
             <img src="images/home-page/mobile-store/img.png" class="home-page__mobileStore-img">
           </v-col>
           <v-col class="home-page__mobileStore-col">
@@ -950,6 +964,33 @@ onMounted(() => {
                 class=home-page__mobileStore-links
               >
             </div>
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+<!-- Services -->
+    <section class="section">
+      <v-container>
+        <v-row class="text-center">
+          <v-col :cols="gridServices" class="home-page__services-border">
+            <img src="images/home-page/services/delivery.png">
+            <div class="category-name">Fast Worldwide Shipping</div>
+            <div class="home-page__services-subtitle menu__regular">Get free shipping over $250</div>
+          </v-col>
+          <v-col :cols="gridServices" class="home-page__services-border">
+            <img src="images/home-page/services/call-center.png">
+            <div class="category-name">24/7 Customer Support</div>
+            <div class="home-page__services-subtitle menu__regular">Friendly 24/7 customer support</div>
+          </v-col>
+          <v-col :cols="gridServices" class="home-page__services-border">
+            <img src="images/home-page/services/shield.png">
+            <div class="category-name">Money Back Guarantee</div>
+            <div class="home-page__services-subtitle menu__regular">We return money within 30 days</div>
+          </v-col>
+          <v-col :cols="gridServices">
+            <img src="images/home-page/services/credit-card.png">
+            <div class="category-name">Secure Online Payment</div>
+            <div class="home-page__services-subtitle menu__regular">Accept all major credit cards</div>
           </v-col>
         </v-row>
       </v-container>

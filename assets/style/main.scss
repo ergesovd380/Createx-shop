@@ -6,7 +6,6 @@
 
 // подключения компонентов страницы
 @import './components/section';
-@import './components/menu';
 @import './components/divider';
 @import './components/navigation';
 @import './components/text';
@@ -22,6 +21,7 @@
 @import './components/pages/home-page/trending.scss';
 @import './components/pages/home-page/sale-up.scss';
 @import './components/pages/home-page/mobile-store.scss';
+@import './components/pages/home-page/services.scss';
 // Swiper
 @import './components/pages/home-page/swiper.scss';
 

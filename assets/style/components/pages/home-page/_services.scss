@@ -1,0 +1,24 @@
+.home-page {
+  
+  &__services {
+
+    &-border {
+      border-width: 2px;
+      border-left: 0;
+      border-style: solid;
+      border-image: 
+        linear-gradient(
+          rgba(218, 219, 221, 0), rgba(218, 219, 221, 0.5), rgba(218, 219, 221, 1), rgba(218, 219, 221, 0.5), rgba(218, 219, 221, 0)
+        ) 1 100%;
+
+      @include for-small-tablet {
+        border: none;
+      }
+    }
+
+    &-subtitle {
+      font-weight: 400;
+      color: var(--gray-700);
+    }
+  }
+}

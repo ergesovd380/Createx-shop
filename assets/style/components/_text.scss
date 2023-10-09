@@ -154,7 +154,6 @@
   }
 }
 
-
 .category-name {
   font-size: 20px;
   font-weight: 700;
@@ -174,4 +173,44 @@
     font-size: 14px;
     line-height: 20px;
   }
+}
+
+.menu {
+
+  &__regular {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25.6px;
+
+    @include for-laptop {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  
+    @include for-big-tablet {
+      font-size: 12px;
+      line-height: 18px;
+    }
+  
+    @include for-small-tablet {
+      font-size: 10px;
+      line-height: 15px;
+    }
+
+    &-title {
+      text-transform: uppercase;
+    }
+  }
+
+  &__small {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    &-title {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+  
 }
