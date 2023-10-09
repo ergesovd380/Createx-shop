@@ -2,10 +2,33 @@
 
   &__mobileStore {
     background-color: var(--gray-900);
+    color: var(--white);
+    position: relative;
+
+    &-col{
+      margin: 50px 0;
+
+      @include for-small-laptop {
+        margin: 40px 0;
+      }
+    }
+    
+    &-img {
+      position: absolute;
+      bottom: 0;
+
+      @include for-small-laptop {
+        position: static;
+      }
+    }
 
     &-links {
-      display: flex;
-      text-align: left;
+      margin: 48px 24px 0 0;
+      cursor: pointer;
+
+      @include for-small-laptop {
+        margin-top: 40px;
+      }
     }
   }
 }
