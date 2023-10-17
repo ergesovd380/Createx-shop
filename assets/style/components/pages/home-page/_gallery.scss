@@ -37,25 +37,6 @@
       font-weight: 700;
     }
 
-    &-btn {
-      padding: 0 32px;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 44px;
-      letter-spacing: 0.5px;
-
-      // 1280
-      @include for-small-laptop {
-        padding: 0 20px;
-      }
-
-      // 960
-      @include for-big-tablet {
-        padding: 0 10px;
-        letter-spacing: 0;
-      }
-    }
-
     &-date {
 
       &-title {

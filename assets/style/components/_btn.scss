@@ -34,8 +34,36 @@
     line-height: 52px;
     letter-spacing: 0.5px;
 
-    @include for-small-tablet {
+    // 1280
+    @include for-small-laptop {
+      padding: 0px 35px;
+      line-height: 42px;
+    }
+  
+    // 960
+    @include for-big-tablet {
+      padding: 0px 20px;
+      font-size: 12px;
+      line-height: 30px;
+    }
+  }
+
+  &__small {
+    padding: 0 32px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 44px;
+    letter-spacing: 0.5px;
+
+    // 1280
+    @include for-small-laptop {
       padding: 0 20px;
+    }
+
+    // 960
+    @include for-big-tablet {
+      padding: 0 10px;
+      letter-spacing: 0;
     }
   }
 }

@@ -101,48 +101,22 @@
       }
     }
 
-    &-btns{
-      margin-top: 50px;
+    &-btn {
+      margin: 50px 24px 0 0;
 
       // 1600
       @include for-laptop {
-        margin-top: 30px;
+        margin: 30px 24px 0 0;
       }
 
       // 1280
       @include for-small-laptop {
-        margin-top: 20px;
+        margin: 20px 24px 0 0;
       }
 
       // 960
       @include for-big-tablet {
-        margin-top: 15px;
-      }
-    }
-
-    &-btn {
-      padding: 0px 40px;
-      margin-right: 24px;
-      align-items: center;
-      gap: 10px;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 52px;
-      letter-spacing: 0.5px;
-
-      // 1280
-      @include for-small-laptop {
-        padding: 0px 35px;
-        font-size: 14px;
-        line-height: 42px;
-      }
-
-      // 960
-      @include for-big-tablet {
-        padding: 0px 20px;
-        margin-right: 20px;
-        font-size: 12px;
-        line-height: 30px;
+        margin: 15px 20px 0 0;
       }
     }
     
@@ -279,7 +253,7 @@
         }
       }
 
-      &-item {
+      &-items {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 40px;
@@ -310,25 +284,6 @@
           width: 200px;
         }
       }
-
-      &-title {
-        font-size: 20px;
-        font-weight: 700;
-        line-height: 30px;
-
-        // 1280
-        @include for-small-laptop {
-          font-size: 18px;
-          font-weight: 300;
-          line-height: 20px;
-        }
-
-        // 600
-        @include for-small-tablet {
-          font-size: 14px;
-        }
-      }
     }
-
   }
 }

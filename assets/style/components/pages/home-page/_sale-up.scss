@@ -11,17 +11,5 @@
     &-categories {
       margin: 60px auto 0;
     }
-
-    &-btn {
-      padding: 0 40px;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 52px;
-      letter-spacing: 0.5px;
-
-      @include for-small-tablet {
-        padding: 0 20px;
-      }
-    }
   }
 }

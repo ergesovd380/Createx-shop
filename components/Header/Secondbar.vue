@@ -63,6 +63,6 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
     temporary
     width="490"
   >
-    <NavigationBottomCategories />
+    <Navigation />
   </v-navigation-drawer>
 </template>

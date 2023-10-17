@@ -423,9 +423,9 @@ onMounted(() => {
             <v-container>
               <div class="home-page__banner-subTitle">{{ item.subTitle }}</div>
               <div class="home-page__banner-title">{{ item.title }}</div>
-              <div class="home-page__banner-btns element__more-small-tablet">
-                <BtnOutline class="home-page__banner-btn">Shop sale</BtnOutline>
-                <Btn class="home-page__banner-btn">Shop the {{ item.title }}</Btn>
+              <div class="element__more-small-tablet">
+                <BtnOutline class="home-page__banner-btn btn__regular">Shop sale</BtnOutline>
+                <Btn class="home-page__banner-btn btn__regular">Shop the {{ item.title }}</Btn>
               </div>
               <div class="home-page__banner-pagination" >
                 <h3 
@@ -445,7 +445,7 @@ onMounted(() => {
         <div class="home-page__banner-category">
           <v-container>
             <div class="home-page__banner-category-width">
-              <div class="home-page__banner-category-item">
+              <div class="home-page__banner-category-items">
                 <div
                   v-for="(category, i) in categories"
                   :key="i"
@@ -455,7 +455,7 @@ onMounted(() => {
                     alt="Category photo" 
                     class="home-page__banner-category-img"
                   >
-                  <div class="home-page__banner-category-title">{{ category.title }}</div>
+                  <div class="category-name">{{ category.title }}</div>
                 </div>
               </div>
             </div>
@@ -590,7 +590,7 @@ onMounted(() => {
           >
             <div class="home-page__gallery-subtitle">Summer Collections</div>
             <div class="home-page__gallery-title title-h2">Sale Up to 70%</div>
-            <BtnOutline class="home-page__gallery-btn">Explore new prices</BtnOutline>
+            <BtnOutline class="btn__small">Explore new prices</BtnOutline>
           </v-img>
         </v-col>
 <!-- Banner 2 -->
@@ -602,7 +602,7 @@ onMounted(() => {
           >
             <div class="home-page__gallery-subtitle">Deal of the week</div>
             <div class="home-page__gallery-title title-h2">Stay Warm With Our <br> New Sweaters</div>
-            <BtnOutline class="home-page__gallery-btn">Shop now</BtnOutline>
+            <BtnOutline class="btn__small">Shop now</BtnOutline>
 <!-- Date -->
             <div class="home-page__gallery-date">
               <div 
@@ -644,7 +644,7 @@ onMounted(() => {
           >
             <div class="home-page__gallery-subtitle">New collection</div>
             <div class="home-page__gallery-title title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
-            <BtnOutline class="home-page__gallery-btn">
+            <BtnOutline class="btn__small">
               See offers 
               <v-icon size="small">mdi-arrow-right</v-icon>
             </BtnOutline>
@@ -675,7 +675,7 @@ onMounted(() => {
                 class="home-page__gallery-form-input"
                 id="email__gallery"
               />
-              <Btn class="home-page__gallery-btn">Subscribe</Btn>
+              <Btn class="btn__small">Subscribe</Btn>
               <div class="home-page__gallery-form-singup">*Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.</div>
             </v-form>
           </v-img>
@@ -813,7 +813,7 @@ onMounted(() => {
           </swiper>
         </div>
         <div class="text-center">
-          <BtnOutline class="home-page__trending-btn">Explore top sales</BtnOutline>
+          <BtnOutline class="btn__regular">Explore top sales</BtnOutline>
         </div>
       </v-container>
     </section>
@@ -935,7 +935,7 @@ onMounted(() => {
           </swiper>
         </div>
         <div class="text-center">
-          <BtnOutline class="home-page__sale-up-btn">See all sale products</BtnOutline>
+          <BtnOutline class="btn__regular">See all sale products</BtnOutline>
         </div>
       </v-container>
     </section>
