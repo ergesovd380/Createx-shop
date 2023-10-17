@@ -158,7 +158,6 @@ const newarrival = ref([
 ]);
 const newarrivalSidesPerView = ref(6)
 
-
 // Gallery
 const date = [
   {
@@ -278,8 +277,7 @@ const trending = ref([
     color: ['bg-black', 'bg-brown', 'bg-secondary']
   }
 ])
-
-const bigSidesPerView = ref(3)
+const trendingSidesPerView = ref(3)
 
 // Sale Up
 const saleUp = ref([
@@ -382,23 +380,23 @@ const calculateGrid = () => {
     mobileStore.value = true;
   }
 };
-const calculatebigSidesPerView = () => {
+const calculateSidesPerView = () => {
   if(window.innerWidth < 600) {
-    bigSidesPerView.value = 1;
+    trendingSidesPerView.value = 1;
 
     gridServices.value = 12;
   } else {
-    bigSidesPerView.value = 3;
+    trendingSidesPerView.value = 3;
 
     gridServices.value = 3;
   }
 };
 
 window.addEventListener('resize', () => {
-  calculateNewarrival(); calculateGrid(); calculatebigSidesPerView();
+  calculateNewarrival(); calculateGrid(); calculateSidesPerView();
 });
 onMounted(() => {
-  calculateNewarrival(); calculateGrid(); calculatebigSidesPerView();
+  calculateNewarrival(); calculateGrid(); calculateSidesPerView();
 });
 
 </script>
@@ -711,7 +709,7 @@ onMounted(() => {
         </div>
         <div class="home-page__trending-categories">
           <swiper
-            :slidesPerView="bigSidesPerView"
+            :slidesPerView="trendingSidesPerView"
             :spaceBetween="30"
             :navigation="{enabled: true, prevEl: '.myPrevTrending', nextEl: '.myNextTrending'}"
             :loop="true"
@@ -831,7 +829,7 @@ onMounted(() => {
         </div>
         <div class="home-page__sale-up-categories">
           <swiper
-            :slidesPerView="bigSidesPerView"
+            :slidesPerView="trendingSidesPerView"
             :spaceBetween="30"
             :navigation="{enabled: true, prevEl: '.myPrevSale', nextEl: '.myNextSale'}"
             :loop="true"
@@ -969,7 +967,7 @@ onMounted(() => {
       </v-container>
     </section>
 <!-- Services -->
-    <section class="section">
+    <section class="home-page__services section">
       <v-container>
         <v-row class="text-center">
           <v-col :cols="gridServices" class="home-page__services-border">
@@ -994,6 +992,30 @@ onMounted(() => {
           </v-col>
         </v-row>
       </v-container>
+    </section>
+<!-- Instagram -->
+    <section class="home-page__instagram section">
+      <V-container>
+        <v-row>
+          <v-col>
+            <div class="title-h6">Follow us on Instagram</div>
+            <div class="title-h1">@createx_store</div>
+            <BtnOutline class="btn__regular">
+              <v-icon>mdi-instagram</v-icon>
+              Follow instagram
+            </BtnOutline>
+          </v-col>
+          <v-col>
+            <img src="images/home-page/instagram/img-1.png">
+          </v-col>
+          <v-col>
+            <img src="images/home-page/instagram/img-2.png">
+          </v-col>
+          <v-col>
+            <img src="images/home-page/instagram/img-3.png">
+          </v-col>
+        </v-row>
+      </V-container>
     </section>
   </main>
 </template>
