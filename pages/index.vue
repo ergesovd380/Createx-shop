@@ -355,6 +355,9 @@ const mobileStore = ref(true);
 // Services
 const gridServices = ref(3);
 
+// Instagram
+const Instagram = ref(true)
+
 // Desktop size
 const calculateNewarrival = () => {
   if(window.innerWidth < 600) {
@@ -373,21 +376,21 @@ const calculateGrid = () => {
     gridSmallGallery.value = 12;
 
     mobileStore.value = false;
+    Instagram.value = false;
   } else {
     gridBigGallery.value = 7;
     gridSmallGallery.value = 5;
 
     mobileStore.value = true;
+    Instagram.value = true;
   }
 };
 const calculateSidesPerView = () => {
   if(window.innerWidth < 600) {
     trendingSidesPerView.value = 1;
-
     gridServices.value = 12;
   } else {
     trendingSidesPerView.value = 3;
-
     gridServices.value = 3;
   }
 };
@@ -1000,18 +1003,18 @@ onMounted(() => {
           <v-col>
             <div class="title-h6">Follow us on Instagram</div>
             <div class="title-h1">@createx_store</div>
-            <BtnOutline class="btn__regular">
+            <BtnOutline class="btn__regular home-page__instagram-btn">
               <v-icon>mdi-instagram</v-icon>
               Follow instagram
             </BtnOutline>
           </v-col>
-          <v-col>
+          <v-col v-if="Instagram">
             <img src="images/home-page/instagram/img-1.png">
           </v-col>
-          <v-col>
+          <v-col v-if="Instagram">
             <img src="images/home-page/instagram/img-2.png">
           </v-col>
-          <v-col>
+          <v-col v-if="Instagram">
             <img src="images/home-page/instagram/img-3.png">
           </v-col>
         </v-row>
