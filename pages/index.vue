@@ -1101,6 +1101,7 @@ onMounted(() => {
         <v-row>
           <v-col>
             <div class="title-h1">Subscribe for updates</div>
+            <div class="title-h2">Here will be subscribe subtitle</div>
           </v-col>
           <v-col>
             <h1>Hello World</h1>
