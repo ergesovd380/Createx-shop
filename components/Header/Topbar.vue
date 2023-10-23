@@ -39,7 +39,7 @@ onMounted(() => {
           <v-btn><v-icon>mdi-theme-light-dark</v-icon></v-btn>
         </div>
         <div class="header__topbar-item element__less-big-tablet">
-          <DialogHeaderSearch />
+          <Dialog />
         </div>
         <div class="header__topbar-item">
           <v-btn><v-icon>mdi-account-outline</v-icon></v-btn>

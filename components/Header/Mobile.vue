@@ -37,7 +37,7 @@ watch(theme.global.current, (theme) => {
         </div>
 <!-- Search -->
         <div class="header__secondbar-item">
-          <DialogHeaderSearch />
+          <Dialog />
         </div>
 <!-- Heart -->
         <div class="header__secondbar-item header__toolbar">
