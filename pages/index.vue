@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
+import { FALSE } from 'sass';
 // Pagination carousel
 const modules = [Pagination, Navigation];
 
@@ -356,10 +357,20 @@ const mobileStore = ref(true);
 const gridServices = ref(3);
 
 // Instagram
-const Instagram = ref(true)
+const Instagram = ref(true);
 
 // Fashion
-const gridFashion = ref(6)
+const gridFashion = ref(6);
+// Brands
+const brandsStatus = ref(true)
+const brands = ref([
+  'images/home-page/brands/img-1.png',
+  'images/home-page/brands/img-2.png',
+  'images/home-page/brands/img-3.png',
+  'images/home-page/brands/img-4.png',
+  'images/home-page/brands/img-5.png',
+  'images/home-page/brands/img-6.png'
+]);
 
 // Desktop size
 const calculateNewarrival = () => {
@@ -373,40 +384,41 @@ const calculateNewarrival = () => {
     newarrivalSidesPerView.value = 5;
   }
 };
-const calculateGrid = () => {
-  if(window.innerWidth < 800) {
-    gridBigGallery.value = 12;
-    gridSmallGallery.value = 12;
-    gridFashion.value = 12
-
-    mobileStore.value = false;
-    Instagram.value = false;
-  } else {
-    gridBigGallery.value = 7;
-    gridSmallGallery.value = 5;
-    gridFashion.value = 6
-
-    mobileStore.value = true;
-    Instagram.value = true;
-  }
-};
-const calculateSidesPerView = () => {
+const calculateGrid600 = () => {
   if(window.innerWidth < 600) {
     trendingSidesPerView.value = 1;
     gridServices.value = 12;
+    gridFashion.value = 12;
   } else {
     trendingSidesPerView.value = 3;
     gridServices.value = 3;
+    gridFashion.value = 6;
+  }
+};
+const calculateGrid800 = () => {
+  if(window.innerWidth < 800) {
+    gridBigGallery.value = 12;
+    gridSmallGallery.value = 12;
+
+    mobileStore.value = false;
+    Instagram.value = false;
+    brandsStatus.value = false;
+  } else {
+    gridBigGallery.value = 7;
+    gridSmallGallery.value = 5;
+
+    mobileStore.value = true;
+    Instagram.value = true;
+    brandsStatus.value = true;
   }
 };
 
 window.addEventListener('resize', () => {
-  calculateNewarrival(); calculateGrid(); calculateSidesPerView();
+  calculateNewarrival(); calculateGrid600(); calculateGrid800();
 });
 onMounted(() => {
-  calculateNewarrival(); calculateGrid(); calculateSidesPerView();
+  calculateNewarrival(); calculateGrid600(); calculateGrid800();
 });
-
 </script>
 
 <template>
@@ -463,7 +475,7 @@ onMounted(() => {
                     alt="Category photo" 
                     class="home-page__banner-category-img"
                   >
-                  <div class="lead-bold">{{ category.title }}</div>
+                  <div class="lead lead__bold">{{ category.title }}</div>
                 </div>
               </div>
             </div>
@@ -700,7 +712,7 @@ onMounted(() => {
             :key="index"
           >
             <v-img :src="item.img"></v-img>
-            <div class="home-page__popular-name lead-bold">{{ item.name }}</div>
+            <div class="home-page__popular-name lead lead__bold">{{ item.name }}</div>
           </div>
         </div>
       </v-container>
@@ -980,23 +992,23 @@ onMounted(() => {
         <v-row class="text-center">
           <v-col :cols="gridServices" class="home-page__services-border">
             <img src="images/home-page/services/delivery.png">
-            <div class="lead-bold">Fast Worldwide Shipping</div>
-            <div class="home-page__services-subtitle base__regular">Get free shipping over $250</div>
+            <div class="lead lead__bold">Fast Worldwide Shipping</div>
+            <div class="home-page__services-subtitle base base__bold">Get free shipping over $250</div>
           </v-col>
           <v-col :cols="gridServices" class="home-page__services-border">
             <img src="images/home-page/services/call-center.png">
-            <div class="lead-bold">24/7 Customer Support</div>
-            <div class="home-page__services-subtitle base__regular">Friendly 24/7 customer support</div>
+            <div class="lead lead__bold">24/7 Customer Support</div>
+            <div class="home-page__services-subtitle base base__bold">Friendly 24/7 customer support</div>
           </v-col>
           <v-col :cols="gridServices" class="home-page__services-border">
             <img src="images/home-page/services/shield.png">
-            <div class="lead-bold">Money Back Guarantee</div>
-            <div class="home-page__services-subtitle base__regular">We return money within 30 days</div>
+            <div class="lead lead__bold">Money Back Guarantee</div>
+            <div class="home-page__services-subtitle base base__bold">We return money within 30 days</div>
           </v-col>
           <v-col :cols="gridServices">
             <img src="images/home-page/services/credit-card.png">
-            <div class="lead-bold">Secure Online Payment</div>
-            <div class="home-page__services-subtitle base__regular">Accept all major credit cards</div>
+            <div class="lead lead__bold">Secure Online Payment</div>
+            <div class="home-page__services-subtitle base base__bold">Accept all major credit cards</div>
           </v-col>
         </v-row>
       </v-container>
@@ -1038,7 +1050,7 @@ onMounted(() => {
             <v-card elevation="4">
                 <v-img src="images/home-page/fashion/img-1.png"></v-img>
                 <v-card-text>
-                  <div class="lead-bold">Bag Trends for Summer 2020</div>
+                  <div class="lead lead__bold">Bag Trends for Summer 2020</div>
                   <div class="home-page__fashion-card-subtitle base__small">
                     <span>Fashion</span> 
                     <span class="home-page__fashion-card-slash">|</span> 
@@ -1046,7 +1058,7 @@ onMounted(() => {
                     <span class="home-page__fashion-card-slash">|</span> 
                     <span>No comments</span>
                   </div>
-                  <div class="home-page__fashion-card-content base__regular">
+                  <div class="home-page__fashion-card-content base base__bold">
                     Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...
                   </div>
                 </v-card-text>
@@ -1056,7 +1068,7 @@ onMounted(() => {
             <v-card elevation="4">
                 <v-img src="images/home-page/fashion/img-2.png"></v-img>
                 <v-card-text>
-                  <div class="lead-bold">Top 10 of This Season’s Hottest Sneakers</div>
+                  <div class="lead lead__bold">Top 10 of This Season’s Hottest Sneakers</div>
                   <div class="home-page__fashion-card-subtitle base__small">
                     <span>Lifestyle</span> 
                     <span class="home-page__fashion-card-slash">|</span> 
@@ -1064,11 +1076,34 @@ onMounted(() => {
                     <span class="home-page__fashion-card-slash">|</span> 
                     <span>4 comments</span>
                   </div>
-                  <div class="home-page__fashion-card-content base__regular">
+                  <div class="home-page__fashion-card-content base base__bold">
                     Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...
                   </div>
                 </v-card-text>
               </v-card>
+          </v-col>
+        </v-row>
+<!-- Brands section -->
+        <v-row class="section-top" v-if="brandsStatus">
+          <v-col 
+            v-for="(brand, i) in brands" 
+            :key="i"
+            class="text-center"
+          >
+            <img :src="brand">
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+<!-- Subscribe section -->
+    <section class="home-page__subscribe section">
+      <v-container>
+        <v-row>
+          <v-col>
+            <div class="title-h1">Subscribe for updates</div>
+          </v-col>
+          <v-col>
+            <h1>Hello World</h1>
           </v-col>
         </v-row>
       </v-container>

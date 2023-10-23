@@ -17,7 +17,7 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
           <slot></slot>
         </div>
 <!-- Categories -->
-        <div class="base__regular header__secondbar-item">
+        <div class="header__secondbar-item base base__bold">
           <div 
             v-for="(category, index) in categories"
             :key="index"
@@ -38,7 +38,7 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
 <!-- Heart/Cart -->
         <div class="header__secondbar-item header__toolbar">
 <!-- Heart -->
-          <div class="header__toolbar-vishList">
+          <div class="base base__regular">
             <v-badge :content="2" inline color="transparent">
               <v-icon>mdi-heart-outline</v-icon>
             </v-badge>

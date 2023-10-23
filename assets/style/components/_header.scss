@@ -1,4 +1,5 @@
 .header {
+
 // Topbar Section
   &__topbar {
     @include flex-all-sb;
@@ -57,8 +58,6 @@
   &__search {
     width: 380px;
     height: 44px;
-    font-size: 14px;
-    line-height: 21px;
 
     // 1280
     @include for-small-laptop {

@@ -154,10 +154,17 @@
   }
 }
 
-.lead-bold {
+.lead {
   font-size: 20px;
-  font-weight: 700;
   line-height: 30px;
+
+  &__bold {
+    font-weight: 700;
+  }
+
+  &__regular {
+    font-weight: 400;
+  }
 
   @include for-laptop {
     font-size: 18px;
@@ -176,30 +183,19 @@
 }
 
 .base {
+  font-size: 16px;
+  line-height: 25.6px;
 
-  &__regular {
+  &__bold {
     font-weight: 700;
-    font-size: 16px;
-    line-height: 25.6px;
-
-    @include for-laptop {
-      font-size: 14px;
-      line-height: 22px;
-    }
-  
-    @include for-big-tablet {
-      font-size: 12px;
-      line-height: 18px;
-    }
-  
-    @include for-small-tablet {
-      font-size: 10px;
-      line-height: 15px;
-    }
 
     &-title {
       text-transform: uppercase;
     }
+  }
+
+  &__regular {
+    font-weight: 400;
   }
 
   &__small {
@@ -212,9 +208,28 @@
       text-transform: uppercase;
     }
 
+    // 800
     @include for-tablet {
       font-size: 10px;
       line-height: 17px;
     }
+  }
+
+  // 1600
+  @include for-laptop {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  // 960
+  @include for-big-tablet {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  // 600
+  @include for-small-tablet {
+    font-size: 10px;
+    line-height: 15px;
   }
 }
