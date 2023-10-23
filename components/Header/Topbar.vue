@@ -25,7 +25,7 @@ onMounted(() => {
     elevation="0"
   >
     <v-container>
-      <div class="menu__small header__topbar">
+      <div class="base__small header__topbar">
         <div class="header__topbar-item">Available 24/7 at (405) 555-0128</div>
         <div class="header__topbar-item element__more-tablet">
           <div class="header__menu">

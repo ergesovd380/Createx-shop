@@ -16,9 +16,9 @@ const icons = ref([
     class="d-flex flex-column footer border" 
   >
     <v-container>
-      <v-row class="menu__regular">
+      <v-row class="base__regular">
         <v-col md="3" sm="6">
-          <div class="menu__regular-title footer__title">Help</div>
+          <div class="base__regular-title footer__title">Help</div>
           <div class="footer__item"> 
             <span class="footer__menu">Delivery & returns</span>
           </div>
@@ -36,7 +36,7 @@ const icons = ref([
           </div>
         </v-col>
         <v-col md="3" sm="6">
-          <div class="menu__regular-title footer__title">Shop</div>
+          <div class="base__regular-title footer__title">Shop</div>
           <div class="footer__item"> 
             <span class="footer__menu">New arrivals</span>
           </div>
@@ -51,7 +51,7 @@ const icons = ref([
           </div>
         </v-col>
         <v-col md="3" sm="6">
-          <div class="menu__regular-title footer__title">Get in touch</div>
+          <div class="base__regular-title footer__title">Get in touch</div>
           <div class="footer__item">
             <span class="footer__menu">Call: (405) 555-0128</span>
           </div>
@@ -68,7 +68,7 @@ const icons = ref([
           </div>
         </v-col>
         <v-col md="3" sm="6">
-          <div class="menu__regular-title footer__title">Download our app</div>
+          <div class="base__regular-title footer__title">Download our app</div>
           <div class="footer__download">
             <div class="footer__download-item"><img src="/images/footer/app-store.png" alt=""></div>
             <div class="footer__download-item"><img src="/images/footer/google-play.png" alt=""></div>

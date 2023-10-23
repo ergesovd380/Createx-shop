@@ -17,7 +17,7 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
           <slot></slot>
         </div>
 <!-- Categories -->
-        <div class="menu__regular header__secondbar-item">
+        <div class="base__regular header__secondbar-item">
           <div 
             v-for="(category, index) in categories"
             :key="index"

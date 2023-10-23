@@ -19,7 +19,7 @@ const categories = ref([
 </script>
 
 <template>
-  <div class="menu__small navigation">
+  <div class="base__small navigation">
     <v-container>
       <v-row>
         <v-col cols="2">
@@ -38,7 +38,7 @@ const categories = ref([
               v-for="category in categories"
               :key="category.title"
             >
-              <div class="navigation__category menu__small-title">{{ category.title }}</div>
+              <div class="navigation__category base__small-title">{{ category.title }}</div>
               <div
                 v-for="(subcategory, index) in category.subcategory"
                 :key="index"

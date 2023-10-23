@@ -1,0 +1,27 @@
+.home-page {
+
+  &__fashion {
+
+    &-head {
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    &-card {
+
+      &-subtitle {
+        color: var(--gray-700);
+      }
+
+      &-slash {
+        margin: 12px;
+      }
+
+      &-content {
+        margin-top: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+}

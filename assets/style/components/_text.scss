@@ -154,7 +154,7 @@
   }
 }
 
-.category-name {
+.lead-bold {
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
@@ -175,7 +175,7 @@
   }
 }
 
-.menu {
+.base {
 
   &__regular {
     font-weight: 700;
@@ -211,6 +211,10 @@
       font-weight: 700;
       text-transform: uppercase;
     }
+
+    @include for-tablet {
+      font-size: 10px;
+      line-height: 17px;
+    }
   }
-  
 }
