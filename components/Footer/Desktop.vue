@@ -8,7 +8,6 @@ const icons = ref([
   'mdi-youtube',
   'mdi-pinterest'
 ])
-
 </script>
 
 <template>
@@ -18,7 +17,7 @@ const icons = ref([
     <v-container>
       <v-row class="base base__bold">
         <v-col md="3" sm="6">
-          <div class="base base__bold-title footer__title">Help</div>
+          <div class="text-uppercase footer__title">Help</div>
           <div class="footer__item"> 
             <span class="footer__menu">Delivery & returns</span>
           </div>
@@ -36,7 +35,7 @@ const icons = ref([
           </div>
         </v-col>
         <v-col md="3" sm="6">
-          <div class="base base__bold-title footer__title">Shop</div>
+          <div class="text-uppercase footer__title">Shop</div>
           <div class="footer__item"> 
             <span class="footer__menu">New arrivals</span>
           </div>
@@ -51,7 +50,7 @@ const icons = ref([
           </div>
         </v-col>
         <v-col md="3" sm="6">
-          <div class="base base__bold-title footer__title">Get in touch</div>
+          <div class="text-uppercase footer__title">Get in touch</div>
           <div class="footer__item">
             <span class="footer__menu">Call: (405) 555-0128</span>
           </div>
@@ -68,7 +67,7 @@ const icons = ref([
           </div>
         </v-col>
         <v-col md="3" sm="6">
-          <div class="base base__bold-title footer__title">Download our app</div>
+          <div class="text-uppercase footer__title">Download our app</div>
           <div class="footer__download">
             <div class="footer__download-item"><img src="/images/footer/app-store.png" alt=""></div>
             <div class="footer__download-item"><img src="/images/footer/google-play.png" alt=""></div>

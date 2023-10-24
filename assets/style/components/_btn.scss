@@ -5,15 +5,6 @@
     color: var(--white);
     border-radius: 4px;
   }
-  
-  &__navigation {
-    padding: 0 24px;
-    height: 36px;
-  
-    &-icon{
-      margin-left: 10px;
-    }
-  }
 
   &__outline {
     background-color: transparent;
@@ -64,6 +55,18 @@
     @include for-big-tablet {
       padding: 0 10px;
       letter-spacing: 0;
+    }
+  }
+
+  &__extrasmall {
+    padding: 0 24px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 36px;
+    letter-spacing: 0.5px;
+  
+    &-icon{
+      margin-left: 10px;
     }
   }
 }

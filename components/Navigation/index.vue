@@ -69,11 +69,11 @@ const categories = ref([
               Back to school. Sale up to 50%
             </div>
             <BtnOutline
-              class="btn__navigation"
+              class="btn__extrasmall"
             >
               <span>See offers</span>
               <v-icon 
-                class="btn__navigation-icon">mdi-arrow-right</v-icon>
+                class="btn__extrasmall-icon">mdi-arrow-right</v-icon>
             </BtnOutline>
           </v-card>
         </v-col>
