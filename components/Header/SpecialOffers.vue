@@ -3,7 +3,6 @@ import { ref } from 'vue';
 
 const step = ref(1);
 const length = 3;
-
 </script>
 
 <template>
@@ -32,9 +31,20 @@ const length = 3;
               color="var(--white)"
               @click="step--"
             ></v-btn>
-            <span class="header__carousel-content">
+            <span class="
+              text-white
+              base__extrasmall 
+              base__extrasmall-bold
+            ">
               Up to 70% Off.
-              <a href="" class="header__carousel-content header__carousel-link">
+              <a 
+                href="" 
+                class="
+                  header__carousel-link 
+                  base__extrasmall
+                  text-white
+                "
+              >
                 Shop our latest sale style
               </a>
             </span>

@@ -158,10 +158,12 @@
   font-size: 20px;
   line-height: 30px;
 
+// Bold
   &__bold {
     font-weight: 700;
   }
 
+// Regular
   &__regular {
     font-weight: 400;
   }
@@ -186,6 +188,7 @@
   font-size: 16px;
   line-height: 25.6px;
 
+// Bold
   &__bold {
     font-weight: 700;
 
@@ -194,24 +197,36 @@
     }
   }
 
+// Regular
   &__regular {
     font-weight: 400;
   }
 
+// Small 
   &__small {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
 
-    &-title {
+    &-bold {
       font-weight: 700;
-      text-transform: uppercase;
     }
 
     // 800
     @include for-tablet {
       font-size: 10px;
       line-height: 17px;
+    }
+  }
+
+// Extrasmall 
+  &__extrasmall {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 100;
+
+    &-bold {
+      font-weight: 900;
     }
   }
 

@@ -38,7 +38,11 @@ const categories = ref([
               v-for="category in categories"
               :key="category.title"
             >
-              <div class="navigation__category base__small-title">{{ category.title }}</div>
+              <div class="
+                navigation__category 
+                base__small-bold 
+                text-uppercase"
+              >{{ category.title }}</div>
               <div
                 v-for="(subcategory, index) in category.subcategory"
                 :key="index"
@@ -61,7 +65,7 @@ const categories = ref([
               class="navigation__img"
               cover
             ></v-img>
-            <div class="navigation__img-title">
+            <div class="navigation__img-title base__small base__small-bold">
               Back to school. Sale up to 50%
             </div>
             <BtnOutline

@@ -78,35 +78,28 @@
     &-cart {
       cursor: pointer;
   
-      &-item {
-        border-radius: 4px;
-        width: 23px;
-        height: 20px;
-        padding: 1px 8px;
-        gap: 10px;
-        background-color: var(--success);
-        color: var(--white);
-        font-size: 12px;
-        line-height: 18px;
-        margin-left: 10px;
+      // &-item {
+      //   border-radius: 4px;
+      //   width: 23px;
+      //   height: 20px;
+      //   padding: 1px 8px;
+      //   gap: 10px;
+      //   background-color: var(--success);
+      //   color: var(--white);
+      //   font-size: 12px;
+      //   line-height: 18px;
+      //   margin-left: 10px;
 
-        // 1280
-        @include for-small-laptop {
-          margin-left: 5px;
-        }
-      }
+      //   // 1280
+      //   @include for-small-laptop {
+      //     margin-left: 5px;
+      //   }
+      // }
     }
   }
 
 // SpecialOffers Section
-  &__carousel-content {
-    font-size: 12px;
-    line-height: 18px;
-    color: var(--white);
-  }
-
   &__carousel-link {
-    font-weight: 100;
     text-decoration: underline;
   }
 }

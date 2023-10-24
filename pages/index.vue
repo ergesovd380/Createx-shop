@@ -10,7 +10,6 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
-import { FALSE } from 'sass';
 // Pagination carousel
 const modules = [Pagination, Navigation];
 
@@ -627,7 +626,8 @@ onMounted(() => {
             <div class="home-page__gallery-date">
               <div 
                 class="
-                  base__small-title
+                  base__small-bold
+                  text-uppercase
                   mb-3
                   home-page__gallery-date-title
                 "

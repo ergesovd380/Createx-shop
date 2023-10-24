@@ -36,9 +36,9 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
           />
         </div>
 <!-- Heart/Cart -->
-        <div class="header__secondbar-item header__toolbar">
+        <div class="header__secondbar-item">
 <!-- Heart -->
-          <div class="base base__regular">
+          <div class="base base__regular header__toolbar">
             <v-badge :content="2" inline color="transparent">
               <v-icon>mdi-heart-outline</v-icon>
             </v-badge>
@@ -46,7 +46,7 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
 <!-- Vertical line -->
           <div class="divider__vl divider__vl-header"></div>
 <!-- Cart -->
-          <div class="header__toolbar-cart">
+          <div class="header__toolbar">
             <v-badge :content="4" inline color="var(--success)">
               <v-icon>mdi-cart-outline</v-icon>
             </v-badge>
