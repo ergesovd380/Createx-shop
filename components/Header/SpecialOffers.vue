@@ -37,14 +37,7 @@ const length = 3;
               base__extrasmall-bold
             ">
               Up to 70% Off.
-              <a 
-                href="" 
-                class="
-                  header__carousel-link 
-                  base__extrasmall
-                  text-white
-                "
-              >
+              <a href="" class="link link__extrasmall">
                 Shop our latest sale style
               </a>
             </span>

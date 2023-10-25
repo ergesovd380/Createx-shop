@@ -132,26 +132,36 @@
 
 // Все ссылки на сайте
 .link {
-  font-size: 18px;
   font-weight: 400;
-  line-height: 27px;
-  color: var(--primary);
   text-decoration: underline;
 
-  @include for-laptop {
-    font-size: 16px;
-    line-height: 25px;
-  }    
+  &__regular {
+    font-size: 18px;
+    line-height: 27px;
+    color: var(--primary);
 
-  @include for-big-tablet {
-    font-size: 15px;
-    line-height: 20px;
+    @include for-laptop {
+      font-size: 16px;
+      line-height: 25px;
+    }    
+  
+    @include for-big-tablet {
+      font-size: 15px;
+      line-height: 20px;
+    }
+  
+    @include for-small-tablet {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 
-  @include for-small-tablet {
-    font-size: 14px;
+  &__extrasmall {
+    font-size: 12px;
     line-height: 18px;
+    color: var(--white);
   }
+
 }
 
 .lead {
@@ -219,7 +229,7 @@
   &__extrasmall {
     font-size: 12px;
     line-height: 18px;
-    font-weight: 100;
+    font-weight: 400;
 
     &-bold {
       font-weight: 900;

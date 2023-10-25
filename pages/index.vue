@@ -488,7 +488,7 @@ onMounted(() => {
       <div class="home-page__newarrival-subtitle subtitle">
         Check out our latest arrivals for the upcoming season
         <br>
-        <a href="#" class="link">See the collection here</a>
+        <a href="#" class="link link__regular">See the collection here</a>
       </div>
       <swiper
         :slidesPerView="newarrivalSidesPerView"
