@@ -514,6 +514,7 @@ onMounted(() => {
     </section>
 <!-- New arrival section -->
     <section class="home-page__newarrival section-top">
+<!-- Title and subtitle -->
       <h1 class="home-page__newarrival-title title-h1">New arrival</h1>
       <div 
         class="
@@ -526,6 +527,7 @@ onMounted(() => {
         <br>
         <a href="#" class="link link__primary">See the collection here</a>
       </div>
+<!-- Swiper -->
       <swiper
         :slidesPerView="newarrivalSidesPerView"
         :spaceBetween="30"
@@ -536,21 +538,25 @@ onMounted(() => {
         :modules="modules"
         class="mySwiper"
       >
+<!-- Swiper slides -->
         <swiper-slide 
           v-for="item in newarrival"
           :key="item.id"
         >
           <v-card elevation="0">
+<!-- Swiper images -->
             <v-img 
               :src="item.src" 
               max-height="320px" 
               max-width="285px"
               class="swiper-img"
             >
+<!-- Swiper rating -->
               <Rating 
                 v-if="item.stars > 0"
                 v-model="item.stars"
               ></Rating>
+<!-- Swiper heart -->
               <div 
                 class="swiper-img-heart"
                 @click="item.heart = !item.heart"
@@ -570,8 +576,9 @@ onMounted(() => {
               </div>
             </v-img>
             <v-card-text>
+<!-- Swiper product name -->
               <div 
-                class="subtitle swiper-name"
+                class="swiper-name subtitle subtitle__regular"
                 @click="item.expand = !item.expand"
               >
                 {{ item.name }}
@@ -580,7 +587,8 @@ onMounted(() => {
                   location="top"
                 >To card double click</v-tooltip>
               </div>
-              <div class="price">${{ item.price }}</div>
+<!-- Swiper product price -->
+              <h5 class="title-h5">${{ item.price }}</h5>
 <!-- Expand transition-->
               <v-expand-transition>
                 <div v-if="item.expand">
@@ -624,6 +632,7 @@ onMounted(() => {
                       </v-chip>
                     </v-chip-group>
                   </div>
+<!-- Swiper add cart btn -->
                   <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
                 </div>
               </v-expand-transition>

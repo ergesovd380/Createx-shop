@@ -20,31 +20,24 @@
 
   &__regular {
     padding: 0 40px;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 52px;
-    letter-spacing: 0.5px;
+
+    @include btn_regular;
 
     // 1280
     @include for-small-laptop {
       padding: 0px 35px;
-      line-height: 42px;
     }
   
     // 960
     @include for-big-tablet {
       padding: 0px 20px;
-      font-size: 12px;
-      line-height: 30px;
     }
   }
 
   &__small {
     padding: 0 32px;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 44px;
-    letter-spacing: 0.5px;
+
+    @include btn_small;
 
     // 1280
     @include for-small-laptop {
@@ -54,19 +47,26 @@
     // 960
     @include for-big-tablet {
       padding: 0 10px;
-      letter-spacing: 0;
     }
   }
 
   &__extrasmall {
     padding: 0 24px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 36px;
-    letter-spacing: 0.5px;
+    
+    @include btn_extrasmall;
   
     &-icon{
       margin-left: 10px;
+    }
+
+    // 1280
+    @include for-small-laptop {
+      padding: 0 16px;
+    }
+    
+    // 960
+    @include for-big-tablet {
+      padding: 0 8px;
     }
   }
 }

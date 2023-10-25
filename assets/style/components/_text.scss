@@ -127,6 +127,42 @@
     }
   }
 
+  &-h5 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+  
+    // 1600
+    @include for-laptop {
+      font-size: 19px;
+      line-height: 24px;
+    }
+
+    // 1280
+    @include for-small-laptop {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  
+    // 960
+    @include for-big-tablet {
+      font-size: 17px;
+      line-height: 20px;
+    }
+
+    // 800
+    @include for-tablet {
+      font-size: 16px;
+      line-height: 18px;
+    }
+  
+    // 600
+    @include for-small-tablet {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
   &-h6 {
     font-size: 16px;
     font-weight: 700;
@@ -189,30 +225,6 @@
   // 600
   @include for-small-tablet {
     font-size: 12px;
-    line-height: 17px;
-  }
-}
-
-.price {
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 26px;
-
-  // 1600
-  @include for-laptop {
-    font-size: 18px;
-    line-height: 23px;
-  }
-
-  // 960
-  @include for-big-tablet {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  // 600
-  @include for-small-tablet {
-    font-size: 14px;
     line-height: 17px;
   }
 }
@@ -321,5 +333,47 @@
   @include for-small-tablet {
     font-size: 10px;
     line-height: 15px;
+  }
+}
+
+// Btn Content
+@mixin btn_regular {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0.5px;
+
+  // 800
+  @include for-tablet {
+    font-size: 12px;
+    line-height: 30px;
+  }
+}
+
+@mixin btn_small {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 44px;
+  letter-spacing: 0.5px;
+
+  // 800
+  @include for-tablet {
+    font-size: 10px;
+    line-height: 25px;
+    letter-spacing: 0;
+  }
+}
+
+@mixin btn_extrasmall {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+
+  // 800
+  @include for-tablet {
+    font-size: 8px;
+    line-height: 16px;
+    letter-spacing: 0;
   }
 }
