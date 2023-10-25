@@ -30,7 +30,11 @@ const color = computed(() => {
       <span>Categories</span>
     </v-btn>
     <v-btn>
-      <v-badge :model-value="active" :content="4" color="var(--success)">
+      <v-badge 
+        :model-value="active" 
+        :content="4" 
+        color="var(--success)"
+      >
         <v-icon icon="mdi-cart"></v-icon>
       </v-badge>
       <span>Cart</span>
