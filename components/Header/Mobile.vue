@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { ref, watch } from 'vue';
 import { useTheme } from 'vuetify';
 const theme = useTheme()
 
@@ -8,17 +7,6 @@ const toggleTheme = () => {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
   localStorage.setItem('theme', theme.global.name.value)
 }
-
-// Менять логотип под тему
-const darkLogo = ref(false)
-
-watch(theme.global.current, (theme) => {
-  if (theme.dark) {
-    darkLogo.value = true;
-  } else {
-    darkLogo.value = false;
-  }
-})
 </script>
 
 <template>
