@@ -55,9 +55,11 @@ watch(theme.global.current, (theme) => {
 <!-- SpecialOffers Section -->
       <HeaderSpecialOffers/>
     </v-header>
-    <v-main>
+
+    <v-main class="createx-shop">
       <NuxtPage/>
     </v-main>
+
 <!-- Desktop Footer -->
     <FooterDesktop 
       :color="darkTheme ? 'var(--gray-900)' : 'var(--white)'"

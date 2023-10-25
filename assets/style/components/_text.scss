@@ -9,40 +9,32 @@
 
     // 1600
     @include for-laptop {
-      font-size: 65px;
-      line-height: 85px;
+      font-size: 62px;
+      line-height: 83.6px;
     }
 
     // 1280
     @include for-small-laptop {
-      font-size: 60px;
-      line-height: 70px;
+      font-size: 52px;
+      line-height: 73.6px;
     }
 
     // 960
     @include for-big-tablet {
-      font-size: 45px;
-      line-height: 65px;
+      font-size: 42px;
+      line-height: 63.6px;
     }
 
     // 800
     @include for-tablet {
-      font-size: 30px;
-      line-height: 50px;
+      font-size: 32px;
+      line-height: 53.6px;
     }
 
     // 600
     @include for-small-tablet {
-      font-size: 25px;
-      line-height: 45px;
-    }
-
-    // 400
-    @include for-mobile {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 40px;
-      letter-spacing: 0;
+      font-size: 22px;
+      line-height: 43.6px;
     }
   }
 
@@ -53,19 +45,19 @@
 
     // 1600
     @include for-laptop {
-      font-size: 40px;
-      line-height: 53px;
+      font-size: 43px;
+      line-height: 54px;
     }
 
     // 960
     @include for-big-tablet {
-      font-size: 30px;
-      line-height: 40px;
+      font-size: 37px;
+      line-height: 42px;
     }
 
     // 600
     @include for-small-tablet {
-      font-size: 20px;
+      font-size: 28px;
       line-height: 30px;
     }
   }
@@ -113,20 +105,20 @@
 
     // 960
     @include for-big-tablet {
-      font-size: 18px;
-      line-height: 22px;
+      font-size: 20px;
+      line-height: 26px;
     }
 
     // 800
     @include for-tablet {
-      font-size: 16px;
-      line-height: 18px;
+      font-size: 17px;
+      line-height: 20px;
     }
 
     // 600
     @include for-small-tablet {
       font-size: 14px;
-      line-height: 14px;
+      line-height: 15px;
     }
 
     // 400
@@ -164,12 +156,16 @@
 
 .subtitle {
   font-size: 18px;
-  font-weight: 400;
   line-height: 27px;
 
 // Bold
   &__bold {
     font-weight: 700;
+  }
+
+// Regular
+  &__regular {
+    font-weight: 400;
   }
 
   // 1600
@@ -194,12 +190,6 @@
   @include for-small-tablet {
     font-size: 12px;
     line-height: 17px;
-  }
-
-  // 400
-  @include for-mobile {
-    font-size: 8px;
-    line-height: 11px;
   }
 }
 
@@ -229,39 +219,15 @@
 
 // Все ссылки на сайте
 .link {
-  font-weight: 400;
   text-decoration: underline;
 
-  &__regular {
-    font-size: 18px;
-    line-height: 27px;
-    color: var(--primary);
-
-    // 1600
-    @include for-laptop {
-      font-size: 16px;
-      line-height: 25px;
-    }    
-  
-    // 960
-    @include for-big-tablet {
-      font-size: 15px;
-      line-height: 20px;
-    }
-  
-    // 600
-    @include for-small-tablet {
-      font-size: 14px;
-      line-height: 18px;
-    }
-  }
-
-  &__extrasmall {
-    font-size: 12px;
-    line-height: 18px;
+  &__white {
     color: var(--white);
   }
 
+  &__primary {
+    color: var(--primary);
+  }
 }
 
 .lead {

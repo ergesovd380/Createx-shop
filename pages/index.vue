@@ -514,11 +514,17 @@ onMounted(() => {
     </section>
 <!-- New arrival section -->
     <section class="home-page__newarrival section-top">
-      <h1 class="title-h1 home-page__newarrival-title">New arrival</h1>
-      <div class="home-page__newarrival-subtitle subtitle">
+      <h1 class="home-page__newarrival-title title-h1">New arrival</h1>
+      <div 
+        class="
+          home-page__newarrival-subtitle 
+          subtitle
+          subtitle__regular
+        "
+      >
         Check out our latest arrivals for the upcoming season
         <br>
-        <a href="#" class="link link__regular">See the collection here</a>
+        <a href="#" class="link link__primary">See the collection here</a>
       </div>
       <swiper
         :slidesPerView="newarrivalSidesPerView"
