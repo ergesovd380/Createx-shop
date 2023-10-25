@@ -440,19 +440,48 @@ onMounted(() => {
             cover
           >
             <v-container>
-              <div class="home-page__banner-subTitle">{{ item.subTitle }}</div>
-              <div class="home-page__banner-title">{{ item.title }}</div>
-              <div class="element__more-small-tablet">
-                <BtnOutline class="home-page__banner-btn btn__regular">Shop sale</BtnOutline>
-                <Btn class="home-page__banner-btn btn__regular">Shop the {{ item.title }}</Btn>
+<!-- Subtitle -->
+              <div 
+                class="
+                  home-page__banner-subTitle
+                  subtitle
+                  subtitle__bold
+                  text-uppercase
+                "
+              >
+                {{ item.subTitle }}
               </div>
+<!-- Title -->
+              <div class="title-display-first">
+                {{ item.title }}
+              </div>
+<!-- Btns -->
+              <div class="element__more-small-tablet">
+                <BtnOutline 
+                  class="
+                    home-page__banner-btn 
+                    btn__regular
+                  "
+                >
+                  Shop sale
+                </BtnOutline>
+                <Btn 
+                  class="
+                    home-page__banner-btn 
+                    btn__regular
+                  "
+                >
+                  Shop the {{ item.title }}
+                </Btn>
+              </div>
+<!-- Pagination -->
               <div class="home-page__banner-pagination" >
                 <h3 
                   v-for="(item, i) in items" 
                   :key="i" 
                   @click="currentBanner = i"
                   :v-model="currentBanner"
-                  class="home-page__banner-pagination-item"
+                  class="home-page__banner-pagination-item title-h3"
                   :class="currentBanner === i ? 'home-page__banner-pagination-item-active' : ''"
                 >
                   0{{ i + 1 }}
@@ -461,6 +490,7 @@ onMounted(() => {
             </v-container>
           </v-carousel-item>
         </v-carousel>
+<!-- Banner Category section -->
         <div class="home-page__banner-category">
           <v-container>
             <div class="home-page__banner-category-width">
@@ -588,7 +618,7 @@ onMounted(() => {
                       </v-chip>
                     </v-chip-group>
                   </div>
-                  <BtnOutline class="swiper-add-cart"> <v-icon>mdi-cart</v-icon> Add to cart</BtnOutline>
+                  <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
                 </div>
               </v-expand-transition>
             </v-card-text>
@@ -824,7 +854,7 @@ onMounted(() => {
                           </v-chip>
                         </v-chip-group>
                       </div>
-                      <BtnOutline class="swiper-add-cart"> <v-icon>mdi-cart</v-icon> Add to cart</BtnOutline>
+                      <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
                     </div>
                   </v-expand-transition>
                 </v-card-text>
@@ -946,7 +976,7 @@ onMounted(() => {
                           </v-chip>
                         </v-chip-group>
                       </div>
-                      <BtnOutline class="swiper-add-cart"> <v-icon>mdi-cart</v-icon> Add to cart</BtnOutline>
+                      <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
                     </div>
                   </v-expand-transition>
                 </v-card-text>
