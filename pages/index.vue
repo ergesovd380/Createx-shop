@@ -604,7 +604,7 @@ onMounted(() => {
                         :value="size"
                         variant="text"
                         tag="div"
-                        class="swiper-size"
+                        class="swiper-size base__extrasmall"
                         size="24"
                       >
                         {{ size }}
@@ -646,14 +646,16 @@ onMounted(() => {
 <!-- Banner Row 1 -->
       <v-row>
 <!-- Banner 1 -->
-        <v-col :cols="gridSmallGallery"  class="pa-1">
+        <v-col :cols="gridSmallGallery" class="pa-1">
           <v-img 
             src="images/home-page/gallery/banner-1.png" 
             class="home-page__gallery-img"
             cover
           >
-            <div class="home-page__gallery-subtitle">Summer Collections</div>
-            <div class="home-page__gallery-title title-h2">Sale Up to 70%</div>
+            <div class="base__small-bold text-uppercase">
+              Summer Collections
+            </div>
+            <h2 class="home-page__gallery-title title-h2">Sale Up to 70%</h2>
             <BtnOutline class="btn__small">Explore new prices</BtnOutline>
           </v-img>
         </v-col>
@@ -664,8 +666,14 @@ onMounted(() => {
             class="home-page__gallery-img"
             cover
           >
-            <div class="home-page__gallery-subtitle">Deal of the week</div>
-            <div class="home-page__gallery-title title-h2">Stay Warm With Our <br> New Sweaters</div>
+            <div class="base__small-bold text-uppercase">
+              Deal of the week
+            </div>
+            <h2 class="home-page__gallery-title title-h2">
+              Stay Warm With Our 
+              <br> 
+              New Sweaters
+            </h2>
             <BtnOutline class="btn__small">Shop now</BtnOutline>
 <!-- Date -->
             <div class="home-page__gallery-date">
@@ -673,7 +681,6 @@ onMounted(() => {
                 class="
                   base__small-bold
                   text-uppercase
-                  mb-3
                   home-page__gallery-date-title
                 "
               >
@@ -685,9 +692,9 @@ onMounted(() => {
                     v-for="(d, index) in date"
                     :key="index"
                   >
-                    <div class="title-h3">
+                    <h3 class="title-h3">
                       {{ d.num }}
-                    </div>
+                    </h3>
                     <div>
                       {{ d.str }}
                     </div>
@@ -707,8 +714,16 @@ onMounted(() => {
             class="home-page__gallery-img"
             cover
           >
-            <div class="home-page__gallery-subtitle">New collection</div>
-            <div class="home-page__gallery-title title-h2">Shoes & Bags <br> autumn / winter 2020 </div>
+            <div class=" 
+                base__small-bold
+                text-uppercase
+              "
+            >New collection</div>
+            <h2 class="home-page__gallery-title title-h2">
+              Shoes & Bags 
+              <br> 
+              autumn / winter 2020 
+            </h2>
             <BtnOutline class="btn__small">
               See offers 
               <v-icon size="small">mdi-arrow-right</v-icon>
@@ -722,8 +737,12 @@ onMounted(() => {
             class="home-page__gallery-img"
             cover
           >
-            <div class="home-page__gallery-subtitle">For All new Email Subscribers</div>
-            <div class="home-page__gallery-title title-h2">Get 5% Off & Free Delivery</div>
+            <div class="
+              base__small-bold
+              text-uppercase
+              "
+            >For All new Email Subscribers</div>
+            <h2 class="home-page__gallery-title title-h2">Get 5% Off & Free Delivery</h2>
 <!-- Form -->
             <v-form 
               @submit.prevent
@@ -825,7 +844,7 @@ onMounted(() => {
                       location="top"
                     >To card double click</v-tooltip>
                   </div>
-                  <div class="price">${{ item.price }}</div>
+                  <h4 class="title-h4">${{ item.price }}</h4>
                   <!-- Expand transition-->
                   <v-expand-transition>
                     <div v-if="item.expand">
@@ -841,7 +860,7 @@ onMounted(() => {
                             :value="size"
                             variant="text"
                             tag="div"
-                            class="swiper-size"
+                            class="swiper-size base__extrasmall"
                             size="24"
                           >
                             {{ size }}
@@ -963,7 +982,7 @@ onMounted(() => {
                             :value="size"
                             variant="text"
                             tag="div"
-                            class="swiper-size"
+                            class="swiper-size base__extrasmall"
                             size="24"
                           >
                             {{ size }}
