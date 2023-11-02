@@ -967,7 +967,10 @@ onMounted(() => {
                       location="top"
                     >To card double click</v-tooltip>
                   </div>
-                  <div class="price">${{ item.price }}</div>
+                  <div class="swiper-price">
+                    <h4 class="title-h4 text-red">${{ item.price }}</h4>
+                    <div class="subtitle swiper-price-sale">$179.00</div>
+                  </div>
                   <v-expand-transition>
                     <div v-if="item.expand">
                       <div class="swiper-data">
@@ -1031,7 +1034,7 @@ onMounted(() => {
             <img src="images/home-page/mobile-store/img.png" class="home-page__mobileStore-img">
           </v-col>
           <v-col class="home-page__mobileStore-col">
-            <div class="home-page__mobileStore-title title-h2">Enjoy mobile shopping with our Createx Store App!</div>
+            <h2 class="title-h2">Enjoy mobile shopping with our Createx Store App!</h2>
             <div>
               <img 
                 width="162" 
@@ -1057,22 +1060,22 @@ onMounted(() => {
           <v-col :cols="gridServices" class="home-page__services-border">
             <img src="images/home-page/services/delivery.png">
             <div class="lead lead__bold">Fast Worldwide Shipping</div>
-            <div class="home-page__services-subtitle base base__bold">Get free shipping over $250</div>
+            <div class="home-page__services-subtitle base base__regular">Get free shipping over $250</div>
           </v-col>
           <v-col :cols="gridServices" class="home-page__services-border">
             <img src="images/home-page/services/call-center.png">
             <div class="lead lead__bold">24/7 Customer Support</div>
-            <div class="home-page__services-subtitle base base__bold">Friendly 24/7 customer support</div>
+            <div class="home-page__services-subtitle base base__regular">Friendly 24/7 customer support</div>
           </v-col>
           <v-col :cols="gridServices" class="home-page__services-border">
             <img src="images/home-page/services/shield.png">
             <div class="lead lead__bold">Money Back Guarantee</div>
-            <div class="home-page__services-subtitle base base__bold">We return money within 30 days</div>
+            <div class="home-page__services-subtitle base base__regular">We return money within 30 days</div>
           </v-col>
           <v-col :cols="gridServices">
             <img src="images/home-page/services/credit-card.png">
             <div class="lead lead__bold">Secure Online Payment</div>
-            <div class="home-page__services-subtitle base base__bold">Accept all major credit cards</div>
+            <div class="home-page__services-subtitle base base__regular">Accept all major credit cards</div>
           </v-col>
         </v-row>
       </v-container>
@@ -1082,8 +1085,8 @@ onMounted(() => {
       <V-container>
         <v-row>
           <v-col>
-            <div class="title-h6">Follow us on Instagram</div>
-            <div class="title-h1">@createx_store</div>
+            <h6 class="title-h6">Follow us on Instagram</h6>
+            <h1 class="title-h1">@createx_store</h1>
             <BtnOutline class="btn__regular home-page__instagram-btn">
               <v-icon>mdi-instagram</v-icon>
               Follow instagram
@@ -1105,7 +1108,7 @@ onMounted(() => {
     <section class="home-page__fashion section">
       <v-container>
         <div class="home-page__fashion-head">
-          <div class="title-h1">Fashion blog</div>
+          <h1 class="title-h1">Fashion blog</h1>
           <v-spacer></v-spacer>
           <BtnOutline class="btn__small">View blog</BtnOutline>
         </div>
@@ -1122,7 +1125,7 @@ onMounted(() => {
                     <span class="home-page__fashion-card-slash">|</span> 
                     <span>No comments</span>
                   </div>
-                  <div class="home-page__fashion-card-content base base__bold">
+                  <div class="home-page__fashion-card-content base base__regular">
                     Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...
                   </div>
                 </v-card-text>
@@ -1140,7 +1143,7 @@ onMounted(() => {
                     <span class="home-page__fashion-card-slash">|</span> 
                     <span>4 comments</span>
                   </div>
-                  <div class="home-page__fashion-card-content base base__bold">
+                  <div class="home-page__fashion-card-content base base__regular">
                     Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...
                   </div>
                 </v-card-text>

@@ -77,6 +77,17 @@
     cursor: pointer;
   }
 
+  &-price {
+    display: flex;
+    align-items: center;
+
+    &-sale {
+      margin-left: 12px;
+      color: var(--gray-700);
+      text-decoration: line-through;
+    }
+  }
+
   &-data {
     margin-top: 20px;
     display: flex;
