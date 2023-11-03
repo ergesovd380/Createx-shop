@@ -1136,14 +1136,25 @@ onMounted(() => {
                 <v-img src="images/home-page/fashion/img-2.png"></v-img>
                 <v-card-text>
                   <div class="lead lead__bold">Top 10 of This Season’s Hottest Sneakers</div>
-                  <div class="home-page__fashion-card-subtitle base__small">
+                  <div 
+                    class="
+                      home-page__fashion-card-subtitle
+                      base__small
+                    "
+                  >
                     <span>Lifestyle</span> 
                     <span class="home-page__fashion-card-slash">|</span> 
                     <span>July 16, 2020</span>
                     <span class="home-page__fashion-card-slash">|</span> 
                     <span>4 comments</span>
                   </div>
-                  <div class="home-page__fashion-card-content base base__regular">
+                  <div 
+                    class="
+                      home-page__fashion-card-content 
+                      base 
+                      base__regular
+                    "
+                  >
                     Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...
                   </div>
                 </v-card-text>
@@ -1167,8 +1178,19 @@ onMounted(() => {
       <v-container>
         <v-row>
           <v-col>
-            <div class="title-h1">Subscribe for updates</div>
-            <div class="title-h2">Here will be subscribe subtitle</div>
+            <h1 class="home-page__subscribe-title title-h1">
+              Subscribe for updates
+            </h1>
+            <div 
+              class="
+                lead 
+                lead__regular
+                home-page__subscribe-subtitle
+              "
+            >Subscribe for exclusive early sale access and new arrivals.</div>
+            <div class="home-page__subscribe-type">
+              
+            </div>
           </v-col>
           <v-col>
             <h1>Hello World</h1>

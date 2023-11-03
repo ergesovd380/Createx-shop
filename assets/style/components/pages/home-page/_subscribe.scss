@@ -2,6 +2,14 @@
 
   &__subscribe {
     background-color: var(--gray-200);
-    color: var(--gray-900);
+
+    &-title {
+      color: var(--gray-900);
+    }
+
+    &-subtitle {
+      margin: 24px 0 32px;
+      color: var(--gray-700);
+    }
   }
 }
