@@ -48,37 +48,5 @@
         width: 209px;
       }
     }
-
-    &-form {
-      margin-top: 32px;
-
-      // 960
-      @include for-big-tablet {
-        margin-top: 20px;
-      }
-
-      &-label {
-        display: block;
-        margin-bottom: 8px;
-      }
-  
-      &-input {
-        width: 360px;
-
-        // 1600
-        @include for-laptop {
-          width: 250px;
-        }
-
-        // 1280
-        @include for-small-laptop {
-          width: 160px;
-        }
-      }
-
-      &-singup {
-        margin-top: 20px;
-      }
-    }
   }
 }

@@ -69,4 +69,13 @@
       padding: 0 8px;
     }
   }
+
+  &__subscribe-selection {
+    padding: 5.5px 16px;
+    margin-right: 12px;
+    color: var(--gray-700);
+    border-color: var(--gray-400);
+
+    @include btn_subscribe-selection;
+  }
 }
