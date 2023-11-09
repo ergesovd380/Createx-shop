@@ -374,6 +374,7 @@ const brands = ref([
 // Subscribe page
 const subscribeBtns = ref(['Women', 'Men', 'Girls', 'Boys']);
 const subscribeSelection = ref([]);
+const subscribeImg = ref(true);
 
 // Desktop size
 const calculateNewarrival = () => {
@@ -415,12 +416,19 @@ const calculateGrid800 = () => {
     brandsStatus.value = true;
   }
 };
+const calculateGrid960 = () => {
+  if(window.innerWidth < 960) {
+    subscribeImg.value = false;
+  } else {
+    subscribeImg.value = true;
+  }
+};
 
 window.addEventListener('resize', () => {
-  calculateNewarrival(); calculateGrid600(); calculateGrid800();
+  calculateNewarrival(); calculateGrid600(); calculateGrid800(); calculateGrid960();
 });
 onMounted(() => {
-  calculateNewarrival(); calculateGrid600(); calculateGrid800();
+  calculateNewarrival(); calculateGrid600(); calculateGrid800(); calculateGrid960();
 });
 </script>
 
@@ -1192,8 +1200,7 @@ onMounted(() => {
                 home-page__subscribe-subtitle
               "
             >Subscribe for exclusive early sale access and new arrivals.</div>
-            <div>
-              <v-item-group 
+            <v-item-group 
                 v-model="subscribeSelection" 
                 multiple 
                 selected-class="home-page__subscribe-selected"
@@ -1211,8 +1218,7 @@ onMounted(() => {
                     {{ btn }}
                   </BtnOutline>
                 </v-item>
-              </v-item-group>
-            </div>
+            </v-item-group>
 <!-- Form -->
             <v-form 
               @submit.prevent
@@ -1233,12 +1239,16 @@ onMounted(() => {
               <v-checkbox 
                 color="var(--primary)" 
                 class="form__checkbox"
-                label="I agree to receive communications from Createx Store.">
+              >
+                <template v-slot:label>
+                  <div class="base base__regu">I agree to receive communications from Createx Store.</div>
+                </template>
               </v-checkbox>
             </v-form>
           </v-col>
-          <v-col class="home-page__subscribe-col">
-            <img src="images/home-page/subscribe/img.png">
+          <v-col v-if="subscribeImg">
+            <img src="images/home-page/subscribe/img.png"
+            class="home-page__subscribe-img">
           </v-col>
         </v-row>
       </v-container>
