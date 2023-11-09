@@ -607,7 +607,7 @@ onMounted(() => {
                   <div class="swiper-data">
 <!-- Swiper size -->
                     <v-chip-group
-                      selected-class="swiper-size-active"
+                      selected-class="swiper-sc-active"
                       mandatory
                     >
                       <v-chip
@@ -615,16 +615,19 @@ onMounted(() => {
                         :key="size"
                         :value="size"
                         variant="text"
-                        tag="div"
-                        class="swiper-size base__extrasmall"
                         size="24"
+                        class="rounded swiper-sc"
                       >
-                        {{ size }}
+                        <div
+                          class="swiper-item base__extrasmall"
+                        >
+                          {{ size }}
+                        </div>
                       </v-chip>
                     </v-chip-group>
 <!-- Swiper color -->
                     <v-chip-group
-                      selected-class="swiper-color-active"
+                      selected-class="swiper-sc-active"
                       mandatory
                     >
                       <v-chip
@@ -632,13 +635,15 @@ onMounted(() => {
                         :key="color"
                         :value="color"
                         variant="text"
-                        tag="div"
-                        class="swiper-color"
                         size="24"
-                        rounded
+                        class="rounded-circle swiper-sc"
                       >
                         <div 
-                          class="swiper-color-value" 
+                          class="
+                            swiper-item 
+                            swiper-item-color 
+                            rounded-circle
+                          " 
                           :class="color"
                         ></div>
                       </v-chip>
@@ -863,7 +868,7 @@ onMounted(() => {
                       <div class="swiper-data">
 <!-- Swiper size -->
                         <v-chip-group
-                          selected-class="swiper-size-active"
+                          selected-class="swiper-sc-active"
                           mandatory
                         >
                           <v-chip
@@ -871,16 +876,19 @@ onMounted(() => {
                             :key="size"
                             :value="size"
                             variant="text"
-                            tag="div"
-                            class="swiper-size base__extrasmall"
                             size="24"
+                            class="rounded swiper-sc"
                           >
-                            {{ size }}
+                            <div
+                              class="swiper-item base__extrasmall"
+                            >
+                              {{ size }}
+                            </div>
                           </v-chip>
                         </v-chip-group>
 <!-- Swiper color -->
                         <v-chip-group
-                          selected-class="swiper-color-active"
+                          selected-class="swiper-sc-active"
                           mandatory
                         >
                           <v-chip
@@ -888,13 +896,15 @@ onMounted(() => {
                             :key="color"
                             :value="color"
                             variant="text"
-                            tag="div"
-                            class="swiper-color"
                             size="24"
-                            rounded
+                            class="rounded-circle swiper-sc"
                           >
                             <div 
-                              class="swiper-color-value" 
+                              class="
+                                swiper-item 
+                                swiper-item-color 
+                                rounded-circle
+                              " 
                               :class="color"
                             ></div>
                           </v-chip>
@@ -988,7 +998,7 @@ onMounted(() => {
                       <div class="swiper-data">
 <!-- Swiper size -->
                         <v-chip-group
-                          selected-class="swiper-size-active"
+                          selected-class="swiper-sc-active"
                           mandatory
                         >
                           <v-chip
@@ -996,16 +1006,19 @@ onMounted(() => {
                             :key="size"
                             :value="size"
                             variant="text"
-                            tag="div"
-                            class="swiper-size base__extrasmall"
                             size="24"
+                            class="rounded swiper-sc"
                           >
-                            {{ size }}
+                            <div
+                              class="swiper-item base__extrasmall"
+                            >
+                              {{ size }}
+                            </div>
                           </v-chip>
                         </v-chip-group>
 <!-- Swiper color -->
                         <v-chip-group
-                          selected-class="swiper-color-active"
+                          selected-class="swiper-sc-active"
                           mandatory
                         >
                           <v-chip
@@ -1013,13 +1026,15 @@ onMounted(() => {
                             :key="color"
                             :value="color"
                             variant="text"
-                            tag="div"
-                            class="swiper-color"
                             size="24"
-                            rounded
+                            class="rounded-circle swiper-sc"
                           >
                             <div 
-                              class="swiper-color-value" 
+                              class="
+                                swiper-item 
+                                swiper-item-color 
+                                rounded-circle
+                              " 
                               :class="color"
                             ></div>
                           </v-chip>

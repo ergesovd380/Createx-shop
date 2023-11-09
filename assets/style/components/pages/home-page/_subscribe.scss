@@ -1,8 +1,8 @@
 .home-page {
-  color: var(--gray-800);
 
   &__subscribe {
     background-color: var(--gray-200);
+    color: var(--gray-800);
     position: relative;
 
     &-title {
