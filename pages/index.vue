@@ -1,164 +1,31 @@
 <script lang="ts" setup>
-import {ref} from 'vue';
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
+// Import Vue.js components
+import {ref, computed} from 'vue';
 
-// Swiper
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-// import required modules
+// Import Swiper Pagination modules
 import { Pagination, Navigation } from 'swiper/modules';
 // Pagination carousel
 const modules = [Pagination, Navigation];
 
-// Banner section
-const items = ref([
-  {
-    src: '/images/home-page/banner/men.png',
-    title: 'Menswear',
-    subTitle: 'New collection'
-  },
-  {
-    src: '/images/home-page/banner/women.jpg',
-    title: 'Womenswear',
-    subTitle: 'New collection'
-  },
-  {
-    src: '/images/home-page/banner/boy.jpg',
-    title: 'Boyswear',
-    subTitle: 'New collection'
-  },
-  {
-    src: '/images/home-page/banner/girl.jpg',
-    title: 'Girlswear',
-    subTitle: 'New collection'
-  }
-]);
-const currentBanner = ref(0);
+// Vuex
+import {useStore} from 'vuex';
+const store = useStore();
 
+//Components
+// section-home-page-banner
+const bannerItem = computed(() => store.getters["banner/items"]);
 // Category section
-const categories = ref([
-  {
-    src: '/images/home-page/categories/women.png',
-    title: "Women's"
-  },
-  {
-    src: '/images/home-page/categories/men.png',
-    title: "Men's"
-  },
-  {
-    src: '/images/home-page/categories/kid.png',
-    title: "Kids'"
-  }
-]);
+const categories = computed(() => store.getters["categories/items"]);
 
-// Newarrival
-const newarrival = ref([
-  {
-    id: 1,
-    stars: 5,
-    src: '/images/home-page/newarrival/img-1.png',
-    name: 'Black and white sport cap',
-    price: '18.15',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 2,
-    stars: 0,
-    src: '/images/home-page/newarrival/img-2.png',
-    name: 'Metal bridge sunglasses',
-    price: '89.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 3,
-    stars: 4,
-    src: '/images/home-page/newarrival/img-3.png',
-    name: 'Green baby romper',
-    price: '20.40',
-    heart: true,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 4,
-    stars: 0,
-    src: '/images/home-page/newarrival/img-4.png',
-    name: 'Mid-rise slim cropped fit jeans',
-    price: '40.00',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 5,
-    stars: 5,
-    src: '/images/home-page/newarrival/img-5.png',
-    name: 'Red dangle earrings',
-    price: '29.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 6,
-    stars: 0,
-    src: '/images/home-page/newarrival/img-6.png',
-    name: 'Baby shoes with laces',
-    price: '30.60',
-    heart: true,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 7,
-    stars: 5,
-    src: '/images/home-page/newarrival/img-1.png',
-    name: 'Black and white sport cap',
-    price: '18.15',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 8,
-    stars: 0,
-    src: '/images/home-page/newarrival/img-2.png',
-    name: 'Metal bridge sunglasses',
-    price: '89.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 9,
-    stars: 4,
-    src: '/images/home-page/newarrival/img-3.png',
-    name: 'Green baby romper',
-    price: '20.40',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  }
-]);
-const newarrivalSidesPerView = ref(6)
+// section-home-page-newarrival
+const newarrival = computed(() => store.getters["newarrival/items"]);
+const newarrivalSidesPerView = ref(6);
 
-// Gallery
+// section-home-page-gallery
 const date = [
   {
     num: '06',
@@ -180,188 +47,29 @@ const date = [
 const gridBigGallery = ref(7);
 const gridSmallGallery = ref(5);
 
-// Popular
-const popularCategories = [
-  {
-    img: 'images/home-page/popular/img-1.png',
-    name: 'Tops'
-  },
-  {
-    img: 'images/home-page/popular/img-2.png',
-    name: 'T-shirts'
-  },
-  {
-    img: 'images/home-page/popular/img-3.png',
-    name: 'Caps'
-  },
-  {
-    img: 'images/home-page/popular/img-4.png',
-    name: 'Sandals'
-  },
-  {
-    img: 'images/home-page/popular/img-5.png',
-    name: 'Jackets'
-  },
-  {
-    img: 'images/home-page/popular/img-6.png',
-    name: 'Coats'
-  }
-]
+// section-home-page-popular
+const popularCategories = computed(() => store.getters["popularCategories/items"]);
 
-// Trending
-const trending = ref([
-  {
-    id: 1,
-    stars: 5,
-    src: '/images/home-page/trending/img-1.png',
-    name: 'Shirt with insertion lace trims',
-    price: '49.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 2,
-    stars: 4,
-    src: '/images/home-page/trending/img-2.png',
-    name: 'Chrono watch with blue leather belt',
-    price: '120.60',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 3,
-    stars: 0,
-    src: '/images/home-page/trending/img-3.png',
-    name: 'Check coat with colour contrast',
-    price: '183.45',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 4,
-    stars: 5,
-    src: '/images/home-page/trending/img-1.png',
-    name: 'Shirt with insertion lace trims',
-    price: '49.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 5,
-    stars: 4,
-    src: '/images/home-page/trending/img-2.png',
-    name: 'Chrono watch with blue leather belt',
-    price: '120.60',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 6,
-    stars: 0,
-    src: '/images/home-page/trending/img-3.png',
-    name: 'Check coat with colour contrast',
-    price: '183.45',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  }
-])
-const trendingSidesPerView = ref(3)
+// section-home-page-trending
+const trending = computed(() => store.getters["trending/items"]);
+const trendingSidesPerView = ref(3);
 
-// Sale Up
-const saleUp = ref([
-  {
-    id: 1,
-    stars: 5,
-    src: '/images/home-page/sale-up/img-1.png',
-    name: 'Leather crossbody bag with gold hardware',
-    price: '179.00',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 2,
-    stars: 0,
-    src: '/images/home-page/sale-up/img-2.png',
-    name: 'Skinny push-up jeans',
-    price: '80.00',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 3,
-    stars: 5,
-    src: '/images/home-page/sale-up/img-3.png',
-    name: 'Wide heel suede ankle boots',
-    price: '149.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 4,
-    stars: 5,
-    src: '/images/home-page/sale-up/img-1.png',
-    name: 'Leather crossbody bag with gold hardware',
-    price: '179.00',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 5,
-    stars: 0,
-    src: '/images/home-page/sale-up/img-2.png',
-    name: 'Skinny push-up jeans',
-    price: '80.00',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  },
-  {
-    id: 6,
-    stars: 5,
-    src: '/images/home-page/sale-up/img-3.png',
-    name: 'Wide heel suede ankle boots',
-    price: '149.95',
-    heart: false,
-    expand: false,
-    size: [36, 38, 40, 42],
-    color: ['bg-black', 'bg-brown', 'bg-secondary']
-  }
-])
+// section-home-page-sale-up
+const saleUp = computed(() => store.getters["saleUp/items"]);
 
-// mobileStore
+// section-home-page-mobile-store
 const mobileStore = ref(true);
 
-// Services
+// section-home-page-services
 const gridServices = ref(3);
 
-// Instagram
+// section-home-page-instagram
 const Instagram = ref(true);
 
-// Fashion
+// section-home-page-fashion
 const gridFashion = ref(6);
 // Brands
-const brandsStatus = ref(true)
+const brandsStatus = ref(true);
 const brands = ref([
   'images/home-page/brands/img-1.png',
   'images/home-page/brands/img-2.png',
@@ -371,7 +79,7 @@ const brands = ref([
   'images/home-page/brands/img-6.png'
 ]);
 
-// Subscribe page
+// section-home-page-subscribe
 const subscribeBtns = ref(['Women', 'Men', 'Girls', 'Boys']);
 const subscribeSelection = ref([]);
 const subscribeImg = ref(true);
@@ -435,838 +143,61 @@ onMounted(() => {
 <template>
   <main class="home-page">
 <!-- Banner section -->
-    <section class="section-banner">
-      <div class="home-page__banner">
-        <v-carousel
-          cycle 
-          interval="3000"
-          show-arrows="hover" 
-          height="auto" 
-          hide-delimiters
-          v-model="currentBanner"
-        >
-          <v-carousel-item
-            v-for="(item, i) in items"
-            :key="i"
-            :src="item.src"
-            cover
-          >
-            <v-container>
-<!-- Subtitle -->
-              <div 
-                class="
-                  home-page__banner-subTitle
-                  subtitle
-                  subtitle__bold
-                  text-uppercase
-                "
-              >
-                {{ item.subTitle }}
-              </div>
-<!-- Title -->
-              <div class="title-display-first">
-                {{ item.title }}
-              </div>
-<!-- Btns -->
-              <div class="element__more-small-tablet">
-                <BtnOutline 
-                  class="
-                    home-page__banner-btn 
-                    btn__regular
-                  "
-                >
-                  Shop sale
-                </BtnOutline>
-                <Btn 
-                  class="
-                    home-page__banner-btn 
-                    btn__regular
-                  "
-                >
-                  Shop the {{ item.title }}
-                </Btn>
-              </div>
-<!-- Pagination -->
-              <div class="home-page__banner-pagination" >
-                <h3 
-                  v-for="(item, i) in items" 
-                  :key="i" 
-                  @click="currentBanner = i"
-                  :v-model="currentBanner"
-                  class="home-page__banner-pagination-item title-h3"
-                  :class="currentBanner === i ? 'home-page__banner-pagination-item-active' : ''"
-                >
-                  0{{ i + 1 }}
-                </h3>
-              </div>
-            </v-container>
-          </v-carousel-item>
-        </v-carousel>
-<!-- Banner Category section -->
-        <div class="home-page__banner-category">
-          <v-container>
-            <div class="home-page__banner-category-width">
-              <div class="home-page__banner-category-items">
-                <div
-                  v-for="(category, i) in categories"
-                  :key="i"
-                >
-                  <img 
-                    :src="category.src" 
-                    alt="Category photo" 
-                    class="home-page__banner-category-img"
-                  >
-                  <div class="lead lead__bold">{{ category.title }}</div>
-                </div>
-              </div>
-            </div>
-          </v-container>
-        </div>
-      </div>
-    </section>
+    <SectionsHomePageBanner 
+      :bannerItem="bannerItem"
+      :categories="categories"
+    />
 <!-- New arrival section -->
-    <section class="home-page__newarrival section-top">
-<!-- Title and subtitle -->
-      <h1 class="home-page__newarrival-title title-h1">New arrival</h1>
-      <div 
-        class="
-          home-page__newarrival-subtitle 
-          subtitle
-          subtitle__regular
-        "
-      >
-        Check out our latest arrivals for the upcoming season
-        <br>
-        <a href="#" class="link link__primary">See the collection here</a>
-      </div>
-<!-- Swiper -->
-      <swiper
-        :slidesPerView="newarrivalSidesPerView"
-        :spaceBetween="30"
-        :pagination="{
-          clickable: true,
-        }"
-        :navigation="true"
-        :modules="modules"
-        class="mySwiper"
-      >
-<!-- Swiper slides -->
-        <swiper-slide 
-          v-for="item in newarrival"
-          :key="item.id"
-        >
-          <v-card elevation="0">
-<!-- Swiper images -->
-            <v-img 
-              :src="item.src" 
-              max-height="320px" 
-              max-width="285px"
-              class="swiper-img"
-            >
-<!-- Swiper rating -->
-              <Rating 
-                v-if="item.stars > 0"
-                v-model="item.stars"
-              ></Rating>
-<!-- Swiper heart -->
-              <div 
-                class="swiper-img-heart"
-                @click="item.heart = !item.heart"
-              >
-                <v-icon
-                  v-if="item.heart"
-                  icon="mdi-heart"
-                  color="red"
-                  class="mt-1"
-                ></v-icon>
-                <v-icon
-                  v-else
-                  icon="mdi-heart-outline"
-                  color="black"
-                  class="mt-1"
-                ></v-icon>
-              </div>
-            </v-img>
-            <v-card-text>
-<!-- Swiper product name -->
-              <div 
-                class="swiper-name subtitle subtitle__regular"
-                @click="item.expand = !item.expand"
-              >
-                {{ item.name }}
-                <v-tooltip
-                  activator="parent"
-                  location="top"
-                >To card double click</v-tooltip>
-              </div>
-<!-- Swiper product price -->
-              <h5 class="title-h5">${{ item.price }}</h5>
-<!-- Expand transition-->
-              <v-expand-transition>
-                <div v-if="item.expand">
-                  <div class="swiper-data">
-<!-- Swiper size -->
-                    <v-chip-group
-                      selected-class="swiper-sc-active"
-                      mandatory
-                    >
-                      <v-chip
-                        v-for="size in item.size"
-                        :key="size"
-                        :value="size"
-                        variant="text"
-                        size="24"
-                        class="rounded swiper-sc"
-                      >
-                        <div
-                          class="swiper-item base__extrasmall"
-                        >
-                          {{ size }}
-                        </div>
-                      </v-chip>
-                    </v-chip-group>
-<!-- Swiper color -->
-                    <v-chip-group
-                      selected-class="swiper-sc-active"
-                      mandatory
-                    >
-                      <v-chip
-                        v-for="color in item.color"
-                        :key="color"
-                        :value="color"
-                        variant="text"
-                        size="24"
-                        class="rounded-circle swiper-sc"
-                      >
-                        <div 
-                          class="
-                            swiper-item 
-                            swiper-item-color 
-                            rounded-circle
-                          " 
-                          :class="color"
-                        ></div>
-                      </v-chip>
-                    </v-chip-group>
-                  </div>
-<!-- Swiper add cart btn -->
-                  <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
-                </div>
-              </v-expand-transition>
-            </v-card-text>
-          </v-card>
-        </swiper-slide>
-      </swiper>
-    </section>
+    <SectionsHomePageNewarrival
+      :modules="modules"
+      :newarrival="newarrival"
+      :newarrivalSidesPerView="newarrivalSidesPerView"
+    />
 <!-- Gallery section -->
-    <section class="home-page__gallery section base__small">
-<!-- Banner Row 1 -->
-      <v-row>
-<!-- Banner 1 -->
-        <v-col :cols="gridSmallGallery" class="pa-1">
-          <v-img 
-            src="images/home-page/gallery/banner-1.png" 
-            class="home-page__gallery-img"
-            cover
-          >
-            <div class="base__small-bold text-uppercase">
-              Summer Collections
-            </div>
-            <h2 class="home-page__gallery-title title-h2">Sale Up to 70%</h2>
-            <BtnOutline class="btn__small">Explore new prices</BtnOutline>
-          </v-img>
-        </v-col>
-<!-- Banner 2 -->
-        <v-col :cols="gridBigGallery" class="pa-1">
-          <v-img 
-            src="images/home-page/gallery/banner-2.png"
-            class="home-page__gallery-img"
-            cover
-          >
-            <div class="base__small-bold text-uppercase">
-              Deal of the week
-            </div>
-            <h2 class="home-page__gallery-title title-h2">
-              Stay Warm With Our 
-              <br> 
-              New Sweaters
-            </h2>
-            <BtnOutline class="btn__small">Shop now</BtnOutline>
-<!-- Date -->
-            <div class="home-page__gallery-date">
-              <div 
-                class="
-                  base__small-bold
-                  text-uppercase
-                  home-page__gallery-date-title
-                "
-              >
-                Limited time offer
-              </div>
-              <div class="home-page__gallery-date-content">
-                <v-row>
-                  <v-col                   
-                    v-for="(d, index) in date"
-                    :key="index"
-                  >
-                    <h3 class="title-h3">
-                      {{ d.num }}
-                    </h3>
-                    <div>
-                      {{ d.str }}
-                    </div>
-                  </v-col>
-                </v-row>
-              </div>
-            </div>
-          </v-img>
-        </v-col>
-      </v-row>
-<!-- Banner Row 2 -->
-      <v-row>
-<!-- Banner 3 -->
-        <v-col :cols="gridBigGallery" class="pa-1">
-          <v-img 
-            src="images/home-page/gallery/banner-3.png"
-            class="home-page__gallery-img"
-            cover
-          >
-            <div class=" 
-                base__small-bold
-                text-uppercase
-              "
-            >New collection</div>
-            <h2 class="home-page__gallery-title title-h2">
-              Shoes & Bags 
-              <br> 
-              autumn / winter 2020 
-            </h2>
-            <BtnOutline class="btn__small">
-              See offers 
-              <v-icon size="small">mdi-arrow-right</v-icon>
-            </BtnOutline>
-          </v-img>
-        </v-col>
-<!-- Banner 4 -->
-        <v-col :cols="gridSmallGallery" class="pa-1">
-          <v-img 
-            src="images/home-page/gallery/banner-4.png"
-            class="home-page__gallery-img"
-            cover
-          >
-            <div class="
-              base__small-bold
-              text-uppercase
-              "
-            >For All new Email Subscribers</div>
-            <h2 class="home-page__gallery-title title-h2">Get 5% Off & Free Delivery</h2>
-<!-- Form -->
-            <v-form 
-              @submit.prevent
-              class="form"
-            >
-              <label 
-                for="email__gallery" 
-                class="form__label base base__regular"
-              >
-                Email
-              </label>
-              <InputText 
-                placeholder="Your working email" 
-                class="form__input"
-                id="email__gallery"
-              />
-              <Btn class="btn__small">Subscribe</Btn>
-              <div class="form__singup">*Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.</div>
-            </v-form>
-          </v-img>
-        </v-col>
-      </v-row>
-    </section>
+    <SectionsHomePageGallery 
+      :date="date"
+      :gridBigGallery="gridBigGallery"
+      :gridSmallGallery="gridSmallGallery"
+    />
 <!-- Popular Categories section -->
-    <section class="home-page__popular section">
-      <v-container>
-        <h1 class="title-h1">Popular categories</h1>
-        <div class="home-page__popular-categories">
-          <div 
-            v-for="(item, index) in popularCategories"
-            :key="index"
-          >
-            <v-img :src="item.img"></v-img>
-            <div class="home-page__popular-name lead lead__bold">{{ item.name }}</div>
-          </div>
-        </div>
-      </v-container>
-    </section>
+    <SectionsHomePagePopular 
+      :popularCategories="popularCategories"
+    />
 <!-- Trending now section -->
-    <section class="home-page__trending section">
-      <v-container>
-        <div class="home-page__trending-header">
-          <h1 class="home-page__trending-title title-h1">Trending now</h1>
-          <div>
-            <Btn class="myPrevTrending swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
-            <Btn class="myNextTrending swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
-          </div>
-        </div>
-        <div class="home-page__trending-categories">
-          <swiper
-            :slidesPerView="trendingSidesPerView"
-            :spaceBetween="30"
-            :navigation="{enabled: true, prevEl: '.myPrevTrending', nextEl: '.myNextTrending'}"
-            :loop="true"
-            :modules="modules"
-            class="mySwiper"
-          >
-            <swiper-slide 
-              v-for="item in trending"
-              :key="item.id"
-            >
-              <v-card elevation="0">
-                <v-img 
-                  :src="item.src" 
-                  max-height="490px" 
-                  max-width="440px"
-                  class="swiper-img"
-                >
-                  <Rating 
-                    v-if="item.stars > 0"
-                    v-model="item.stars"
-                  ></Rating>
-                  <div 
-                    class="swiper-img-heart"
-                    @click="item.heart = !item.heart"
-                  >
-                    <v-icon
-                      v-if="item.heart"
-                      icon="mdi-heart"
-                      color="red"
-                      class="mt-1"
-                    ></v-icon>
-                    <v-icon
-                      v-else
-                      icon="mdi-heart-outline"
-                      color="black"
-                      class="mt-1"
-                    ></v-icon>
-                  </div>
-                </v-img>
-                <v-card-text>
-                  <div 
-                    class="subtitle swiper-name" 
-                    @click="item.expand = !item.expand"
-                  >
-                    {{ item.name }}
-                    <v-tooltip
-                      activator="parent"
-                      location="top"
-                    >To card double click</v-tooltip>
-                  </div>
-                  <h4 class="title-h4">${{ item.price }}</h4>
-                  <!-- Expand transition-->
-                  <v-expand-transition>
-                    <div v-if="item.expand">
-                      <div class="swiper-data">
-<!-- Swiper size -->
-                        <v-chip-group
-                          selected-class="swiper-sc-active"
-                          mandatory
-                        >
-                          <v-chip
-                            v-for="size in item.size"
-                            :key="size"
-                            :value="size"
-                            variant="text"
-                            size="24"
-                            class="rounded swiper-sc"
-                          >
-                            <div
-                              class="swiper-item base__extrasmall"
-                            >
-                              {{ size }}
-                            </div>
-                          </v-chip>
-                        </v-chip-group>
-<!-- Swiper color -->
-                        <v-chip-group
-                          selected-class="swiper-sc-active"
-                          mandatory
-                        >
-                          <v-chip
-                            v-for="color in item.color"
-                            :key="color"
-                            :value="color"
-                            variant="text"
-                            size="24"
-                            class="rounded-circle swiper-sc"
-                          >
-                            <div 
-                              class="
-                                swiper-item 
-                                swiper-item-color 
-                                rounded-circle
-                              " 
-                              :class="color"
-                            ></div>
-                          </v-chip>
-                        </v-chip-group>
-                      </div>
-                      <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
-                    </div>
-                  </v-expand-transition>
-                </v-card-text>
-              </v-card>
-            </swiper-slide>
-          </swiper>
-        </div>
-        <div class="text-center">
-          <BtnOutline class="btn__regular">Explore top sales</BtnOutline>
-        </div>
-      </v-container>
-    </section>
+    <SectionsHomePageTrending 
+      :modules="modules"
+      :trending="trending"
+      :trendingSidesPerView="trendingSidesPerView"
+    />
 <!-- Sale up section -->
-    <section class="home-page__sale-up section">
-      <v-container>
-        <div class="home-page__sale-up-header">
-          <h1 class="title-h1">Sale up to 70%</h1>
-          <div>
-            <Btn class="myPrevSale swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
-            <Btn class="myNextSale swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
-          </div>
-        </div>
-        <div class="home-page__sale-up-categories">
-          <swiper
-            :slidesPerView="trendingSidesPerView"
-            :spaceBetween="30"
-            :navigation="{enabled: true, prevEl: '.myPrevSale', nextEl: '.myNextSale'}"
-            :loop="true"
-            :modules="modules"
-            class="mySwiper"
-          >
-            <swiper-slide 
-              v-for="item in saleUp"
-              :key="item.id"
-            >
-              <v-card elevation="0">
-                <v-img 
-                  :src="item.src" 
-                  max-height="490px" 
-                  max-width="440px"
-                  class="swiper-img"
-                >
-                  <div class="swiper-img-header">
-                    <div class="swiper-img-sale">-50%</div>
-                    <Rating 
-                      v-if="item.stars > 0"
-                      v-model="item.stars"
-                    ></Rating>
-                  </div>
-                  <div 
-                    class="swiper-img-heart"
-                    @click="item.heart = !item.heart"
-                  >
-                    <v-icon
-                      v-if="item.heart"
-                      icon="mdi-heart"
-                      color="red"
-                      class="mt-1"
-                    ></v-icon>
-                    <v-icon
-                      v-else
-                      icon="mdi-heart-outline"
-                      color="black"
-                      class="mt-1"
-                    ></v-icon>
-                  </div>
-                </v-img>
-                <v-card-text>
-                  <div 
-                    class="subtitle swiper-name" 
-                    @click="item.expand = !item.expand"
-                  >
-                    {{ item.name }}
-                    <v-tooltip
-                      activator="parent"
-                      location="top"
-                    >To card double click</v-tooltip>
-                  </div>
-                  <div class="swiper-price">
-                    <h4 class="title-h4 text-red">${{ item.price }}</h4>
-                    <div class="subtitle swiper-price-sale">$179.00</div>
-                  </div>
-                  <v-expand-transition>
-                    <div v-if="item.expand">
-                      <div class="swiper-data">
-<!-- Swiper size -->
-                        <v-chip-group
-                          selected-class="swiper-sc-active"
-                          mandatory
-                        >
-                          <v-chip
-                            v-for="size in item.size"
-                            :key="size"
-                            :value="size"
-                            variant="text"
-                            size="24"
-                            class="rounded swiper-sc"
-                          >
-                            <div
-                              class="swiper-item base__extrasmall"
-                            >
-                              {{ size }}
-                            </div>
-                          </v-chip>
-                        </v-chip-group>
-<!-- Swiper color -->
-                        <v-chip-group
-                          selected-class="swiper-sc-active"
-                          mandatory
-                        >
-                          <v-chip
-                            v-for="color in item.color"
-                            :key="color"
-                            :value="color"
-                            variant="text"
-                            size="24"
-                            class="rounded-circle swiper-sc"
-                          >
-                            <div 
-                              class="
-                                swiper-item 
-                                swiper-item-color 
-                                rounded-circle
-                              " 
-                              :class="color"
-                            ></div>
-                          </v-chip>
-                        </v-chip-group>
-                      </div>
-                      <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
-                    </div>
-                  </v-expand-transition>
-                </v-card-text>
-              </v-card>
-            </swiper-slide>
-          </swiper>
-        </div>
-        <div class="text-center">
-          <BtnOutline class="btn__regular">See all sale products</BtnOutline>
-        </div>
-      </v-container>
-    </section>
+    <SectionsHomePageSaleUp 
+      :modules="modules"
+      :saleUp="saleUp"
+      :trendingSidesPerView="trendingSidesPerView"
+    />
 <!-- Mobile store section -->
-    <section class="home-page__mobileStore">
-      <v-container>
-        <v-row>
-          <v-col v-if="mobileStore">
-            <img src="images/home-page/mobile-store/img.png" class="home-page__mobileStore-img">
-          </v-col>
-          <v-col class="home-page__mobileStore-col">
-            <h2 class="title-h2">Enjoy mobile shopping with our Createx Store App!</h2>
-            <div>
-              <img 
-                width="162" 
-                height="48"
-                src="images/footer/app-store.png"
-                class="home-page__mobileStore-links"
-              >
-              <img 
-                width="162" 
-                height="48"
-                src="images/footer/google-play.png"
-                class=home-page__mobileStore-links
-              >
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
+    <SectionsHomePageMobileStore 
+      :mobileStore="mobileStore"
+    />
 <!-- Services section -->
-    <section class="home-page__services section">
-      <v-container>
-        <v-row class="text-center">
-          <v-col :cols="gridServices" class="home-page__services-border">
-            <img src="images/home-page/services/delivery.png">
-            <div class="lead lead__bold">Fast Worldwide Shipping</div>
-            <div class="home-page__services-subtitle base base__regular">Get free shipping over $250</div>
-          </v-col>
-          <v-col :cols="gridServices" class="home-page__services-border">
-            <img src="images/home-page/services/call-center.png">
-            <div class="lead lead__bold">24/7 Customer Support</div>
-            <div class="home-page__services-subtitle base base__regular">Friendly 24/7 customer support</div>
-          </v-col>
-          <v-col :cols="gridServices" class="home-page__services-border">
-            <img src="images/home-page/services/shield.png">
-            <div class="lead lead__bold">Money Back Guarantee</div>
-            <div class="home-page__services-subtitle base base__regular">We return money within 30 days</div>
-          </v-col>
-          <v-col :cols="gridServices">
-            <img src="images/home-page/services/credit-card.png">
-            <div class="lead lead__bold">Secure Online Payment</div>
-            <div class="home-page__services-subtitle base base__regular">Accept all major credit cards</div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
+    <SectionsHomePageServices 
+      :gridServices="gridServices"
+    />
 <!-- Instagram section -->
-    <section class="home-page__instagram section">
-      <V-container>
-        <v-row>
-          <v-col>
-            <h6 class="title-h6">Follow us on Instagram</h6>
-            <h1 class="title-h1">@createx_store</h1>
-            <BtnOutline class="btn__regular home-page__instagram-btn">
-              <v-icon>mdi-instagram</v-icon>
-              Follow instagram
-            </BtnOutline>
-          </v-col>
-          <v-col v-if="Instagram">
-            <img src="images/home-page/instagram/img-1.png">
-          </v-col>
-          <v-col v-if="Instagram">
-            <img src="images/home-page/instagram/img-2.png">
-          </v-col>
-          <v-col v-if="Instagram">
-            <img src="images/home-page/instagram/img-3.png">
-          </v-col>
-        </v-row>
-      </V-container>
-    </section>
+    <SectionsHomePageInstagram 
+      :Instagram="Instagram"
+    />
 <!-- Fashion section -->
-    <section class="home-page__fashion section">
-      <v-container>
-        <div class="home-page__fashion-head">
-          <h1 class="title-h1">Fashion blog</h1>
-          <v-spacer></v-spacer>
-          <BtnOutline class="btn__small">View blog</BtnOutline>
-        </div>
-        <v-row>
-          <v-col :cols="gridFashion">
-            <v-card elevation="4">
-                <v-img src="images/home-page/fashion/img-1.png"></v-img>
-                <v-card-text>
-                  <div class="lead lead__bold">Bag Trends for Summer 2020</div>
-                  <div class="home-page__fashion-card-subtitle base__small">
-                    <span>Fashion</span> 
-                    <span class="home-page__fashion-card-slash">|</span> 
-                    <span>August 24, 2020</span>
-                    <span class="home-page__fashion-card-slash">|</span> 
-                    <span>No comments</span>
-                  </div>
-                  <div class="home-page__fashion-card-content base base__regular">
-                    Ipsum aliquet nisi, hendrerit rhoncus quam tortor, maecenas faucibus. Tincidunt aliquet sit vel, venenatis nulla. Integer bibendum turpis convallis...
-                  </div>
-                </v-card-text>
-              </v-card>
-          </v-col>
-          <v-col :cols="gridFashion">
-            <v-card elevation="4">
-                <v-img src="images/home-page/fashion/img-2.png"></v-img>
-                <v-card-text>
-                  <div class="lead lead__bold">Top 10 of This Season’s Hottest Sneakers</div>
-                  <div 
-                    class="
-                      home-page__fashion-card-subtitle
-                      base__small
-                    "
-                  >
-                    <span>Lifestyle</span> 
-                    <span class="home-page__fashion-card-slash">|</span> 
-                    <span>July 16, 2020</span>
-                    <span class="home-page__fashion-card-slash">|</span> 
-                    <span>4 comments</span>
-                  </div>
-                  <div 
-                    class="
-                      home-page__fashion-card-content 
-                      base 
-                      base__regular
-                    "
-                  >
-                    Porta habitant vitae quam interdum. Leo viverra non volutpat rhoncus placerat vitae scelerisque. Rhoncus augue faucibus maecenas lacus...
-                  </div>
-                </v-card-text>
-              </v-card>
-          </v-col>
-        </v-row>
-<!-- Brands section -->
-        <v-row class="section-top" v-if="brandsStatus">
-          <v-col 
-            v-for="(brand, i) in brands" 
-            :key="i"
-            class="text-center"
-          >
-            <img :src="brand">
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
+    <SectionsHomePageFashion 
+      :gridFashion="gridFashion"
+      :brandsStatus="brandsStatus"
+      :brands="brands"
+    />
 <!-- Subscribe section -->
-    <section class="home-page__subscribe section">
-      <v-container>
-        <v-row>
-          <v-col>
-            <h1 class="home-page__subscribe-title title-h1">
-              Subscribe for updates
-            </h1>
-            <div 
-              class="
-                lead 
-                lead__regular
-                home-page__subscribe-subtitle
-              "
-            >Subscribe for exclusive early sale access and new arrivals.</div>
-            <v-item-group 
-                v-model="subscribeSelection" 
-                multiple 
-                selected-class="home-page__subscribe-selected"
-              >
-                <v-item
-                  v-for="(btn, indexSubscribe) in subscribeBtns"
-                  :key="indexSubscribe"
-                  v-slot="{ selectedClass, toggle }"
-                >
-                  <BtnOutline
-                    :class="selectedClass"
-                    class="btn__subscribe-selection"
-                    @click="toggle"
-                  >
-                    {{ btn }}
-                  </BtnOutline>
-                </v-item>
-            </v-item-group>
-<!-- Form -->
-            <v-form 
-              @submit.prevent
-              class="form"
-            >
-              <label 
-                for="email__gallery" 
-                class="form__label base base__regular"
-              >
-                Email
-              </label>
-              <InputText 
-                placeholder="Your working email" 
-                class="form__input"
-                id="email__gallery"
-              />
-              <Btn class="btn__small">Subscribe</Btn>
-              <v-checkbox 
-                color="var(--primary)" 
-                class="form__checkbox"
-              >
-                <template v-slot:label>
-                  <div class="base base__regu">I agree to receive communications from Createx Store.</div>
-                </template>
-              </v-checkbox>
-            </v-form>
-          </v-col>
-          <v-col v-if="subscribeImg">
-            <img src="images/home-page/subscribe/img.png"
-            class="home-page__subscribe-img">
-          </v-col>
-        </v-row>
-      </v-container>
-    </section>
+    <SectionsHomePageSubscribe 
+      :subscribeBtns="subscribeBtns"
+      :subscribeSelection="subscribeSelection"
+      :subscribeImg="subscribeImg"
+    />
   </main>
 </template>
