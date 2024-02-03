@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import {ref, onMounted, watch} from 'vue';
 import { useTheme } from 'vuetify';
+
 const theme = useTheme()
 
 const Desktop = ref(true)
@@ -35,7 +36,7 @@ watch(theme.global.current, (theme) => {
 
 <template>
   <v-app>
-    <v-header class="header">
+    <header class="header">
 <!-- Topbar Section -->
       <HeaderTopbar
         v-if="Desktop"
@@ -54,7 +55,7 @@ watch(theme.global.current, (theme) => {
       </HeaderMobile>
 <!-- SpecialOffers Section -->
       <HeaderSpecialOffers/>
-    </v-header>
+    </header>
 
     <v-main class="createx-shop">
       <NuxtPage/>

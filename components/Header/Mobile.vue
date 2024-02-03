@@ -1,8 +1,15 @@
 <script lang="ts" setup>
 import { useTheme } from 'vuetify';
-const theme = useTheme()
+import { useI18n } from 'vue-i18n';
+
+// Менять язык
+const { locale } = useI18n({ useScope: 'global' })
+const toggleLang = () => {
+  localStorage.setItem('lang', locale.value);
+};
 
 // Менять тему
+const theme = useTheme()
 const toggleTheme = () => {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark'
   localStorage.setItem('theme', theme.global.name.value)
@@ -22,6 +29,17 @@ const toggleTheme = () => {
 <!-- Change theme -->
         <div class="header__secondbar-item" @click="toggleTheme">
           <v-btn><v-icon>mdi-theme-light-dark</v-icon></v-btn>
+        </div>
+<!-- Change lang -->
+        <div class="header__topbar-item">
+          <v-select 
+            v-model="locale"
+             @update:menu="toggleLang" 
+             variant="underlined"
+             :items="['en', 'ru']"
+             hide-selected
+             menu-icon="mdi-earth"
+            ></v-select>
         </div>
 <!-- Search -->
         <div class="header__secondbar-item">

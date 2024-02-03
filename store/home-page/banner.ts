@@ -1,4 +1,4 @@
-export default {
+export default { 
   state: () => ({
     items: [
       {
@@ -29,6 +29,6 @@ export default {
       return state.items;
     }
   },
-  
+
   namespaced: true
 }

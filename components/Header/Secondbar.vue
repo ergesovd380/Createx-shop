@@ -24,15 +24,17 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
             class="header__category" 
             @click.stop="showDrawer = !showDrawer"
           >
-            {{ category }}
+           {{ $t('Secondbar.' + category) }} 
           </div>
-          <div class="header__category sale">Sale</div>
+          <div class="header__category sale">
+              {{ $t('Secondbar.Sale') }}
+          </div>
         </div>
 <!-- Search big-tablet -->
         <div class="header__secondbar-item element__more-big-tablet">          
           <InputSearch 
             class="header__search"
-            placeholder="Search for products..."  
+            :placeholder="$t('Secondbar.Search')"
           />
         </div>
 <!-- Heart/Cart -->
