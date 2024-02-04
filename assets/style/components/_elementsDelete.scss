@@ -1,27 +1,13 @@
 .element {
-
-// 960 <
-  &__more-big-tablet {
-    @include for-big-tablet {
+// 1280 <
+  &__more-small-laptop {
+    @include for-small-laptop {
       display: none;
     }
   }
-// 960 >
-  &__less-big-tablet {
-    @include big-tablet {
-      display: none;
-    }
-  }
-
-// 800 <
-  &__more-tablet {
-    @include for-tablet {
-      display: none;
-    }
-  }
-// 800 >
-  &__less-tablet {
-    @include tablet {
+// 1280 >
+  &__less-small-laptop {
+    @include small-laptop {
       display: none;
     }
   }
@@ -35,19 +21,6 @@
 // 600 >
   &__less-small-tablet {
     @include small-tablet {
-      display: none;
-    }
-  }
-
-// 400 <
-  &__more-mobile {
-    @include for-mobile {
-      display: none;
-    }
-  }
-// 400 >
-  &__less-mobile {
-    @include mobile {
       display: none;
     }
   }

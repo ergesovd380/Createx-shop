@@ -20,7 +20,7 @@ const dialog = ref(false)
       <v-card min-height="500">
         <v-toolbar
           color="var(--primary)"
-          title="Search CreateX"
+          :title="$t('Secondbar.Search')"
           class="text-white"
         >
           <v-btn

@@ -33,10 +33,11 @@ const length = 3;
             ></v-btn>
             <span class="
               text-white
+              text-center
               base__extrasmall 
               base__extrasmall-bold
             ">
-              Up to 70% Off.
+              {{ $t('Secondbar.SpecialOffersUp') }}
               <a 
                 href="" 
                 class="
@@ -45,7 +46,7 @@ const length = 3;
                   base__extrasmall 
                 "
               >
-                Shop our latest sale style
+                {{ $t('Secondbar.SpecialOffersShop') }}
               </a>
             </span>
             <v-btn

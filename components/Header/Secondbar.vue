@@ -27,11 +27,11 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
            {{ $t('Secondbar.' + category) }} 
           </div>
           <div class="header__category sale">
-              {{ $t('Secondbar.Sale') }}
+              Sale%
           </div>
         </div>
 <!-- Search big-tablet -->
-        <div class="header__secondbar-item element__more-big-tablet">          
+        <div class="header__secondbar-item element__more-small-laptop">          
           <InputSearch 
             class="header__search"
             :placeholder="$t('Secondbar.Search')"

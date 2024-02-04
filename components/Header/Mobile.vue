@@ -46,11 +46,11 @@ const toggleTheme = () => {
           <Dialog />
         </div>
 <!-- Heart -->
-        <div class="header__secondbar-item header__toolbar">
+        <!-- <div class="header__secondbar-item header__toolbar">
           <v-badge :content="2" inline color="transparent">
             <v-icon>mdi-heart-outline</v-icon>
           </v-badge>
-        </div>
+        </div> -->
       </div>
     </v-container>
   </v-app-bar>

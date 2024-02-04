@@ -3,6 +3,7 @@ export default {
   Men: 'Men',
   Girls: 'Girls',
   Boys: 'Boys',
-  Sale: 'Sale',
-  Search: 'Search for products...'
+  Search: 'Search for products...',
+  SpecialOffersUp: 'Up to 70% Off.',
+  SpecialOffersShop: 'Shop our latest sale style'
 }

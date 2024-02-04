@@ -17,9 +17,9 @@ const store = useStore();
 
 //Components
 // section-home-page-banner
-const bannerItem = computed(() => store.getters["banner/items"]);
+const bannerItem = computed(() => store.getters["banner/banner"]);
 // Category section
-const categories = computed(() => store.getters["categories/items"]);
+const categories = computed(() => store.getters["banner/categories"]);
 
 // section-home-page-newarrival
 const newarrival = computed(() => store.getters["newarrival/items"]);

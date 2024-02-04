@@ -39,7 +39,7 @@ onMounted(() => {
     <v-container>
       <div class="header__topbar base__small">
         <div class="header__topbar-item">{{ $t('Topbar.Available') }} <b>(405) 555-0128</b></div>
-        <div class="header__topbar-item element__more-big-tablet">
+        <div class="header__topbar-item element__more-small-laptop">
           <div class="header__menu">
             <div 
               class="header__menu-item"
@@ -63,7 +63,7 @@ onMounted(() => {
              menu-icon="mdi-earth"
             ></v-select>
         </div>
-        <div class="header__topbar-item element__less-big-tablet">
+        <div class="header__topbar-item element__less-small-laptop">
           <Dialog />
         </div>
         <div class="header__topbar-item">
