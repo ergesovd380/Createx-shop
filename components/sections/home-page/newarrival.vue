@@ -8,7 +8,7 @@ const props = defineProps(['newarrival', 'newarrivalSidesPerView', 'modules']);
 <template>
   <section class="home-page__newarrival section-top">
 <!-- Title and subtitle -->
-    <h1 class="home-page__newarrival-title title-h1">New arrival</h1>
+    <h1 class="home-page__newarrival-title title-h1">{{ $t('NewArrival.Title') }}</h1>
     <div 
       class="
         home-page__newarrival-subtitle 
@@ -16,9 +16,9 @@ const props = defineProps(['newarrival', 'newarrivalSidesPerView', 'modules']);
         subtitle__regular
       "
     >
-      Check out our latest arrivals for the upcoming season
+      {{ $t('NewArrival.Subtitle') }}
       <br>
-      <a href="#" class="link link__primary">See the collection here</a>
+      <a href="#" class="link link__primary">{{ $t('NewArrival.Link') }}</a>
     </div>
 <!-- Swiper -->
     <swiper
