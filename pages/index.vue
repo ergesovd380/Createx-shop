@@ -22,7 +22,7 @@ const bannerItem = computed(() => store.getters["banner/banner"]);
 const categories = computed(() => store.getters["banner/categories"]);
 
 // section-home-page-newarrival
-const newarrival = computed(() => store.getters["newarrival/items"]);
+const newarrival = computed(() => store.getters["products/newArrival"]);
 const newarrivalSidesPerView = ref(6);
 
 // section-home-page-gallery

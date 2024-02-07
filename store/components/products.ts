@@ -320,8 +320,16 @@ export default {
   }),
 
   getters: {
-    products(state: any) {
-      return state.products;
+    newArrival(state: any, newArrival: any) {
+      let products = state.products
+      newArrival = 'newArrival' 
+      let elements = []
+      for(let i=0; i < products.length; ++i) {
+        if(products[i][newArrival] === true) {
+          elements.push(products[i]);
+        }
+      }
+      return elements;
     }
   },
   

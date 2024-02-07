@@ -74,7 +74,7 @@ const props = defineProps(['newarrival', 'newarrivalSidesPerView', 'modules']);
               class="swiper-name subtitle subtitle__regular"
               @click="item.expand = !item.expand"
             >
-              {{ item.name }}
+              {{ $t('Products.' + item.id) }}
               <v-tooltip
                 activator="parent"
                 location="top"

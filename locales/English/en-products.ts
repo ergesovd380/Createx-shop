@@ -1,0 +1,23 @@
+export default {
+  P_1: 'Black and white sport cap',
+  P_2: 'Metal bridge sunglasses',
+  P_3: 'Green baby romper',
+  P_4: 'Mid-rise slim cropped fit jeans',
+  P_5: 'Red dangle earrings',
+  P_6: 'Baby shoes with laces',
+  P_7: 'Black and white sport cap',
+  P_8: 'Metal bridge sunglasses',
+  P_9: 'Green baby romper',
+  P_10: 'Leather crossbody bag with gold hardware',
+  P_11: 'Skinny push-up jeans',
+  P_12: 'Wide heel suede ankle boots',
+  P_13: 'Leather crossbody bag with gold hardware',
+  P_14: 'Skinny push-up jeans',
+  P_15: 'Wide heel suede ankle boots',
+  P_16: 'Shirt with insertion lace trims',
+  P_17: 'Chrono watch with blue leather belt',
+  P_18: 'Check coat with colour contrast',
+  P_19: 'Shirt with insertion lace trims',
+  P_20: 'Chrono watch with blue leather belt',
+  P_21: 'Check coat with colour contrast'
+}
