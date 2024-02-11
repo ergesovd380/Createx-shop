@@ -9,7 +9,7 @@ const props = defineProps(['saleUp', 'modules', 'trendingSidesPerView']);
   <section class="home-page__sale-up section">
     <v-container>
       <div class="home-page__sale-up-header">
-        <h1 class="title-h1">Sale up to 70%</h1>
+        <h1 class="title-h1">{{ $t('SaleUp.Title') }}</h1>
         <div>
           <Btn class="myPrevSale swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
           <Btn class="myNextSale swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
@@ -65,11 +65,11 @@ const props = defineProps(['saleUp', 'modules', 'trendingSidesPerView']);
                   class="subtitle swiper-name" 
                   @click="item.expand = !item.expand"
                 >
-                  {{ item.name }}
+                  {{ $t('Products.' + item.id) }}
                   <v-tooltip
                     activator="parent"
                     location="top"
-                  >To card double click</v-tooltip>
+                  >{{ $t('Swiper.Tooltip') }}</v-tooltip>
                 </div>
                 <div class="swiper-price">
                   <h4 class="title-h4 text-red">${{ item.price }}</h4>
@@ -122,7 +122,7 @@ const props = defineProps(['saleUp', 'modules', 'trendingSidesPerView']);
                         </v-chip>
                       </v-chip-group>
                     </div>
-                    <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
+                    <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon>{{ $t('Swiper.AddCart') }}</BtnOutline>
                   </div>
                 </v-expand-transition>
               </v-card-text>
@@ -131,7 +131,7 @@ const props = defineProps(['saleUp', 'modules', 'trendingSidesPerView']);
         </swiper>
       </div>
       <div class="text-center">
-        <BtnOutline class="btn__regular">See all sale products</BtnOutline>
+        <BtnOutline class="btn__regular">{{ $t('SaleUp.SeeAll') }}</BtnOutline>
       </div>
     </v-container>
   </section>

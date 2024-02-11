@@ -55,7 +55,8 @@ const trending = computed(() => store.getters["products/Trending"]);
 const trendingSidesPerView = ref(3);
 
 // section-home-page-sale-up
-const saleUp = computed(() => store.getters["saleUp/items"]);
+const saleUpS = computed(() => store.getters["saleUp/items"]);
+const saleUp = computed(() => store.getters["products/SaleUp"]);
 
 // section-home-page-mobile-store
 const mobileStore = ref(true);

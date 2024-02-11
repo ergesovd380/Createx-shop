@@ -8,6 +8,7 @@ import NewArrival from './English/home-page/en-newArrival';
 import Gallery from './English/home-page/en-gallery';
 import Popular from './English/home-page/en-popular';
 import Trending from './English/home-page/en-trending';
+import SaleUp from './English/home-page/en-sale-up';
 
 // Components
 import Products from './English/components/en-products';
@@ -23,6 +24,7 @@ export default ({
   Gallery,
   Popular,
   Trending,
+  SaleUp,
 
 // Components 
   Products,
