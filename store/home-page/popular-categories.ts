@@ -7,7 +7,7 @@ export default {
       },
       {
         img: 'images/home-page/popular/img-2.png',
-        name: 'T-shirts'
+        name: 'Tshirts'
       },
       {
         img: 'images/home-page/popular/img-3.png',

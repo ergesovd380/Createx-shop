@@ -6,6 +6,7 @@ import Secondbar from './English/header/en-secondbar';
 import Banner from './English/home-page/en-banner';
 import NewArrival from './English/home-page/en-newArrival';
 import Gallery from './English/home-page/en-gallery';
+import Popular from './English/home-page/en-popular';
 
 // Components
 import Products from './English/components/en-products';
@@ -18,6 +19,7 @@ export default ({
   Banner,
   NewArrival,
   Gallery,
+  Popular,
 
 // Components 
   Products,

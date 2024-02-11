@@ -6,6 +6,7 @@ import Secondbar from './Russian/header/ru-secondbar';
 import Banner from './Russian/home-page/ru-banner';
 import NewArrival from './Russian/home-page/ru-newArrivel';
 import Gallery from './Russian/home-page/ru-gallery';
+import Popular from './Russian/home-page/ru-popular';
 
 //Components 
 import Products from './Russian/components/ru-products';
@@ -18,6 +19,7 @@ export default{
   Banner,
   NewArrival,
   Gallery,
+  Popular,
 
 
 // Components

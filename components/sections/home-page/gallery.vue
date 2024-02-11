@@ -58,7 +58,7 @@ const props = defineProps(['date', 'gridBigGallery', 'gridSmallGallery']);
                     {{ d.num }}
                   </h3>
                   <div>
-                    {{ d.str }}
+                    {{ $t('Gallery.' + d.str) }}
                   </div>
                 </v-col>
               </v-row>

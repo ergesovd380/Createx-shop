@@ -16,5 +16,9 @@ export default {
   FreeDelivery: 'Get 5% Off & Free Delivery',
   WorkingEmail: 'Your working email',
   Subscribe: 'Subscribe',
-  SignUp: '*Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.'
+  SignUp: '*Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.',
+  Days: 'Days',
+  Hours: 'Hours',
+  Mins: 'Mins',
+  Sec: 'Sec'
 }
