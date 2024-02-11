@@ -7,9 +7,11 @@ import Banner from './English/home-page/en-banner';
 import NewArrival from './English/home-page/en-newArrival';
 import Gallery from './English/home-page/en-gallery';
 import Popular from './English/home-page/en-popular';
+import Trending from './English/home-page/en-trending';
 
 // Components
 import Products from './English/components/en-products';
+import Swiper from './English/components/en-swiper';
 
 export default ({
 // Header
@@ -20,7 +22,9 @@ export default ({
   NewArrival,
   Gallery,
   Popular,
+  Trending,
 
 // Components 
   Products,
+  Swiper
 })

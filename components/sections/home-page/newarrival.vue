@@ -78,7 +78,7 @@ const props = defineProps(['newarrival', 'newarrivalSidesPerView', 'modules']);
               <v-tooltip
                 activator="parent"
                 location="top"
-              >To card double click</v-tooltip>
+              >{{ $t('Swiper.Tooltip') }}</v-tooltip>
             </div>
 <!-- Swiper product price -->
             <h5 class="title-h5">${{ item.price }}</h5>
@@ -131,7 +131,7 @@ const props = defineProps(['newarrival', 'newarrivalSidesPerView', 'modules']);
                   </v-chip-group>
                 </div>
 <!-- Swiper add cart btn -->
-                <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
+                <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon>{{ $t('Swiper.AddCart') }}</BtnOutline>
               </div>
             </v-expand-transition>
           </v-card-text>

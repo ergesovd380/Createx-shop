@@ -330,6 +330,17 @@ export default {
         }
       }
       return elements;
+    },
+    Trending(state: any, trending: any) {
+      let products = state.products
+      trending = 'trending' 
+      let elements = []
+      for(let i=0; i < products.length; ++i) {
+        if(products[i][trending] === true) {
+          elements.push(products[i]);
+        }
+      }
+      return elements;
     }
   },
   

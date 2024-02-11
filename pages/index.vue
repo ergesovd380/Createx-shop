@@ -51,7 +51,7 @@ const gridSmallGallery = ref(5);
 const popularCategories = computed(() => store.getters["popularCategories/items"]);
 
 // section-home-page-trending
-const trending = computed(() => store.getters["trending/items"]);
+const trending = computed(() => store.getters["products/Trending"]);
 const trendingSidesPerView = ref(3);
 
 // section-home-page-sale-up

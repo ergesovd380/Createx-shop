@@ -9,7 +9,7 @@ const props = defineProps(['trending', 'trendingSidesPerView', 'modules']);
   <section class="home-page__trending section">
     <v-container>
       <div class="home-page__trending-header">
-        <h1 class="home-page__trending-title title-h1">Trending now</h1>
+        <h1 class="home-page__trending-title title-h1">{{ $t('Trending.Title') }}</h1>
         <div>
           <Btn class="myPrevTrending swiper-btn"><v-icon size="small">mdi-arrow-left-thin</v-icon></Btn>
           <Btn class="myNextTrending swiper-btn"><v-icon size="small">mdi-arrow-right-thin</v-icon></Btn>
@@ -62,11 +62,11 @@ const props = defineProps(['trending', 'trendingSidesPerView', 'modules']);
                   class="subtitle swiper-name" 
                   @click="item.expand = !item.expand"
                 >
-                  {{ item.name }}
+                  {{ $t('Products.' + item.id) }}
                   <v-tooltip
                     activator="parent"
                     location="top"
-                  >To card double click</v-tooltip>
+                  >{{ $t('Swiper.Tooltip') }}</v-tooltip>
                 </div>
                 <h4 class="title-h4">${{ item.price }}</h4>
                 <!-- Expand transition-->
@@ -117,7 +117,7 @@ const props = defineProps(['trending', 'trendingSidesPerView', 'modules']);
                         </v-chip>
                       </v-chip-group>
                     </div>
-                    <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon> Add to cart</BtnOutline>
+                    <BtnOutline class="swiper-add-cart btn__small"> <v-icon>mdi-cart-outline</v-icon>{{ $t('Swiper.AddCart') }}</BtnOutline>
                   </div>
                 </v-expand-transition>
               </v-card-text>
@@ -126,7 +126,7 @@ const props = defineProps(['trending', 'trendingSidesPerView', 'modules']);
         </swiper>
       </div>
       <div class="text-center">
-        <BtnOutline class="btn__regular">Explore top sales</BtnOutline>
+        <BtnOutline class="btn__regular">{{ $t('Trending.TopSales') }}</BtnOutline>
       </div>
     </v-container>
   </section>
