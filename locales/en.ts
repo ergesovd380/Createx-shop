@@ -9,6 +9,7 @@ import Gallery from './English/home-page/en-gallery';
 import Popular from './English/home-page/en-popular';
 import Trending from './English/home-page/en-trending';
 import SaleUp from './English/home-page/en-sale-up';
+import Mobile from './English/home-page/en-mobile-store';
 
 // Components
 import Products from './English/components/en-products';
@@ -25,6 +26,7 @@ export default ({
   Popular,
   Trending,
   SaleUp,
+  Mobile,
 
 // Components 
   Products,

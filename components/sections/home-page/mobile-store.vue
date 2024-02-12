@@ -10,7 +10,7 @@
           <img src="images/home-page/mobile-store/img.png" class="home-page__mobileStore-img">
         </v-col>
         <v-col class="home-page__mobileStore-col">
-          <h2 class="title-h2">Enjoy mobile shopping with our Createx Store App!</h2>
+          <h2 class="title-h2">{{ $t('Mobile.Title') }}</h2>
           <div>
             <img 
               width="162" 

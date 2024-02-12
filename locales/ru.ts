@@ -9,6 +9,7 @@ import Gallery from './Russian/home-page/ru-gallery';
 import Popular from './Russian/home-page/ru-popular';
 import Trending from './Russian/home-page/ru-trending';
 import SaleUp from './Russian/home-page/ru-sale-up';
+import Mobile from './Russian/home-page/ru-mobile-store';
 
 //Components 
 import Products from './Russian/components/ru-products';
@@ -25,6 +26,7 @@ export default{
   Popular,
   Trending,
   SaleUp,
+  Mobile,
 
 
 // Components
