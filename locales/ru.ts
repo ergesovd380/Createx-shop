@@ -10,6 +10,7 @@ import Popular from './Russian/home-page/ru-popular';
 import Trending from './Russian/home-page/ru-trending';
 import SaleUp from './Russian/home-page/ru-sale-up';
 import Mobile from './Russian/home-page/ru-mobile-store';
+import Service from './Russian/home-page/ru-services';
 
 //Components 
 import Products from './Russian/components/ru-products';
@@ -27,6 +28,7 @@ export default{
   Trending,
   SaleUp,
   Mobile,
+  Service,
 
 
 // Components
