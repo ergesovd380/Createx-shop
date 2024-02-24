@@ -11,6 +11,8 @@ import Trending from './English/home-page/en-trending';
 import SaleUp from './English/home-page/en-sale-up';
 import Mobile from './English/home-page/en-mobile-store';
 import Service from './English/home-page/en-services';
+import Instagram from './English/home-page/en-instagram';
+import Fashion from './English/home-page/en-fashion';
 
 // Components
 import Products from './English/components/en-products';
@@ -29,6 +31,8 @@ export default ({
   SaleUp,
   Mobile,
   Service,
+  Instagram,
+  Fashion,
 
 // Components 
   Products,

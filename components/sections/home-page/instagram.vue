@@ -7,11 +7,11 @@
     <V-container>
       <v-row>
         <v-col>
-          <h6 class="title-h6">Follow us on Instagram</h6>
-          <h1 class="title-h1">@createx_store</h1>
+          <h6 class="title-h6">{{ $t('Instagram.Title') }}</h6>
+          <h1 class="title-h1">{{ $t('Instagram.Subtitle') }}</h1>
           <BtnOutline class="btn__regular home-page__instagram-btn">
             <v-icon>mdi-instagram</v-icon>
-            Follow instagram
+            {{ $t('Instagram.Btn') }}
           </BtnOutline>
         </v-col>
         <v-col v-if="props.Instagram">

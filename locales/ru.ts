@@ -11,6 +11,8 @@ import Trending from './Russian/home-page/ru-trending';
 import SaleUp from './Russian/home-page/ru-sale-up';
 import Mobile from './Russian/home-page/ru-mobile-store';
 import Service from './Russian/home-page/ru-services';
+import Instagram from './Russian/home-page/ru-instagram';
+import Fashion from './Russian/home-page/ru-fashion';
 
 //Components 
 import Products from './Russian/components/ru-products';
@@ -29,7 +31,8 @@ export default{
   SaleUp,
   Mobile,
   Service,
-
+  Instagram,
+  Fashion,
 
 // Components
   Products,

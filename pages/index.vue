@@ -69,6 +69,8 @@ const Instagram = ref(true);
 
 // section-home-page-fashion
 const gridFashion = ref(6);
+const fashionCards = computed(() => store.getters["fashion/card"]);
+
 // Brands
 const brandsStatus = ref(true);
 const brands = ref([
@@ -193,6 +195,7 @@ onMounted(() => {
       :gridFashion="gridFashion"
       :brandsStatus="brandsStatus"
       :brands="brands"
+      :fashionCards="fashionCards"
     />
 <!-- Subscribe section -->
     <SectionsHomePageSubscribe 
