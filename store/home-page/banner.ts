@@ -21,20 +21,6 @@ export default {
         title: 'Girlswear',
         subTitle: 'NewCollection'
       }
-    ],
-    categories: [
-      {
-        src: '/images/home-page/categories/women.png',
-        title: "Womens"
-      },
-      {
-        src: '/images/home-page/categories/men.png',
-        title: "Mens"
-      },
-      {
-        src: '/images/home-page/categories/kid.png',
-        title: "Kids"
-      }
     ]
   }),
 

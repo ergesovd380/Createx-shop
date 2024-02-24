@@ -19,7 +19,7 @@ const store = useStore();
 // section-home-page-banner
 const bannerItem = computed(() => store.getters["banner/banner"]);
 // Category section
-const categories = computed(() => store.getters["banner/categories"]);
+const categories = computed(() => store.getters["categories/categoriesBanner"]);
 
 // section-home-page-newarrival
 const newarrival = computed(() => store.getters["products/newArrival"]);

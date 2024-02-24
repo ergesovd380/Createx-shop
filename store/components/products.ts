@@ -321,36 +321,36 @@ export default {
 
   getters: {
     newArrival(state: any, newArrival: any) {
-      let products = state.products
-      newArrival = 'newArrival' 
-      let elements = []
-      for(let i=0; i < products.length; ++i) {
+      let products = state.products;
+      newArrival = 'newArrival' ;
+      let elements = [];
+      for(let i=0; i < products.length; i++) {
         if(products[i][newArrival] === true) {
           elements.push(products[i]);
-        }
-      }
+        };
+      };
       return elements;
     },
     Trending(state: any, trending: any) {
-      let products = state.products
-      trending = 'trending' 
-      let elements = []
-      for(let i=0; i < products.length; ++i) {
+      let products = state.products;
+      trending = 'trending';
+      let elements = [];
+      for(let i=0; i < products.length; i++) {
         if(products[i][trending] === true) {
           elements.push(products[i]);
-        }
-      }
+        };
+      };
       return elements;
     },
     SaleUp(state: any, saleUp: any) {
-      let products = state.products
-      saleUp = 'saleUp' 
-      let elements = []
-      for(let i=0; i < products.length; ++i) {
+      let products = state.products;
+      saleUp = 'saleUp';
+      let elements = [];
+      for(let i=0; i < products.length; i++) {
         if(products[i][saleUp] === true) {
           elements.push(products[i]);
-        }
-      }
+        };
+      };
       return elements;
     }
   },

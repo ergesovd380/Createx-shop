@@ -88,11 +88,11 @@ const propses = defineProps(['categories', 'bannerItem']);
                 :key="i"
               >
                 <img 
-                  :src="category.src" 
+                  :src="category.img" 
                   alt="Category photo" 
                   class="home-page__banner-category-img"
                 >
-                <div class="lead lead__bold">{{ $t('Banner.' + category.title) }}</div>
+                <div class="lead lead__bold">{{ $t('Categories.' + category.id) }}</div>
               </div>
             </div>
           </div>

@@ -16,6 +16,7 @@ import Fashion from './English/home-page/en-fashion';
 
 // Components
 import Products from './English/components/en-products';
+import Categories from './English/components/en-categories';
 import Swiper from './English/components/en-swiper';
 
 export default ({
@@ -36,5 +37,6 @@ export default ({
 
 // Components 
   Products,
+  Categories,
   Swiper
 })

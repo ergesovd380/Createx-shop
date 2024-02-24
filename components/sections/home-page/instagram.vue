@@ -8,7 +8,7 @@
       <v-row>
         <v-col>
           <h6 class="title-h6">{{ $t('Instagram.Title') }}</h6>
-          <h1 class="title-h1">{{ $t('Instagram.Subtitle') }}</h1>
+          <h1 class="title-h1">@createx_store</h1>
           <BtnOutline class="btn__regular home-page__instagram-btn">
             <v-icon>mdi-instagram</v-icon>
             {{ $t('Instagram.Btn') }}

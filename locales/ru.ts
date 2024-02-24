@@ -16,6 +16,7 @@ import Fashion from './Russian/home-page/ru-fashion';
 
 //Components 
 import Products from './Russian/components/ru-products';
+import Categories from './Russian/components/ru-categories';
 import Swiper from './Russian/components/ru-swiper';
 
 export default{
@@ -36,5 +37,6 @@ export default{
 
 // Components
   Products,
+  Categories,
   Swiper
 }

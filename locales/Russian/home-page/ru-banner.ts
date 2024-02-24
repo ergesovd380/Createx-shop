@@ -1,11 +1,8 @@
 export default {
   Menswear: 'Мужская одежда',
   Womenswear: 'Женская одежда',
-  Boyswear: 'Одежда мальчиков',
-  Girlswear: 'Одежда девочек',
+  Boyswear: 'Для мальчиков',
+  Girlswear: 'Для девочек',
   NewCollection: 'Новая коллекция',
   ShopSale: 'Купить по скидке',
-  Womens: 'Женщинам',
-  Mens: 'Мужчинам',
-  Kids: 'Детям'
 }

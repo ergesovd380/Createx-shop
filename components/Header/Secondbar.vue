@@ -1,9 +1,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
+// Vuex
+import {useStore} from 'vuex';
+const store = useStore();
+
 // Navigation Drawers with categories
 const showDrawer = ref(false);
-const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
+const categories = computed(() => store.getters["categories/categoriesHeader"]);
 </script>
 
 <template>
@@ -24,7 +28,7 @@ const categories = ref(['Women', 'Men', 'Girls', 'Boys']);
             class="header__category" 
             @click.stop="showDrawer = !showDrawer"
           >
-           {{ $t('Secondbar.' + category) }} 
+           {{ $t('Categories.' + category) }} 
           </div>
           <div class="header__category sale">
               Sale%
