@@ -114,14 +114,14 @@ const props = defineProps(['date', 'gridBigGallery', 'gridSmallGallery']);
               for="email__gallery" 
               class="form__label base base__regular"
             >
-            {{ $t('Gallery.Email') }}
+            {{ $t('Email.Email') }}
             </label>
             <InputText 
-              :placeholder="$t('Gallery.WorkingEmail')" 
+              :placeholder="$t('Email.WorkingEmail')" 
               class="form__input"
               id="email__gallery"
             />
-            <Btn class="btn__small">{{ $t('Gallery.Subscribe') }}</Btn>
+            <Btn class="btn__small">{{ $t('Email.Subscribe') }}</Btn>
             <div class="form__singup">{{ $t('Gallery.SignUp') }}</div>
           </v-form>
         </v-img>

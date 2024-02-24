@@ -13,11 +13,13 @@ import Mobile from './English/home-page/en-mobile-store';
 import Service from './English/home-page/en-services';
 import Instagram from './English/home-page/en-instagram';
 import Fashion from './English/home-page/en-fashion';
+import Subscribe from './English/home-page/en-subscribe';
 
 // Components
 import Products from './English/components/en-products';
 import Categories from './English/components/en-categories';
 import Swiper from './English/components/en-swiper';
+import Email from './English/components/en-email';
 
 export default ({
 // Header
@@ -34,9 +36,11 @@ export default ({
   Service,
   Instagram,
   Fashion,
+  Subscribe,
 
 // Components 
   Products,
   Categories,
-  Swiper
+  Swiper,
+  Email
 })

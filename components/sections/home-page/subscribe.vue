@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-  const props = defineProps(['subscribeBtns', 'subscribeSelection', 'subscribeImg']);
+// Import Vue.js components
+import {ref} from 'vue';
+ 
+const props = defineProps(['subscribeCategories', 'subscribeImg']);
+const subscribeSelection = ref([]);
+const agre = ref(false);
 </script>
 
 <template>
@@ -8,7 +13,7 @@
       <v-row>
         <v-col>
           <h1 class="home-page__subscribe-title title-h1">
-            Subscribe for updates
+            {{ $t('Subscribe.Title') }}
           </h1>
           <div 
             class="
@@ -16,15 +21,15 @@
               lead__regular
               home-page__subscribe-subtitle
             "
-          >Subscribe for exclusive early sale access and new arrivals.</div>
+          >{{ $t('Subscribe.SubTitle') }}</div>
           <v-item-group 
-              v-model="props.subscribeSelection" 
-              multiple 
+              v-model="subscribeSelection"
+              multiple
               selected-class="home-page__subscribe-selected"
             >
               <v-item
-                v-for="(btn, indexSubscribe) in props.subscribeBtns"
-                :key="indexSubscribe"
+                v-for="(category, indexS) in props.subscribeCategories"
+                :key="indexS"
                 v-slot="{ selectedClass, toggle }"
               >
                 <BtnOutline
@@ -32,7 +37,7 @@
                   class="btn__subscribe-selection"
                   @click="toggle"
                 >
-                  {{ btn }}
+                  {{ $t('Categories.' + category) }}
                 </BtnOutline>
               </v-item>
           </v-item-group>
@@ -45,20 +50,24 @@
               for="email__gallery" 
               class="form__label base base__regular"
             >
-              Email
+              {{ $t('Email.Email') }}
             </label>
             <InputText 
-              placeholder="Your working email" 
+              :placeholder="$t('Email.WorkingEmail')" 
               class="form__input"
               id="email__gallery"
             />
-            <Btn class="btn__small">Subscribe</Btn>
+            <Btn 
+              class="btn__small" 
+              :disabled="!agre"
+            >{{ $t('Email.Subscribe') }}</Btn>
             <v-checkbox 
+              v-model="agre"
               color="var(--primary)" 
               class="form__checkbox"
             >
               <template v-slot:label>
-                <div class="base base__regu">I agree to receive communications from Createx Store.</div>
+                <div class="base base__regu">{{ $t('Subscribe.Agree') }}</div>
               </template>
             </v-checkbox>
           </v-form>

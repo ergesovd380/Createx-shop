@@ -55,7 +55,6 @@ const trending = computed(() => store.getters["products/Trending"]);
 const trendingSidesPerView = ref(3);
 
 // section-home-page-sale-up
-const saleUpS = computed(() => store.getters["saleUp/items"]);
 const saleUp = computed(() => store.getters["products/SaleUp"]);
 
 // section-home-page-mobile-store
@@ -83,8 +82,7 @@ const brands = ref([
 ]);
 
 // section-home-page-subscribe
-const subscribeBtns = ref(['Women', 'Men', 'Girls', 'Boys']);
-const subscribeSelection = ref([]);
+const subscribeCategories = computed(() => store.getters["categories/categoriesHeader"]);
 const subscribeImg = ref(true);
 
 // Desktop size
@@ -199,8 +197,7 @@ onMounted(() => {
     />
 <!-- Subscribe section -->
     <SectionsHomePageSubscribe 
-      :subscribeBtns="subscribeBtns"
-      :subscribeSelection="subscribeSelection"
+      :subscribeCategories="subscribeCategories"
       :subscribeImg="subscribeImg"
     />
   </main>
