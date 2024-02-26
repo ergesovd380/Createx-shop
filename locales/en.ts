@@ -1,6 +1,7 @@
 // Header
-import Topbar from './English/header/en-topbar';
-import Secondbar from './English/header/en-secondbar';
+import Topbar from './English/headFoot/en-topbar';
+import Secondbar from './English/headFoot/en-secondbar';
+import Footer from './English/headFoot/en-footer';
 
 //Home-page
 import Banner from './English/home-page/en-banner';
@@ -23,24 +24,11 @@ import Email from './English/components/en-email';
 
 export default ({
 // Header
-  Topbar, Secondbar, 
+  Topbar, Secondbar, Footer,
   
 // Home-page
-  Banner,
-  NewArrival,
-  Gallery,
-  Popular,
-  Trending,
-  SaleUp,
-  Mobile,
-  Service,
-  Instagram,
-  Fashion,
-  Subscribe,
+  Banner, NewArrival, Gallery, Popular, Trending, SaleUp, Mobile, Service, Instagram, Fashion, Subscribe,
 
 // Components 
-  Products,
-  Categories,
-  Swiper,
-  Email
+  Products, Categories, Swiper, Email
 })

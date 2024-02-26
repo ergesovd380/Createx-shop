@@ -8,6 +8,9 @@ import fashion from '@/store/home-page/fashion';
 import products from './components/products';
 import categories from './components/categories';
 
+// HeadFoot
+import footer from './headFoot/footer'
+
 
 export const myModule = createStore({
   modules: {
@@ -19,7 +22,11 @@ export const myModule = createStore({
     
 // Components
     products,
-    categories
+    categories,
+
+
+// HeadFoot
+    footer
   }
 });
 

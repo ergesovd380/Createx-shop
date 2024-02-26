@@ -1,6 +1,7 @@
 // Header
-import Topbar from './Russian/header/ru-topbar';
-import Secondbar from './Russian/header/ru-secondbar';
+import Topbar from './Russian/headFoot/ru-topbar';
+import Secondbar from './Russian/headFoot/ru-secondbar';
+import Footer from './Russian/headFoot/ru-footer';
 
 // Home-page
 import Banner from './Russian/home-page/ru-banner';
@@ -23,24 +24,11 @@ import Email from './Russian/components/ru-email';
 
 export default{
 // Header
-  Topbar, Secondbar, 
+  Topbar, Secondbar, Footer,
   
 // Home-page
-  Banner,
-  NewArrival,
-  Gallery,
-  Popular,
-  Trending,
-  SaleUp,
-  Mobile,
-  Service,
-  Instagram,
-  Fashion,
-  Subscribe,
+  Banner, NewArrival, Gallery, Popular, Trending, SaleUp, Mobile, Service, Instagram, Fashion, Subscribe,
 
 // Components
-  Products,
-  Categories,
-  Swiper,
-  Email
+  Products, Categories, Swiper, Email
 }

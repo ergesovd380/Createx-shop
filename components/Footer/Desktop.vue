@@ -1,25 +1,30 @@
 <script setup>
 import {ref} from 'vue';
+// Vuex
+import {useStore} from 'vuex';
+const store = useStore();
 
-const footer = ref([
-  {
-    title: 'Help', 
-    menu: ['Delivery & returns', 'FAQ', 'Track order', 'Contacts', 'Blog']
-  },
-  {
-    title: 'Shop', 
-    menu: ['New arrivals', 'Trending now', 'Sales', 'Brands']
-  },
-  {
-    title: 'Get in touch',
-    menu: ['Call: (405) 555-0128', 'Email: hello@createx.com'],
-    icons: ['mdi-facebook', 'mdi-instagram', 'mdi-twitter', 'mdi-youtube', 'mdi-pinterest']
-  },
-  {
-    title: 'Download our app',
-    img: ['/images/footer/app-store.png', '/images/footer/google-play.png']
-  }
-])
+const footer = computed(() => store.getters["footer/footerMenu"]);
+
+// const footer = ref([
+//   {
+//     title: 'Help', 
+//     menu: ['Delivery & returns', 'FAQ', 'Track order', 'Contacts', 'Blog']
+//   },
+//   {
+//     title: 'Shop', 
+//     menu: ['New arrivals', 'Trending now', 'Sales', 'Brands']
+//   },
+//   {
+//     title: 'Get in touch',
+//     menu: ['Call: (405) 555-0128', 'Email: hello@createx.com'],
+//     icons: ['mdi-facebook', 'mdi-instagram', 'mdi-twitter', 'mdi-youtube', 'mdi-pinterest']
+//   },
+//   {
+//     title: 'Download our app',
+//     img: ['/images/footer/app-store.png', '/images/footer/google-play.png']
+//   }
+// ])
 </script>
 
 <template>
@@ -50,7 +55,7 @@ const footer = ref([
                 base__regular
               "
             >
-              {{menu}}
+              {{menu.title}}{{ menu.value }}
             </span>
           </div>
 <!-- Footer icons -->
