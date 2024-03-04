@@ -1,5 +1,9 @@
 export default { 
   state: () => ({
+    goTop: {
+      id: 'Go_Top',
+      title: 'goTop'
+    },
     footer: [
 // Help
       {
@@ -39,7 +43,7 @@ export default {
           },
           {
             id: 'M_7',
-            title: 'New arrivalsTrending now'
+            title: 'Trending now'
           },
           {
             id: 'M_8',
@@ -81,6 +85,9 @@ export default {
   getters: {
     footerMenu (state: any) {
       return state.footer;
+    },
+    goTOp (state: any) {
+      return state.goTop.id;
     }
   },
 

@@ -5,7 +5,7 @@ import {useStore} from 'vuex';
 const store = useStore();
 
 const footer = computed(() => store.getters["footer/footerMenu"]);
-
+const goTop = computed(() => store.getters["goTop/footerMenu"]);
 // const footer = ref([
 //   {
 //     title: 'Help', 
@@ -40,7 +40,7 @@ const footer = computed(() => store.getters["footer/footerMenu"]);
         >
 <!-- Footer title -->
           <div class="text-uppercase footer__title">
-            {{ foot.title }}
+            {{ $t('Footer.' + foot.id) }}
           </div>
 <!-- Footer menu -->
           <div 
@@ -55,7 +55,7 @@ const footer = computed(() => store.getters["footer/footerMenu"]);
                 base__regular
               "
             >
-              {{menu.title}}{{ menu.value }}
+              {{ $t('Footer.' + menu.id) }}{{ menu.value }}
             </span>
           </div>
 <!-- Footer icons -->
@@ -103,6 +103,7 @@ const footer = computed(() => store.getters["footer/footerMenu"]);
           "
         >
           Go to top
+          <!-- {{ $t('Footer.' + goTop) }} -->
         </div>
       </div>
     </v-container>
